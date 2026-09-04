@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Rebuild GBO investor HTML."""
+
 import json
 from pathlib import Path
 
@@ -222,7 +223,15 @@ def unit_chart(skus):
     inner_w, inner_h = W - pad_l - pad_r, H - pad_t - pad_b
     all_ep = [sc["ep"] for s in skus for sc in s["scenarios"]]
     ymin, ymax = min(all_ep) * 0.9, max(all_ep) * 1.08
-    colors = ["#3b82f6", "#22c55e", "#eab308", "#f97316", "#a78bfa", "#06b6d4", "#ef4444"]
+    colors = [
+        "#3b82f6",
+        "#22c55e",
+        "#eab308",
+        "#f97316",
+        "#a78bfa",
+        "#06b6d4",
+        "#ef4444",
+    ]
     n = max(len(labels) - 1, 1)
 
     def x(i):
@@ -239,14 +248,14 @@ def unit_chart(skus):
         val = ymin + (ymax - ymin) * t / 4
         yy = y(val)
         parts.append(
-            f'<line x1="{pad_l}" y1="{yy:.1f}" x2="{W-pad_r}" y2="{yy:.1f}" stroke="#1f2937"/>'
+            f'<line x1="{pad_l}" y1="{yy:.1f}" x2="{W - pad_r}" y2="{yy:.1f}" stroke="#1f2937"/>'
         )
         parts.append(
-            f'<text x="{pad_l-8}" y="{yy+4:.1f}" text-anchor="end" fill="#6b7280" font-size="11">{r(val,0)}</text>'
+            f'<text x="{pad_l - 8}" y="{yy + 4:.1f}" text-anchor="end" fill="#6b7280" font-size="11">{r(val, 0)}</text>'
         )
     for i, lab in enumerate(labels):
         parts.append(
-            f'<text x="{x(i):.1f}" y="{H-10}" text-anchor="middle" fill="#9ca3af" font-size="12">{lab}</text>'
+            f'<text x="{x(i):.1f}" y="{H - 10}" text-anchor="middle" fill="#9ca3af" font-size="12">{lab}</text>'
         )
     for si, s in enumerate(skus):
         pts = []
@@ -275,7 +284,7 @@ def mp_class(pct):
 
 
 def mln(n):
-    return f"{n/1e6:.2f}".replace(".", ",") + " млн"
+    return f"{n / 1e6:.2f}".replace(".", ",") + " млн"
 
 
 def master_cards(skus):
@@ -286,15 +295,15 @@ def master_cards(skus):
         m50 = scenario(s, "−50%")
         cls = "weak" if b["m_shelf_pct"] < 15 else ""
         cards.append(f"""
-      <article class="scard {cls}" id="sum-{s['id']}">
+      <article class="scard {cls}" id="sum-{s["id"]}">
         <header class="scard-h">
           <div>
-            <span class="tag">{s['group']}</span>
-            <a class="scard-name" href="#{s['id']}">{s['name']}</a>
+            <span class="tag">{s["group"]}</span>
+            <a class="scard-name" href="#{s["id"]}">{s["name"]}</a>
           </div>
           <div class="scard-meta">
-            <span>{s['eur']:.2f} € · {r(b['buy_unit_rub'])} ₽</span>
-            <a href="{s['url']}" target="_blank" rel="noopener">полка {r(s['dealer'])} ₽</a>
+            <span>{s["eur"]:.2f} € · {r(b["buy_unit_rub"])} ₽</span>
+            <a href="{s["url"]}" target="_blank" rel="noopener">полка {r(s["dealer"])} ₽</a>
           </div>
         </header>
         <div class="sgrid">
@@ -304,24 +313,24 @@ def master_cards(skus):
           <div class="shead">−50%</div>
 
           <div class="slabel">Земля</div>
-          <div class="sval accent">{r(b['ep'])}</div>
-          <div class="sval">{r(m30['ep'])}</div>
-          <div class="sval">{r(m50['ep'])}</div>
+          <div class="sval accent">{r(b["ep"])}</div>
+          <div class="sval">{r(m30["ep"])}</div>
+          <div class="sval">{r(m50["ep"])}</div>
 
           <div class="slabel">Маржа</div>
-          <div class="sval {mp_class(b['m_shelf_pct'])}">{b['m_shelf_pct']:+.0f}%</div>
-          <div class="sval {mp_class(m30['m_shelf_pct'])}">{m30['m_shelf_pct']:+.0f}%</div>
-          <div class="sval {mp_class(m50['m_shelf_pct'])}">{m50['m_shelf_pct']:+.0f}%</div>
+          <div class="sval {mp_class(b["m_shelf_pct"])}">{b["m_shelf_pct"]:+.0f}%</div>
+          <div class="sval {mp_class(m30["m_shelf_pct"])}">{m30["m_shelf_pct"]:+.0f}%</div>
+          <div class="sval {mp_class(m50["m_shelf_pct"])}">{m50["m_shelf_pct"]:+.0f}%</div>
 
           <div class="slabel">₽ рейса</div>
-          <div class="sval">{k(b['m_shelf'])}</div>
-          <div class="sval">{k(m30['m_shelf'])}</div>
-          <div class="sval">{k(m50['m_shelf'])}</div>
+          <div class="sval">{k(b["m_shelf"])}</div>
+          <div class="sval">{k(m30["m_shelf"])}</div>
+          <div class="sval">{k(m50["m_shelf"])}</div>
 
           <div class="slabel">Заморозка</div>
-          <div class="sval freeze">{mln(b['freeze'])}</div>
-          <div class="sval freeze">{mln(m30['freeze'])}</div>
-          <div class="sval freeze">{mln(m50['freeze'])}</div>
+          <div class="sval freeze">{mln(b["freeze"])}</div>
+          <div class="sval freeze">{mln(m30["freeze"])}</div>
+          <div class="sval freeze">{mln(m50["freeze"])}</div>
         </div>
       </article>""")
     return "".join(cards)
@@ -335,26 +344,26 @@ def sku_section(s, eur):
         mpcls = "bad" if sc["m_shelf_pct"] < 0 else "good"
         rows_sc += f"""<tr>
           <td>{lab}</td>
-          <td class="num">{r(sc['qty'])}</td>
-          <td class="num">{r(sc['weight'],0)}</td>
-          <td class="num">{r(sc['goods_eur'],0)} €</td>
-          <td class="num">{r(sc['ep'])} ₽</td>
-          <td class="num freeze">{r(sc['freeze'])} ₽</td>
-          <td class="num">{r(sc['landed'])} ₽</td>
-          <td class="num {mpcls}">{sc['m_shelf_pct']:+.1f}%</td>
-          <td class="num">{k(sc['m_shelf'])}</td>
+          <td class="num">{r(sc["qty"])}</td>
+          <td class="num">{r(sc["weight"], 0)}</td>
+          <td class="num">{r(sc["goods_eur"], 0)} €</td>
+          <td class="num">{r(sc["ep"])} ₽</td>
+          <td class="num freeze">{r(sc["freeze"])} ₽</td>
+          <td class="num">{r(sc["landed"])} ₽</td>
+          <td class="num {mpcls}">{sc["m_shelf_pct"]:+.1f}%</td>
+          <td class="num">{k(sc["m_shelf"])}</td>
         </tr>"""
     stages = [
         (
             "1. Закупка по инвойсу AutoChill (netto)",
             b["buy_unit_rub"],
-            f"{s['eur']:.2f} € × {r(eur,4)} ₽",
+            f"{s['eur']:.2f} € × {r(eur, 4)} ₽",
         ),
         ("2. + доля выкупа 750 €", round(b["buyout_rub"] / b["qty"]), "фикс на партию"),
         (
             "3. + доля логистики PL→МСК",
             round(b["log_rub"] / b["qty"]),
-            f"{r(b['log_eur'],0)} € на {r(b['weight'],0)} кг",
+            f"{r(b['log_eur'], 0)} € на {r(b['weight'], 0)} кг",
         ),
         ("4. + пошлина 5%", round(b["duty"] / b["qty"]), "от (товар + фрахт)"),
         (
@@ -379,38 +388,38 @@ def sku_section(s, eur):
           <td class="muted">{note}</td>
         </tr>"""
     return f"""
-    <section class="sku" id="{s['id']}">
+    <section class="sku" id="{s["id"]}">
       <header>
         <div>
-          <span class="tag">{s['group']}</span>
-          <h2>{s['name']}</h2>
-          <p class="lead">{s['note']}</p>
+          <span class="tag">{s["group"]}</span>
+          <h2>{s["name"]}</h2>
+          <p class="lead">{s["note"]}</p>
         </div>
-        <a class="dealer" href="{s['url']}" target="_blank" rel="noopener">Полка Digitronic · {r(s['dealer'])} ₽ →</a>
+        <a class="dealer" href="{s["url"]}" target="_blank" rel="noopener">Полка Digitronic · {r(s["dealer"])} ₽ →</a>
       </header>
       <div class="kpis">
-        <div><small>Закупка инвойс</small><b>{s['eur']:.2f} € · {r(b['buy_unit_rub'])} ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>{r(b['ep'])} ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="{s['url']}" target="_blank" rel="noopener">{r(s['dealer'])} ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="{'bad' if b['m_shelf_pct']<0 else 'good'}">{b['m_shelf_pct']:+.1f}% · {k(b['m_shelf'])}</b></div>
-        <div><small>Заморозка BASE</small><b>{r(b['freeze'])} ₽</b></div>
+        <div><small>Закупка инвойс</small><b>{s["eur"]:.2f} € · {r(b["buy_unit_rub"])} ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>{r(b["ep"])} ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="{s["url"]}" target="_blank" rel="noopener">{r(s["dealer"])} ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="{"bad" if b["m_shelf_pct"] < 0 else "good"}">{b["m_shelf_pct"]:+.1f}% · {k(b["m_shelf"])}</b></div>
+        <div><small>Заморозка BASE</small><b>{r(b["freeze"])} ₽</b></div>
       </div>
       <h3>Стадии до земли — BASE, 1 шт</h3>
       <table>
         <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
         <tbody>{stage_rows}
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">{r(b['ep'])} ₽</td><td></td><td>касса {r(b['landed'])} ₽ / {r(b['qty'])} шт</td></tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">{r(b["ep"])} ₽</td><td></td><td>касса {r(b["landed"])} ₽ / {r(b["qty"])} шт</td></tr>
         </tbody>
       </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE {r(b['ep_ex_vat'])} ₽/шт, маржа к полке {b['m_osno_pct']:+.1f}%. Заморозка всё равно включает НДС до вычета.</p>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE {r(b["ep_ex_vat"])} ₽/шт, маржа к полке {b["m_osno_pct"]:+.1f}%. Заморозка всё равно включает НДС до вычета.</p>
       <h3>Заморозка капитала — BASE</h3>
       <table>
         <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
         <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">{r(b['goods_rub'])} ₽</td><td class="muted">{r(b['goods_eur'],0)} €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">{r(b['ekaterina'])} ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">{r(b['customs'])} ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">{r(b['freeze'])} ₽</td><td class="muted">товар считается дважды</td></tr>
+          <tr><td>Польша: товар AutoChill</td><td class="num">{r(b["goods_rub"])} ₽</td><td class="muted">{r(b["goods_eur"], 0)} €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">{r(b["ekaterina"])} ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">{r(b["customs"])} ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">{r(b["freeze"])} ₽</td><td class="muted">товар считается дважды</td></tr>
         </tbody>
       </table>
       <h3>Объём: земля и заморозка</h3>
@@ -527,7 +536,7 @@ def render(data):
   <div class="scards">
       {master_cards(skus)}
   </div>
-  <p class="cap">Полка — digitronicgas.ru. Заморозка = товар в PL + платёж РФ-партнёру (товар ещё раз + 750 € + логистика) + таможня. Цифры земли — ₽/шт. Курс ЦБ {r(data['eur'],4)} ₽/€ · {data['date']}.</p>
+  <p class="cap">Полка — digitronicgas.ru. Заморозка = товар в PL + платёж РФ-партнёру (товар ещё раз + 750 € + логистика) + таможня. Цифры земли — ₽/шт. Курс ЦБ {r(data["eur"], 4)} ₽/€ · {data["date"]}.</p>
 
   <h3>Себестоимость за штуку vs объём</h3>
   {unit_chart(skus)}
@@ -540,7 +549,7 @@ def render(data):
   <div class="ass">
     <div class="note">
       <strong>Деньги</strong><br/>
-      EUR ЦБ {r(data['eur'],4)} на {data['date']}. Выкуп 750 € фикс до инвойса 15 000 €.
+      EUR ЦБ {r(data["eur"], 4)} на {data["date"]}. Выкуп 750 € фикс до инвойса 15 000 €.
       Брокер 25 000 ₽. Сбор ФТС — шкала от ТС. МСК→Казань 12 000 ₽.
     </div>
     <div class="note">
@@ -561,14 +570,18 @@ def render(data):
 
 def main():
     data = build_data()
-    (OUT / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    (OUT / "data.json").write_text(
+        json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     (OUT / "index.html").write_text(render(data), encoding="utf-8")
     print("SKU                    EP BASE  EP-50%  полка  маржа%   freeze BASE")
-    for s in sorted(data["skus"], key=lambda x: scenario(x, "BASE")["m_shelf_pct"], reverse=True):
+    for s in sorted(
+        data["skus"], key=lambda x: scenario(x, "BASE")["m_shelf_pct"], reverse=True
+    ):
         b = scenario(s, "BASE")
         m = scenario(s, "−50%")
         print(
-            f"{s['name']:<22} {b['ep']:>7} {m['ep']:>7} {s['dealer']:>6} {b['m_shelf_pct']:>+6.1f}%  {b['freeze']/1e6:5.2f} млн"
+            f"{s['name']:<22} {b['ep']:>7} {m['ep']:>7} {s['dealer']:>6} {b['m_shelf_pct']:>+6.1f}%  {b['freeze'] / 1e6:5.2f} млн"
         )
 
 
