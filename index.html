@@ -10,49 +10,80 @@
     --accent:#6ee7b7; --bad:#f87171; --link:#93c5fd; --freeze:#c4b5fd;
   }
   * { box-sizing:border-box; }
-  body { margin:0; font:15px/1.5 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); }
-  .wrap { max-width:1180px; margin:0 auto; padding:40px 20px 80px; }
-  h1 { font-size:28px; letter-spacing:-.03em; margin:0 0 8px; font-weight:650; }
-  h2 { font-size:22px; margin:0 0 6px; font-weight:650; }
-  h3 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:28px 0 10px; font-weight:600; }
+  body { margin:0; font:15px/1.4 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); }
+  .wrap { max-width:980px; margin:0 auto; padding:24px 14px 64px; }
+  h1 { font-size:clamp(22px,5vw,28px); letter-spacing:-.03em; margin:0 0 6px; font-weight:650; line-height:1.15; }
+  h2 { font-size:20px; margin:0 0 4px; font-weight:650; }
+  h3 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:22px 0 10px; font-weight:600; }
   p, .lead { color:var(--muted); }
-  .sub { margin:0 0 22px; }
+  .sub { margin:0 0 16px; font-size:14px; }
   a { color:var(--link); text-decoration:none; }
   a:hover { text-decoration:underline; }
-  .note { border:1px solid var(--line); background:var(--card); padding:16px 18px; border-radius:10px; margin:16px 0 24px; }
+  .note { border:1px solid var(--line); background:var(--card); padding:12px 14px; border-radius:10px; margin:12px 0 18px; font-size:13.5px; line-height:1.45; }
   .note strong { color:var(--text); }
-  .tiny { font-size:13px; margin:10px 0 0; }
-  .scroll { overflow-x:auto; }
-  table { width:100%; border-collapse:collapse; font-size:13px; min-width:1280px; }
-  .sku table { min-width:0; }
-  th, td { border-bottom:1px solid var(--line); padding:8px 7px; text-align:left; vertical-align:top; }
-  th { color:var(--muted); font-weight:600; font-size:10px; text-transform:uppercase; letter-spacing:.05em; }
+  .tiny { font-size:12px; margin:8px 0 0; }
+  .scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th, td { border-bottom:1px solid var(--line); padding:6px 5px; text-align:left; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:10px; text-transform:uppercase; letter-spacing:.04em; }
   .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
   .muted { color:var(--muted); }
   .accent { font-weight:650; }
   .good { color:var(--accent); }
   .bad { color:var(--bad); }
   .freeze { color:var(--freeze); font-weight:600; }
-  tr.total td { font-weight:650; border-bottom:none; padding-top:12px; }
-  .tag { display:inline-block; font-size:10px; letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--line); padding:2px 6px; border-radius:4px; color:var(--muted); margin-right:8px; }
-  .art { color:var(--muted); font-size:12px; margin-top:2px; }
-  .kpis { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:16px 0 8px; }
-  .kpis div { background:var(--card); border:1px solid var(--line); padding:12px 14px; border-radius:10px; }
-  .kpis small { display:block; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
-  .kpis b { font-size:15px; font-weight:650; }
-  .sku { margin:52px 0; padding-top:8px; border-top:1px solid var(--line); }
-  .sku header { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
-  .dealer { border:1px solid var(--line); padding:8px 12px; border-radius:8px; white-space:nowrap; }
-  .legend { display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:10px; color:var(--muted); font-size:12px; }
-  .legend i { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+  tr.total td { font-weight:650; border-bottom:none; padding-top:10px; }
+  .tag { display:inline-block; font-size:9px; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--line); padding:1px 5px; border-radius:3px; color:var(--muted); margin-right:6px; vertical-align:middle; }
+  .art { color:var(--muted); font-size:11px; margin-top:1px; }
+  .kpis { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:12px 0 8px; }
+  .kpis div { background:var(--card); border:1px solid var(--line); padding:10px 11px; border-radius:8px; }
+  .kpis small { display:block; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:3px; }
+  .kpis b { font-size:14px; font-weight:650; }
+  .sku { margin:36px 0; padding-top:6px; border-top:1px solid var(--line); }
+  .sku header { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+  .dealer { border:1px solid var(--line); padding:7px 10px; border-radius:8px; white-space:nowrap; font-size:13px; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:8px; color:var(--muted); font-size:11px; }
+  .legend i { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:5px; vertical-align:middle; }
   .chart { width:100%; height:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
-  nav.toc { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 28px; }
-  nav.toc a { border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:13px; color:var(--text); }
-  .ass { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-  footer { margin-top:40px; color:var(--muted); font-size:13px; }
+  nav.toc { display:flex; flex-wrap:wrap; gap:6px; margin:16px 0 20px; }
+  nav.toc a { border:1px solid var(--line); padding:5px 9px; border-radius:999px; font-size:12px; color:var(--text); }
+  .ass { display:grid; grid-template-columns:1fr; gap:10px; }
+  footer { margin-top:28px; color:var(--muted); font-size:12px; }
+
+  /* Summary cards — mobile first, no horizontal scroll */
+  .scards { display:grid; gap:10px; }
+  .scard { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 11px 8px; }
+  .scard.weak { border-color:#3a2a2a; }
+  .scard-h { display:flex; flex-direction:column; gap:4px; margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .scard-name { color:var(--text); font-weight:650; font-size:15px; }
+  .scard-meta { display:flex; flex-wrap:wrap; gap:6px 12px; font-size:12px; color:var(--muted); }
+  .sgrid {
+    display:grid;
+    grid-template-columns:72px repeat(3,minmax(0,1fr));
+    gap:2px 4px;
+    align-items:center;
+    font-variant-numeric:tabular-nums;
+  }
+  .shead { font-size:10px; color:var(--muted); text-align:right; text-transform:uppercase; letter-spacing:.04em; font-weight:600; padding:0 2px 4px; }
+  .shead:first-child { text-align:left; }
+  .slabel { font-size:11px; color:var(--muted); padding:3px 0; }
+  .sval { text-align:right; font-size:12.5px; padding:3px 2px; white-space:nowrap; }
+  .cap { font-size:12px; color:var(--muted); margin:8px 0 0; }
+
+  @media (min-width:640px) {
+    .wrap { padding:32px 20px 72px; }
+    .kpis { grid-template-columns:repeat(3,1fr); }
+    .scards { grid-template-columns:1fr 1fr; gap:12px; }
+    .sval { font-size:13px; }
+  }
+  @media (min-width:900px) {
+    .kpis { grid-template-columns:repeat(5,1fr); }
+    .ass { grid-template-columns:1fr 1fr; }
+    .scards { grid-template-columns:1fr 1fr; }
+  }
   @media (max-width:800px) {
-    .kpis, .ass { grid-template-columns:1fr; }
     .sku header { flex-direction:column; }
+    .dealer { white-space:normal; }
   }
 </style>
 </head>
@@ -71,153 +102,276 @@
   </div>
 
   <h3>Сводка: земля, маржа к полке, заморозка</h3>
-  <div class="scroll">
-  <table>
-    <thead>
-      <tr>
-        <th>Позиция</th>
-        <th class="num">Инвойс</th>
-        <th class="num">Закуп ₽</th>
-        <th class="num">EP BASE</th>
-        <th class="num">EP −30%</th>
-        <th class="num">EP −50%</th>
-        <th class="num">Полка</th>
-        <th class="num">Маржа BASE</th>
-        <th class="num">Маржа −30%</th>
-        <th class="num">Маржа −50%</th>
-        <th class="num">₽ рейса BASE</th>
-        <th class="num">₽ рейса −30%</th>
-        <th class="num">₽ рейса −50%</th>
-        <th class="num">Заморозка BASE</th>
-        <th class="num">Заморозка −30%</th>
-        <th class="num">Заморозка −50%</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="">
-          <td><span class="tag">Фильтр</span><strong>BLASTER Y 12×2/12</strong><div class="art">BLASTER Y 12x2/12</div></td>
-          <td class="num">4.50 €</td>
-          <td class="num">453 ₽</td>
-          <td class="num accent">816 ₽</td>
-          <td class="num">867 ₽</td>
-          <td class="num">937 ₽</td>
-          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">1 250 ₽</a></td>
-          <td class="num good">+53.2%</td>
-          <td class="num good">+44.3%</td>
-          <td class="num good">+33.4%</td>
-          <td class="num">+478k</td>
-          <td class="num">+295k</td>
-          <td class="num">+172k</td>
-          <td class="num freeze">1 395 359</td>
-          <td class="num freeze">1 015 783</td>
-          <td class="num freeze">764 374</td>
-        </tr><tr class="">
-          <td><span class="tag">Редуктор</span><strong>AT13 XP</strong><div class="art">RGDG3990</div></td>
-          <td class="num">46.00 €</td>
-          <td class="num">4 628 ₽</td>
-          <td class="num accent">7 829 ₽</td>
-          <td class="num">8 224 ₽</td>
-          <td class="num">8 719 ₽</td>
-          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">11 600 ₽</a></td>
-          <td class="num good">+48.2%</td>
-          <td class="num good">+41.0%</td>
-          <td class="num good">+33.0%</td>
-          <td class="num">+566k</td>
-          <td class="num">+354k</td>
-          <td class="num">+216k</td>
-          <td class="num freeze">1 868 522</td>
-          <td class="num freeze">1 349 460</td>
-          <td class="num freeze">1 000 956</td>
-        </tr><tr class="">
-          <td><span class="tag">Редуктор</span><strong>AT09 Nordic XP</strong><div class="art">RGDG3895</div></td>
-          <td class="num">34.00 €</td>
-          <td class="num">3 420 ₽</td>
-          <td class="num accent">6 007 ₽</td>
-          <td class="num">6 336 ₽</td>
-          <td class="num">6 748 ₽</td>
-          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">8 250 ₽</a></td>
-          <td class="num good">+37.3%</td>
-          <td class="num good">+30.2%</td>
-          <td class="num good">+22.3%</td>
-          <td class="num">+404k</td>
-          <td class="num">+241k</td>
-          <td class="num">+135k</td>
-          <td class="num freeze">1 696 886</td>
-          <td class="num freeze">1 229 314</td>
-          <td class="num freeze">915 138</td>
-        </tr><tr class="">
-          <td><span class="tag">Фильтр</span><strong>BLASTER 12×12</strong><div class="art">BLASTER 12х12</div></td>
-          <td class="num">3.50 €</td>
-          <td class="num">352 ₽</td>
-          <td class="num accent">642 ₽</td>
-          <td class="num">681 ₽</td>
-          <td class="num">737 ₽</td>
-          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">880 ₽</a></td>
-          <td class="num good">+37.1%</td>
-          <td class="num good">+29.1%</td>
-          <td class="num ">+19.4%</td>
-          <td class="num">+334k</td>
-          <td class="num">+195k</td>
-          <td class="num">+100k</td>
-          <td class="num freeze">1 391 231</td>
-          <td class="num freeze">1 012 894</td>
-          <td class="num freeze">762 310</td>
-        </tr><tr class="">
-          <td><span class="tag">Фильтр</span><strong>FLS 12×12</strong><div class="art">FL01S 12/12</div></td>
-          <td class="num">0.70 €</td>
-          <td class="num">70 ₽</td>
-          <td class="num accent">194 ₽</td>
-          <td class="num">217 ₽</td>
-          <td class="num">247 ₽</td>
-          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">250 ₽</a></td>
-          <td class="num good">+29.2%</td>
-          <td class="num ">+15.3%</td>
-          <td class="num ">+1.3%</td>
-          <td class="num">+141k</td>
-          <td class="num">+58k</td>
-          <td class="num">+4k</td>
-          <td class="num freeze">659 836</td>
-          <td class="num freeze">502 641</td>
-          <td class="num freeze">396 613</td>
-        </tr><tr class="">
-          <td><span class="tag">Редуктор</span><strong>AT09 Nordic</strong><div class="art">RGDG3890</div></td>
-          <td class="num">26.00 €</td>
-          <td class="num">2 616 ₽</td>
-          <td class="num accent">4 838 ₽</td>
-          <td class="num">5 134 ₽</td>
-          <td class="num">5 505 ₽</td>
-          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">6 150 ₽</a></td>
-          <td class="num good">+27.1%</td>
-          <td class="num ">+19.8%</td>
-          <td class="num ">+11.7%</td>
-          <td class="num">+262k</td>
-          <td class="num">+142k</td>
-          <td class="num">+65k</td>
-          <td class="num freeze">1 490 676</td>
-          <td class="num freeze">1 084 967</td>
-          <td class="num freeze">812 033</td>
-        </tr><tr class="neg">
-          <td><span class="tag">Фильтр</span><strong>FLY 12 / 2×12</strong><div class="art">FL01Y 12/12</div></td>
-          <td class="num">2.00 €</td>
-          <td class="num">201 ₽</td>
-          <td class="num accent">388 ₽</td>
-          <td class="num">416 ₽</td>
-          <td class="num">455 ₽</td>
-          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">440 ₽</a></td>
-          <td class="num ">+13.4%</td>
-          <td class="num ">+5.8%</td>
-          <td class="num bad">-3.3%</td>
-          <td class="num">+104k</td>
-          <td class="num">+34k</td>
-          <td class="num">-15k</td>
-          <td class="num freeze">1 178 592</td>
-          <td class="num freeze">864 046</td>
-          <td class="num freeze">655 991</td>
-        </tr>
-    </tbody>
-  </table>
+  <div class="scards">
+      
+      <article class="scard " id="sum-blaster_y">
+        <header class="scard-h">
+          <div>
+            <span class="tag">Фильтр</span>
+            <a class="scard-name" href="#blaster_y">BLASTER Y 12×2/12</a>
+          </div>
+          <div class="scard-meta">
+            <span>4.50 € · 453 ₽</span>
+            <a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">полка 1 250 ₽</a>
+          </div>
+        </header>
+        <div class="sgrid">
+          <div class="shead"></div>
+          <div class="shead">BASE</div>
+          <div class="shead">−30%</div>
+          <div class="shead">−50%</div>
+
+          <div class="slabel">Земля</div>
+          <div class="sval accent">816</div>
+          <div class="sval">867</div>
+          <div class="sval">937</div>
+
+          <div class="slabel">Маржа</div>
+          <div class="sval good">+53%</div>
+          <div class="sval good">+44%</div>
+          <div class="sval good">+33%</div>
+
+          <div class="slabel">₽ рейса</div>
+          <div class="sval">+478k</div>
+          <div class="sval">+295k</div>
+          <div class="sval">+172k</div>
+
+          <div class="slabel">Заморозка</div>
+          <div class="sval freeze">1,40 млн</div>
+          <div class="sval freeze">1,02 млн</div>
+          <div class="sval freeze">0,76 млн</div>
+        </div>
+      </article>
+      <article class="scard " id="sum-at13">
+        <header class="scard-h">
+          <div>
+            <span class="tag">Редуктор</span>
+            <a class="scard-name" href="#at13">AT13 XP</a>
+          </div>
+          <div class="scard-meta">
+            <span>46.00 € · 4 628 ₽</span>
+            <a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">полка 11 600 ₽</a>
+          </div>
+        </header>
+        <div class="sgrid">
+          <div class="shead"></div>
+          <div class="shead">BASE</div>
+          <div class="shead">−30%</div>
+          <div class="shead">−50%</div>
+
+          <div class="slabel">Земля</div>
+          <div class="sval accent">7 829</div>
+          <div class="sval">8 224</div>
+          <div class="sval">8 719</div>
+
+          <div class="slabel">Маржа</div>
+          <div class="sval good">+48%</div>
+          <div class="sval good">+41%</div>
+          <div class="sval good">+33%</div>
+
+          <div class="slabel">₽ рейса</div>
+          <div class="sval">+566k</div>
+          <div class="sval">+354k</div>
+          <div class="sval">+216k</div>
+
+          <div class="slabel">Заморозка</div>
+          <div class="sval freeze">1,87 млн</div>
+          <div class="sval freeze">1,35 млн</div>
+          <div class="sval freeze">1,00 млн</div>
+        </div>
+      </article>
+      <article class="scard " id="sum-nordic_xp">
+        <header class="scard-h">
+          <div>
+            <span class="tag">Редуктор</span>
+            <a class="scard-name" href="#nordic_xp">AT09 Nordic XP</a>
+          </div>
+          <div class="scard-meta">
+            <span>34.00 € · 3 420 ₽</span>
+            <a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">полка 8 250 ₽</a>
+          </div>
+        </header>
+        <div class="sgrid">
+          <div class="shead"></div>
+          <div class="shead">BASE</div>
+          <div class="shead">−30%</div>
+          <div class="shead">−50%</div>
+
+          <div class="slabel">Земля</div>
+          <div class="sval accent">6 007</div>
+          <div class="sval">6 336</div>
+          <div class="sval">6 748</div>
+
+          <div class="slabel">Маржа</div>
+          <div class="sval good">+37%</div>
+          <div class="sval good">+30%</div>
+          <div class="sval good">+22%</div>
+
+          <div class="slabel">₽ рейса</div>
+          <div class="sval">+404k</div>
+          <div class="sval">+241k</div>
+          <div class="sval">+135k</div>
+
+          <div class="slabel">Заморозка</div>
+          <div class="sval freeze">1,70 млн</div>
+          <div class="sval freeze">1,23 млн</div>
+          <div class="sval freeze">0,92 млн</div>
+        </div>
+      </article>
+      <article class="scard " id="sum-blaster">
+        <header class="scard-h">
+          <div>
+            <span class="tag">Фильтр</span>
+            <a class="scard-name" href="#blaster">BLASTER 12×12</a>
+          </div>
+          <div class="scard-meta">
+            <span>3.50 € · 352 ₽</span>
+            <a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">полка 880 ₽</a>
+          </div>
+        </header>
+        <div class="sgrid">
+          <div class="shead"></div>
+          <div class="shead">BASE</div>
+          <div class="shead">−30%</div>
+          <div class="shead">−50%</div>
+
+          <div class="slabel">Земля</div>
+          <div class="sval accent">642</div>
+          <div class="sval">681</div>
+          <div class="sval">737</div>
+
+          <div class="slabel">Маржа</div>
+          <div class="sval good">+37%</div>
+          <div class="sval good">+29%</div>
+          <div class="sval ">+19%</div>
+
+          <div class="slabel">₽ рейса</div>
+          <div class="sval">+334k</div>
+          <div class="sval">+195k</div>
+          <div class="sval">+100k</div>
+
+          <div class="slabel">Заморозка</div>
+          <div class="sval freeze">1,39 млн</div>
+          <div class="sval freeze">1,01 млн</div>
+          <div class="sval freeze">0,76 млн</div>
+        </div>
+      </article>
+      <article class="scard " id="sum-fls">
+        <header class="scard-h">
+          <div>
+            <span class="tag">Фильтр</span>
+            <a class="scard-name" href="#fls">FLS 12×12</a>
+          </div>
+          <div class="scard-meta">
+            <span>0.70 € · 70 ₽</span>
+            <a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">полка 250 ₽</a>
+          </div>
+        </header>
+        <div class="sgrid">
+          <div class="shead"></div>
+          <div class="shead">BASE</div>
+          <div class="shead">−30%</div>
+          <div class="shead">−50%</div>
+
+          <div class="slabel">Земля</div>
+          <div class="sval accent">194</div>
+          <div class="sval">217</div>
+          <div class="sval">247</div>
+
+          <div class="slabel">Маржа</div>
+          <div class="sval good">+29%</div>
+          <div class="sval ">+15%</div>
+          <div class="sval ">+1%</div>
+
+          <div class="slabel">₽ рейса</div>
+          <div class="sval">+141k</div>
+          <div class="sval">+58k</div>
+          <div class="sval">+4k</div>
+
+          <div class="slabel">Заморозка</div>
+          <div class="sval freeze">0,66 млн</div>
+          <div class="sval freeze">0,50 млн</div>
+          <div class="sval freeze">0,40 млн</div>
+        </div>
+      </article>
+      <article class="scard " id="sum-nordic">
+        <header class="scard-h">
+          <div>
+            <span class="tag">Редуктор</span>
+            <a class="scard-name" href="#nordic">AT09 Nordic</a>
+          </div>
+          <div class="scard-meta">
+            <span>26.00 € · 2 616 ₽</span>
+            <a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">полка 6 150 ₽</a>
+          </div>
+        </header>
+        <div class="sgrid">
+          <div class="shead"></div>
+          <div class="shead">BASE</div>
+          <div class="shead">−30%</div>
+          <div class="shead">−50%</div>
+
+          <div class="slabel">Земля</div>
+          <div class="sval accent">4 838</div>
+          <div class="sval">5 134</div>
+          <div class="sval">5 505</div>
+
+          <div class="slabel">Маржа</div>
+          <div class="sval good">+27%</div>
+          <div class="sval ">+20%</div>
+          <div class="sval ">+12%</div>
+
+          <div class="slabel">₽ рейса</div>
+          <div class="sval">+262k</div>
+          <div class="sval">+142k</div>
+          <div class="sval">+65k</div>
+
+          <div class="slabel">Заморозка</div>
+          <div class="sval freeze">1,49 млн</div>
+          <div class="sval freeze">1,08 млн</div>
+          <div class="sval freeze">0,81 млн</div>
+        </div>
+      </article>
+      <article class="scard weak" id="sum-fly">
+        <header class="scard-h">
+          <div>
+            <span class="tag">Фильтр</span>
+            <a class="scard-name" href="#fly">FLY 12 / 2×12</a>
+          </div>
+          <div class="scard-meta">
+            <span>2.00 € · 201 ₽</span>
+            <a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">полка 440 ₽</a>
+          </div>
+        </header>
+        <div class="sgrid">
+          <div class="shead"></div>
+          <div class="shead">BASE</div>
+          <div class="shead">−30%</div>
+          <div class="shead">−50%</div>
+
+          <div class="slabel">Земля</div>
+          <div class="sval accent">388</div>
+          <div class="sval">416</div>
+          <div class="sval">455</div>
+
+          <div class="slabel">Маржа</div>
+          <div class="sval ">+13%</div>
+          <div class="sval ">+6%</div>
+          <div class="sval bad">-3%</div>
+
+          <div class="slabel">₽ рейса</div>
+          <div class="sval">+104k</div>
+          <div class="sval">+34k</div>
+          <div class="sval">-15k</div>
+
+          <div class="slabel">Заморозка</div>
+          <div class="sval freeze">1,18 млн</div>
+          <div class="sval freeze">0,86 млн</div>
+          <div class="sval freeze">0,66 млн</div>
+        </div>
+      </article>
   </div>
-  <p>Полка — живая карточка digitronicgas.ru. Заморозка = товар в Польше + платёж РФ-партнёру (товар ещё раз + 750 € + логистика) + таможня.</p>
+  <p class="cap">Полка — digitronicgas.ru. Заморозка = товар в PL + платёж РФ-партнёру (товар ещё раз + 750 € + логистика) + таможня. Цифры земли — ₽/шт.</p>
 
   <h3>Себестоимость за штуку vs объём</h3>
   <svg viewBox="0 0 720 280" class="chart" role="img" aria-label="Себестоимость за штуку растёт при снижении объёма"><line x1="52" y1="244.0" x2="704" y2="244.0" stroke="#1f2937"/><text x="44" y="248.0" text-anchor="end" fill="#6b7280" font-size="11">175</text><line x1="52" y1="187.0" x2="704" y2="187.0" stroke="#1f2937"/><text x="44" y="191.0" text-anchor="end" fill="#6b7280" font-size="11">2 485</text><line x1="52" y1="130.0" x2="704" y2="130.0" stroke="#1f2937"/><text x="44" y="134.0" text-anchor="end" fill="#6b7280" font-size="11">4 796</text><line x1="52" y1="73.0" x2="704" y2="73.0" stroke="#1f2937"/><text x="44" y="77.0" text-anchor="end" fill="#6b7280" font-size="11">7 106</text><line x1="52" y1="16.0" x2="704" y2="16.0" stroke="#1f2937"/><text x="44" y="20.0" text-anchor="end" fill="#6b7280" font-size="11">9 417</text><text x="52.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">BASE</text><text x="378.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">−30%</text><text x="704.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">−50%</text><polyline fill="none" stroke="#3b82f6" stroke-width="2.2" points="52.0,228.2 378.0,226.9 704.0,225.2"/><circle cx="52.0" cy="228.2" r="3.2" fill="#3b82f6"/><circle cx="378.0" cy="226.9" r="3.2" fill="#3b82f6"/><circle cx="704.0" cy="225.2" r="3.2" fill="#3b82f6"/><polyline fill="none" stroke="#22c55e" stroke-width="2.2" points="52.0,55.2 378.0,45.4 704.0,33.2"/><circle cx="52.0" cy="55.2" r="3.2" fill="#22c55e"/><circle cx="378.0" cy="45.4" r="3.2" fill="#22c55e"/><circle cx="704.0" cy="33.2" r="3.2" fill="#22c55e"/><polyline fill="none" stroke="#eab308" stroke-width="2.2" points="52.0,100.1 378.0,92.0 704.0,81.8"/><circle cx="52.0" cy="100.1" r="3.2" fill="#eab308"/><circle cx="378.0" cy="92.0" r="3.2" fill="#eab308"/><circle cx="704.0" cy="81.8" r="3.2" fill="#eab308"/><polyline fill="none" stroke="#f97316" stroke-width="2.2" points="52.0,232.5 378.0,231.5 704.0,230.1"/><circle cx="52.0" cy="232.5" r="3.2" fill="#f97316"/><circle cx="378.0" cy="231.5" r="3.2" fill="#f97316"/><circle cx="704.0" cy="230.1" r="3.2" fill="#f97316"/><polyline fill="none" stroke="#a78bfa" stroke-width="2.2" points="52.0,243.5 378.0,243.0 704.0,242.2"/><circle cx="52.0" cy="243.5" r="3.2" fill="#a78bfa"/><circle cx="378.0" cy="243.0" r="3.2" fill="#a78bfa"/><circle cx="704.0" cy="242.2" r="3.2" fill="#a78bfa"/><polyline fill="none" stroke="#06b6d4" stroke-width="2.2" points="52.0,129.0 378.0,121.7 704.0,112.5"/><circle cx="52.0" cy="129.0" r="3.2" fill="#06b6d4"/><circle cx="378.0" cy="121.7" r="3.2" fill="#06b6d4"/><circle cx="704.0" cy="112.5" r="3.2" fill="#06b6d4"/><polyline fill="none" stroke="#ef4444" stroke-width="2.2" points="52.0,238.7 378.0,238.0 704.0,237.1"/><circle cx="52.0" cy="238.7" r="3.2" fill="#ef4444"/><circle cx="378.0" cy="238.0" r="3.2" fill="#ef4444"/><circle cx="704.0" cy="237.1" r="3.2" fill="#ef4444"/></svg><div class="legend"><span><i style="background:#3b82f6"></i>BLASTER Y 12×2/12</span><span><i style="background:#22c55e"></i>AT13 XP</span><span><i style="background:#eab308"></i>AT09 Nordic XP</span><span><i style="background:#f97316"></i>BLASTER 12×12</span><span><i style="background:#a78bfa"></i>FLS 12×12</span><span><i style="background:#06b6d4"></i>AT09 Nordic</span><span><i style="background:#ef4444"></i>FLY 12 / 2×12</span></div>
