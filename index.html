@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ГБО Польша → Россия · фильтры и редукторы</title>
+<style>
+  :root {
+    --bg:#0b0d10; --card:#12161c; --line:#222831; --text:#e8edf4; --muted:#8b95a5;
+    --accent:#6ee7b7; --bad:#f87171; --link:#93c5fd; --freeze:#c4b5fd;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.5 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); }
+  .wrap { max-width:1180px; margin:0 auto; padding:40px 20px 80px; }
+  h1 { font-size:28px; letter-spacing:-.03em; margin:0 0 8px; font-weight:650; }
+  h2 { font-size:22px; margin:0 0 6px; font-weight:650; }
+  h3 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:28px 0 10px; font-weight:600; }
+  p, .lead { color:var(--muted); }
+  .sub { margin:0 0 22px; }
+  a { color:var(--link); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .note { border:1px solid var(--line); background:var(--card); padding:16px 18px; border-radius:10px; margin:16px 0 24px; }
+  .note strong { color:var(--text); }
+  .tiny { font-size:13px; margin:10px 0 0; }
+  .scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:13px; min-width:980px; }
+  .sku table { min-width:0; }
+  th, td { border-bottom:1px solid var(--line); padding:8px 7px; text-align:left; vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:10px; text-transform:uppercase; letter-spacing:.05em; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .muted { color:var(--muted); }
+  .accent { font-weight:650; }
+  .good { color:var(--accent); }
+  .bad { color:var(--bad); }
+  .freeze { color:var(--freeze); font-weight:600; }
+  tr.total td { font-weight:650; border-bottom:none; padding-top:12px; }
+  .tag { display:inline-block; font-size:10px; letter-spacing:.08em; text-transform:uppercase; border:1px solid var(--line); padding:2px 6px; border-radius:4px; color:var(--muted); margin-right:8px; }
+  .art { color:var(--muted); font-size:12px; margin-top:2px; }
+  .kpis { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:16px 0 8px; }
+  .kpis div { background:var(--card); border:1px solid var(--line); padding:12px 14px; border-radius:10px; }
+  .kpis small { display:block; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px; }
+  .kpis b { font-size:15px; font-weight:650; }
+  .sku { margin:52px 0; padding-top:8px; border-top:1px solid var(--line); }
+  .sku header { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+  .dealer { border:1px solid var(--line); padding:8px 12px; border-radius:8px; white-space:nowrap; }
+  .legend { display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:10px; color:var(--muted); font-size:12px; }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+  .chart { width:100%; height:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+  nav.toc { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 28px; }
+  nav.toc a { border:1px solid var(--line); padding:6px 10px; border-radius:999px; font-size:13px; color:var(--text); }
+  .ass { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  footer { margin-top:40px; color:var(--muted); font-size:13px; }
+  @media (max-width:800px) {
+    .kpis, .ass { grid-template-columns:1fr; }
+    .sku header { flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ГБО: фильтры и редукторы · Польша → Казань</h1>
+  <p class="sub">Три цены: инвойс AutoChill → земля в Казани → полка Digitronic.
+  Маржа — к рыночной цене на сайте дилера, без выдуманной оптовой скидки.
+  Курс ЦБ 100,5980 ₽/€ на 04.09.2026. Сценарии: BASE, −30%, −50%.</p>
+
+  <div class="note">
+    <strong>НДС: 5% на сайте ≠ 5% на таможне.</strong>
+    «В т.ч. НДС 5%» у Digitronic — это <em>их</em> НДС в розничном ценнике (УСН 5%).
+    При ввозе ТН ВЭД 8708 ставка <em>всегда 22%</em>. Если ваше юрлицо тоже на УСН 5% — ввозной 22% <em>не вычитается</em>, сидит в себестоимости.
+    Если ОСНО / УСН 22% — ввозной НДС к вычету, но из кассы на границе всё равно уходит. Ниже земля и заморозка считаются с 22% внутри (консервативно, как УСН 5%).
+  </div>
+
+  <h3>Сводка: земля, маржа к полке, заморозка</h3>
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr>
+        <th>Позиция</th>
+        <th class="num">Инвойс</th>
+        <th class="num">Закуп ₽</th>
+        <th class="num">EP BASE</th>
+        <th class="num">EP −30%</th>
+        <th class="num">EP −50%</th>
+        <th class="num">Полка</th>
+        <th class="num">Маржа BASE</th>
+        <th class="num">₽ рейса</th>
+        <th class="num">Заморозка BASE</th>
+        <th class="num">Заморозка −30%</th>
+        <th class="num">Заморозка −50%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="">
+          <td><span class="tag">Фильтр</span><strong>BLASTER Y 12×2/12</strong><div class="art">BLASTER Y 12x2/12</div></td>
+          <td class="num">4.50 €</td>
+          <td class="num">453 ₽</td>
+          <td class="num accent">816 ₽</td>
+          <td class="num">867 ₽</td>
+          <td class="num">937 ₽</td>
+          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">1 250 ₽</a></td>
+          <td class="num good">+53.2%</td>
+          <td class="num">+478k</td>
+          <td class="num freeze">1 395 359</td>
+          <td class="num freeze">1 015 783</td>
+          <td class="num freeze">764 374</td>
+        </tr><tr class="">
+          <td><span class="tag">Редуктор</span><strong>AT13 XP</strong><div class="art">RGDG3990</div></td>
+          <td class="num">46.00 €</td>
+          <td class="num">4 628 ₽</td>
+          <td class="num accent">7 829 ₽</td>
+          <td class="num">8 224 ₽</td>
+          <td class="num">8 719 ₽</td>
+          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">11 600 ₽</a></td>
+          <td class="num good">+48.2%</td>
+          <td class="num">+566k</td>
+          <td class="num freeze">1 868 522</td>
+          <td class="num freeze">1 349 460</td>
+          <td class="num freeze">1 000 956</td>
+        </tr><tr class="">
+          <td><span class="tag">Редуктор</span><strong>AT09 Nordic XP</strong><div class="art">RGDG3895</div></td>
+          <td class="num">34.00 €</td>
+          <td class="num">3 420 ₽</td>
+          <td class="num accent">6 007 ₽</td>
+          <td class="num">6 336 ₽</td>
+          <td class="num">6 748 ₽</td>
+          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">8 250 ₽</a></td>
+          <td class="num good">+37.3%</td>
+          <td class="num">+404k</td>
+          <td class="num freeze">1 696 886</td>
+          <td class="num freeze">1 229 314</td>
+          <td class="num freeze">915 138</td>
+        </tr><tr class="">
+          <td><span class="tag">Фильтр</span><strong>BLASTER 12×12</strong><div class="art">BLASTER 12х12</div></td>
+          <td class="num">3.50 €</td>
+          <td class="num">352 ₽</td>
+          <td class="num accent">642 ₽</td>
+          <td class="num">681 ₽</td>
+          <td class="num">737 ₽</td>
+          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">880 ₽</a></td>
+          <td class="num good">+37.1%</td>
+          <td class="num">+334k</td>
+          <td class="num freeze">1 391 231</td>
+          <td class="num freeze">1 012 894</td>
+          <td class="num freeze">762 310</td>
+        </tr><tr class="">
+          <td><span class="tag">Фильтр</span><strong>FLS 12×12</strong><div class="art">FL01S 12/12</div></td>
+          <td class="num">0.70 €</td>
+          <td class="num">70 ₽</td>
+          <td class="num accent">194 ₽</td>
+          <td class="num">217 ₽</td>
+          <td class="num">247 ₽</td>
+          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">250 ₽</a></td>
+          <td class="num good">+29.2%</td>
+          <td class="num">+141k</td>
+          <td class="num freeze">659 836</td>
+          <td class="num freeze">502 641</td>
+          <td class="num freeze">396 613</td>
+        </tr><tr class="">
+          <td><span class="tag">Редуктор</span><strong>AT09 Nordic</strong><div class="art">RGDG3890</div></td>
+          <td class="num">26.00 €</td>
+          <td class="num">2 616 ₽</td>
+          <td class="num accent">4 838 ₽</td>
+          <td class="num">5 134 ₽</td>
+          <td class="num">5 505 ₽</td>
+          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">6 150 ₽</a></td>
+          <td class="num good">+27.1%</td>
+          <td class="num">+262k</td>
+          <td class="num freeze">1 490 676</td>
+          <td class="num freeze">1 084 967</td>
+          <td class="num freeze">812 033</td>
+        </tr><tr class="neg">
+          <td><span class="tag">Фильтр</span><strong>FLY 12 / 2×12</strong><div class="art">FL01Y 12/12</div></td>
+          <td class="num">2.00 €</td>
+          <td class="num">201 ₽</td>
+          <td class="num accent">388 ₽</td>
+          <td class="num">416 ₽</td>
+          <td class="num">455 ₽</td>
+          <td class="num"><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">440 ₽</a></td>
+          <td class="num ">+13.4%</td>
+          <td class="num">+104k</td>
+          <td class="num freeze">1 178 592</td>
+          <td class="num freeze">864 046</td>
+          <td class="num freeze">655 991</td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Полка — живая карточка digitronicgas.ru. Заморозка = товар в Польше + платёж РФ-партнёру (товар ещё раз + 750 € + логистика) + таможня.</p>
+
+  <h3>Себестоимость за штуку vs объём</h3>
+  <svg viewBox="0 0 720 280" class="chart" role="img" aria-label="Себестоимость за штуку растёт при снижении объёма"><line x1="52" y1="244.0" x2="704" y2="244.0" stroke="#1f2937"/><text x="44" y="248.0" text-anchor="end" fill="#6b7280" font-size="11">175</text><line x1="52" y1="187.0" x2="704" y2="187.0" stroke="#1f2937"/><text x="44" y="191.0" text-anchor="end" fill="#6b7280" font-size="11">2 485</text><line x1="52" y1="130.0" x2="704" y2="130.0" stroke="#1f2937"/><text x="44" y="134.0" text-anchor="end" fill="#6b7280" font-size="11">4 796</text><line x1="52" y1="73.0" x2="704" y2="73.0" stroke="#1f2937"/><text x="44" y="77.0" text-anchor="end" fill="#6b7280" font-size="11">7 106</text><line x1="52" y1="16.0" x2="704" y2="16.0" stroke="#1f2937"/><text x="44" y="20.0" text-anchor="end" fill="#6b7280" font-size="11">9 417</text><text x="52.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">BASE</text><text x="378.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">−30%</text><text x="704.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">−50%</text><polyline fill="none" stroke="#3b82f6" stroke-width="2.2" points="52.0,228.2 378.0,226.9 704.0,225.2"/><circle cx="52.0" cy="228.2" r="3.2" fill="#3b82f6"/><circle cx="378.0" cy="226.9" r="3.2" fill="#3b82f6"/><circle cx="704.0" cy="225.2" r="3.2" fill="#3b82f6"/><polyline fill="none" stroke="#22c55e" stroke-width="2.2" points="52.0,55.2 378.0,45.4 704.0,33.2"/><circle cx="52.0" cy="55.2" r="3.2" fill="#22c55e"/><circle cx="378.0" cy="45.4" r="3.2" fill="#22c55e"/><circle cx="704.0" cy="33.2" r="3.2" fill="#22c55e"/><polyline fill="none" stroke="#eab308" stroke-width="2.2" points="52.0,100.1 378.0,92.0 704.0,81.8"/><circle cx="52.0" cy="100.1" r="3.2" fill="#eab308"/><circle cx="378.0" cy="92.0" r="3.2" fill="#eab308"/><circle cx="704.0" cy="81.8" r="3.2" fill="#eab308"/><polyline fill="none" stroke="#f97316" stroke-width="2.2" points="52.0,232.5 378.0,231.5 704.0,230.1"/><circle cx="52.0" cy="232.5" r="3.2" fill="#f97316"/><circle cx="378.0" cy="231.5" r="3.2" fill="#f97316"/><circle cx="704.0" cy="230.1" r="3.2" fill="#f97316"/><polyline fill="none" stroke="#a78bfa" stroke-width="2.2" points="52.0,243.5 378.0,243.0 704.0,242.2"/><circle cx="52.0" cy="243.5" r="3.2" fill="#a78bfa"/><circle cx="378.0" cy="243.0" r="3.2" fill="#a78bfa"/><circle cx="704.0" cy="242.2" r="3.2" fill="#a78bfa"/><polyline fill="none" stroke="#06b6d4" stroke-width="2.2" points="52.0,129.0 378.0,121.7 704.0,112.5"/><circle cx="52.0" cy="129.0" r="3.2" fill="#06b6d4"/><circle cx="378.0" cy="121.7" r="3.2" fill="#06b6d4"/><circle cx="704.0" cy="112.5" r="3.2" fill="#06b6d4"/><polyline fill="none" stroke="#ef4444" stroke-width="2.2" points="52.0,238.7 378.0,238.0 704.0,237.1"/><circle cx="52.0" cy="238.7" r="3.2" fill="#ef4444"/><circle cx="378.0" cy="238.0" r="3.2" fill="#ef4444"/><circle cx="704.0" cy="237.1" r="3.2" fill="#ef4444"/></svg><div class="legend"><span><i style="background:#3b82f6"></i>BLASTER Y 12×2/12</span><span><i style="background:#22c55e"></i>AT13 XP</span><span><i style="background:#eab308"></i>AT09 Nordic XP</span><span><i style="background:#f97316"></i>BLASTER 12×12</span><span><i style="background:#a78bfa"></i>FLS 12×12</span><span><i style="background:#06b6d4"></i>AT09 Nordic</span><span><i style="background:#ef4444"></i>FLY 12 / 2×12</span></div>
+  <p>Ось Y — земля ₽/шт. Направо партия меньше — EP растёт из‑за фиксов.</p>
+
+  <nav class="toc"><a href="#blaster_y">BLASTER Y 12×2/12</a><a href="#at13">AT13 XP</a><a href="#nordic_xp">AT09 Nordic XP</a><a href="#blaster">BLASTER 12×12</a><a href="#fls">FLS 12×12</a><a href="#nordic">AT09 Nordic</a><a href="#fly">FLY 12 / 2×12</a></nav>
+  
+    <section class="sku" id="blaster_y">
+      <header>
+        <div>
+          <span class="tag">Фильтр</span>
+          <h2>BLASTER Y 12×2/12</h2>
+          <p class="lead">Главный по марже к полке. Разборный расходник, меняют каждые 10–15 тыс. км.</p>
+        </div>
+        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">Полка Digitronic · 1 250 ₽ →</a>
+      </header>
+      <div class="kpis">
+        <div><small>Закупка инвойс</small><b>4.50 € · 453 ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>816 ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">1 250 ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="good">+53.2% · +478k</b></div>
+        <div><small>Заморозка BASE</small><b>1 395 359 ₽</b></div>
+      </div>
+      <h3>Стадии до земли — BASE, 1 шт</h3>
+      <table>
+        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <tbody><tr>
+          <td>1. Закупка по инвойсу AutoChill (netto)</td>
+          <td class="num">453 ₽</td>
+          <td class="num muted">453 ₽</td>
+          <td class="muted">4.50 € × 100,5980 ₽</td>
+        </tr><tr>
+          <td>2. + доля выкупа 750 €</td>
+          <td class="num">69 ₽</td>
+          <td class="num muted">522 ₽</td>
+          <td class="muted">фикс на партию</td>
+        </tr><tr>
+          <td>3. + доля логистики PL→МСК</td>
+          <td class="num">101 ₽</td>
+          <td class="num muted">623 ₽</td>
+          <td class="muted">1 103 € на 198 кг</td>
+        </tr><tr>
+          <td>4. + пошлина 5%</td>
+          <td class="num">28 ₽</td>
+          <td class="num muted">651 ₽</td>
+          <td class="muted">от (товар + фрахт)</td>
+        </tr><tr>
+          <td>5. + НДС ввоз 22%</td>
+          <td class="num">128 ₽</td>
+          <td class="num muted">779 ₽</td>
+          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+        </tr><tr>
+          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
+          <td class="num">38 ₽</td>
+          <td class="num muted">817 ₽</td>
+          <td class="muted">фиксы партии</td>
+        </tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">816 ₽</td><td></td><td>касса 897 399 ₽ / 1 100 шт</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 688 ₽/шт, маржа к полке +81.7%. Заморозка всё равно включает НДС до вычета.</p>
+      <h3>Заморозка капитала — BASE</h3>
+      <table>
+        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Польша: товар AutoChill</td><td class="num">497 960 ₽</td><td class="muted">4 950 €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">684 368 ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">213 030 ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">1 395 359 ₽</td><td class="muted">товар считается дважды</td></tr>
+        </tbody>
+      </table>
+      <h3>Объём: земля и заморозка</h3>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
+        <tbody><tr>
+          <td>BASE</td>
+          <td class="num">1 100</td>
+          <td class="num">198</td>
+          <td class="num">4 950 €</td>
+          <td class="num">816 ₽</td>
+          <td class="num freeze">1 395 359 ₽</td>
+          <td class="num">897 399 ₽</td>
+          <td class="num good">+53.2%</td>
+          <td class="num">+478k</td>
+        </tr><tr>
+          <td>−30%</td>
+          <td class="num">770</td>
+          <td class="num">139</td>
+          <td class="num">3 465 €</td>
+          <td class="num">867 ₽</td>
+          <td class="num freeze">1 015 783 ₽</td>
+          <td class="num">667 211 ₽</td>
+          <td class="num good">+44.3%</td>
+          <td class="num">+295k</td>
+        </tr><tr>
+          <td>−50%</td>
+          <td class="num">550</td>
+          <td class="num">99</td>
+          <td class="num">2 475 €</td>
+          <td class="num">937 ₽</td>
+          <td class="num freeze">764 374 ₽</td>
+          <td class="num">515 394 ₽</td>
+          <td class="num good">+33.4%</td>
+          <td class="num">+172k</td>
+        </tr></tbody>
+      </table>
+    </section>
+    
+
+    <section class="sku" id="at13">
+      <header>
+        <div>
+          <span class="tag">Редуктор</span>
+          <h2>AT13 XP</h2>
+          <p class="lead">Под мощные авто. Высокий чек, оборот медленнее Nordic.</p>
+        </div>
+        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">Полка Digitronic · 11 600 ₽ →</a>
+      </header>
+      <div class="kpis">
+        <div><small>Закупка инвойс</small><b>46.00 € · 4 628 ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>7 829 ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">11 600 ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="good">+48.2% · +566k</b></div>
+        <div><small>Заморозка BASE</small><b>1 868 522 ₽</b></div>
+      </div>
+      <h3>Стадии до земли — BASE, 1 шт</h3>
+      <table>
+        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <tbody><tr>
+          <td>1. Закупка по инвойсу AutoChill (netto)</td>
+          <td class="num">4 628 ₽</td>
+          <td class="num muted">4 628 ₽</td>
+          <td class="muted">46.00 € × 100,5980 ₽</td>
+        </tr><tr>
+          <td>2. + доля выкупа 750 €</td>
+          <td class="num">503 ₽</td>
+          <td class="num muted">5 131 ₽</td>
+          <td class="muted">фикс на партию</td>
+        </tr><tr>
+          <td>3. + доля логистики PL→МСК</td>
+          <td class="num">874 ₽</td>
+          <td class="num muted">6 005 ₽</td>
+          <td class="muted">1 302 € на 240 кг</td>
+        </tr><tr>
+          <td>4. + пошлина 5%</td>
+          <td class="num">275 ₽</td>
+          <td class="num muted">6 280 ₽</td>
+          <td class="muted">от (товар + фрахт)</td>
+        </tr><tr>
+          <td>5. + НДС ввоз 22%</td>
+          <td class="num">1 271 ₽</td>
+          <td class="num muted">7 551 ₽</td>
+          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+        </tr><tr>
+          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
+          <td class="num">279 ₽</td>
+          <td class="num muted">7 830 ₽</td>
+          <td class="muted">фиксы партии</td>
+        </tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">7 829 ₽</td><td></td><td>касса 1 174 396 ₽ / 150 шт</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 6 559 ₽/шт, маржа к полке +76.9%. Заморозка всё равно включает НДС до вычета.</p>
+      <h3>Заморозка капитала — BASE</h3>
+      <table>
+        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Польша: товар AutoChill</td><td class="num">694 126 ₽</td><td class="muted">6 900 €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">900 604 ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">273 793 ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">1 868 522 ₽</td><td class="muted">товар считается дважды</td></tr>
+        </tbody>
+      </table>
+      <h3>Объём: земля и заморозка</h3>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
+        <tbody><tr>
+          <td>BASE</td>
+          <td class="num">150</td>
+          <td class="num">240</td>
+          <td class="num">6 900 €</td>
+          <td class="num">7 829 ₽</td>
+          <td class="num freeze">1 868 522 ₽</td>
+          <td class="num">1 174 396 ₽</td>
+          <td class="num good">+48.2%</td>
+          <td class="num">+566k</td>
+        </tr><tr>
+          <td>−30%</td>
+          <td class="num">105</td>
+          <td class="num">168</td>
+          <td class="num">4 830 €</td>
+          <td class="num">8 224 ₽</td>
+          <td class="num freeze">1 349 460 ₽</td>
+          <td class="num">863 571 ₽</td>
+          <td class="num good">+41.0%</td>
+          <td class="num">+354k</td>
+        </tr><tr>
+          <td>−50%</td>
+          <td class="num">75</td>
+          <td class="num">120</td>
+          <td class="num">3 450 €</td>
+          <td class="num">8 719 ₽</td>
+          <td class="num freeze">1 000 956 ₽</td>
+          <td class="num">653 893 ₽</td>
+          <td class="num good">+33.0%</td>
+          <td class="num">+216k</td>
+        </tr></tbody>
+      </table>
+    </section>
+    
+
+    <section class="sku" id="nordic_xp">
+      <header>
+        <div>
+          <span class="tag">Редуктор</span>
+          <h2>AT09 Nordic XP</h2>
+          <p class="lead">До 250 л.с. Живая цена Digitronic 8 250 ₽.</p>
+        </div>
+        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">Полка Digitronic · 8 250 ₽ →</a>
+      </header>
+      <div class="kpis">
+        <div><small>Закупка инвойс</small><b>34.00 € · 3 420 ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>6 007 ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">8 250 ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="good">+37.3% · +404k</b></div>
+        <div><small>Заморозка BASE</small><b>1 696 886 ₽</b></div>
+      </div>
+      <h3>Стадии до земли — BASE, 1 шт</h3>
+      <table>
+        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <tbody><tr>
+          <td>1. Закупка по инвойсу AutoChill (netto)</td>
+          <td class="num">3 420 ₽</td>
+          <td class="num muted">3 420 ₽</td>
+          <td class="muted">34.00 € × 100,5980 ₽</td>
+        </tr><tr>
+          <td>2. + доля выкупа 750 €</td>
+          <td class="num">419 ₽</td>
+          <td class="num muted">3 839 ₽</td>
+          <td class="muted">фикс на партию</td>
+        </tr><tr>
+          <td>3. + доля логистики PL→МСК</td>
+          <td class="num">760 ₽</td>
+          <td class="num muted">4 599 ₽</td>
+          <td class="muted">1 360 € на 252 кг</td>
+        </tr><tr>
+          <td>4. + пошлина 5%</td>
+          <td class="num">209 ₽</td>
+          <td class="num muted">4 808 ₽</td>
+          <td class="muted">от (товар + фрахт)</td>
+        </tr><tr>
+          <td>5. + НДС ввоз 22%</td>
+          <td class="num">966 ₽</td>
+          <td class="num muted">5 774 ₽</td>
+          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+        </tr><tr>
+          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
+          <td class="num">233 ₽</td>
+          <td class="num muted">6 007 ₽</td>
+          <td class="muted">фиксы партии</td>
+        </tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">6 007 ₽</td><td></td><td>касса 1 081 226 ₽ / 180 шт</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 5 041 ₽/шт, маржа к полке +63.7%. Заморозка всё равно включает НДС до вычета.</p>
+      <h3>Заморозка капитала — BASE</h3>
+      <table>
+        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Польша: товар AutoChill</td><td class="num">615 660 ₽</td><td class="muted">6 120 €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">827 871 ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">253 355 ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">1 696 886 ₽</td><td class="muted">товар считается дважды</td></tr>
+        </tbody>
+      </table>
+      <h3>Объём: земля и заморозка</h3>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
+        <tbody><tr>
+          <td>BASE</td>
+          <td class="num">180</td>
+          <td class="num">252</td>
+          <td class="num">6 120 €</td>
+          <td class="num">6 007 ₽</td>
+          <td class="num freeze">1 696 886 ₽</td>
+          <td class="num">1 081 226 ₽</td>
+          <td class="num good">+37.3%</td>
+          <td class="num">+404k</td>
+        </tr><tr>
+          <td>−30%</td>
+          <td class="num">126</td>
+          <td class="num">176</td>
+          <td class="num">4 284 €</td>
+          <td class="num">6 336 ₽</td>
+          <td class="num freeze">1 229 314 ₽</td>
+          <td class="num">798 352 ₽</td>
+          <td class="num good">+30.2%</td>
+          <td class="num">+241k</td>
+        </tr><tr>
+          <td>−50%</td>
+          <td class="num">90</td>
+          <td class="num">126</td>
+          <td class="num">3 060 €</td>
+          <td class="num">6 748 ₽</td>
+          <td class="num freeze">915 138 ₽</td>
+          <td class="num">607 308 ₽</td>
+          <td class="num good">+22.3%</td>
+          <td class="num">+135k</td>
+        </tr></tbody>
+      </table>
+    </section>
+    
+
+    <section class="sku" id="blaster">
+      <header>
+        <div>
+          <span class="tag">Фильтр</span>
+          <h2>BLASTER 12×12</h2>
+          <p class="lead">Разборный центробежный. Слабее BLASTER Y, но тоже расходник.</p>
+        </div>
+        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">Полка Digitronic · 880 ₽ →</a>
+      </header>
+      <div class="kpis">
+        <div><small>Закупка инвойс</small><b>3.50 € · 352 ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>642 ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">880 ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="good">+37.1% · +334k</b></div>
+        <div><small>Заморозка BASE</small><b>1 391 231 ₽</b></div>
+      </div>
+      <h3>Стадии до земли — BASE, 1 шт</h3>
+      <table>
+        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <tbody><tr>
+          <td>1. Закупка по инвойсу AutoChill (netto)</td>
+          <td class="num">352 ₽</td>
+          <td class="num muted">352 ₽</td>
+          <td class="muted">3.50 € × 100,5980 ₽</td>
+        </tr><tr>
+          <td>2. + доля выкупа 750 €</td>
+          <td class="num">54 ₽</td>
+          <td class="num muted">406 ₽</td>
+          <td class="muted">фикс на партию</td>
+        </tr><tr>
+          <td>3. + доля логистики PL→МСК</td>
+          <td class="num">83 ₽</td>
+          <td class="num muted">489 ₽</td>
+          <td class="muted">1 160 € на 210 кг</td>
+        </tr><tr>
+          <td>4. + пошлина 5%</td>
+          <td class="num">22 ₽</td>
+          <td class="num muted">511 ₽</td>
+          <td class="muted">от (товар + фрахт)</td>
+        </tr><tr>
+          <td>5. + НДС ввоз 22%</td>
+          <td class="num">101 ₽</td>
+          <td class="num muted">612 ₽</td>
+          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+        </tr><tr>
+          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
+          <td class="num">30 ₽</td>
+          <td class="num muted">642 ₽</td>
+          <td class="muted">фиксы партии</td>
+        </tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">642 ₽</td><td></td><td>касса 898 301 ₽ / 1 400 шт</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 541 ₽/шт, маржа к полке +62.6%. Заморозка всё равно включает НДС до вычета.</p>
+      <h3>Заморозка капитала — BASE</h3>
+      <table>
+        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Польша: товар AutoChill</td><td class="num">492 930 ₽</td><td class="muted">4 900 €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">685 072 ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">213 228 ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">1 391 231 ₽</td><td class="muted">товар считается дважды</td></tr>
+        </tbody>
+      </table>
+      <h3>Объём: земля и заморозка</h3>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
+        <tbody><tr>
+          <td>BASE</td>
+          <td class="num">1 400</td>
+          <td class="num">210</td>
+          <td class="num">4 900 €</td>
+          <td class="num">642 ₽</td>
+          <td class="num freeze">1 391 231 ₽</td>
+          <td class="num">898 301 ₽</td>
+          <td class="num good">+37.1%</td>
+          <td class="num">+334k</td>
+        </tr><tr>
+          <td>−30%</td>
+          <td class="num">980</td>
+          <td class="num">147</td>
+          <td class="num">3 430 €</td>
+          <td class="num">681 ₽</td>
+          <td class="num freeze">1 012 894 ₽</td>
+          <td class="num">667 842 ₽</td>
+          <td class="num good">+29.1%</td>
+          <td class="num">+195k</td>
+        </tr><tr>
+          <td>−50%</td>
+          <td class="num">700</td>
+          <td class="num">105</td>
+          <td class="num">2 450 €</td>
+          <td class="num">737 ₽</td>
+          <td class="num freeze">762 310 ₽</td>
+          <td class="num">515 845 ₽</td>
+          <td class="num good">+19.4%</td>
+          <td class="num">+100k</td>
+        </tr></tbody>
+      </table>
+    </section>
+    
+
+    <section class="sku" id="fls">
+      <header>
+        <div>
+          <span class="tag">Фильтр</span>
+          <h2>FLS 12×12</h2>
+          <p class="lead">Самый ходовой расходник. Фиксы сильно бьют по штуке на малой партии.</p>
+        </div>
+        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">Полка Digitronic · 250 ₽ →</a>
+      </header>
+      <div class="kpis">
+        <div><small>Закупка инвойс</small><b>0.70 € · 70 ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>194 ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">250 ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="good">+29.2% · +141k</b></div>
+        <div><small>Заморозка BASE</small><b>659 836 ₽</b></div>
+      </div>
+      <h3>Стадии до земли — BASE, 1 шт</h3>
+      <table>
+        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <tbody><tr>
+          <td>1. Закупка по инвойсу AutoChill (netto)</td>
+          <td class="num">70 ₽</td>
+          <td class="num muted">70 ₽</td>
+          <td class="muted">0.70 € × 100,5980 ₽</td>
+        </tr><tr>
+          <td>2. + доля выкупа 750 €</td>
+          <td class="num">30 ₽</td>
+          <td class="num muted">100 ₽</td>
+          <td class="muted">фикс на партию</td>
+        </tr><tr>
+          <td>3. + доля логистики PL→МСК</td>
+          <td class="num">45 ₽</td>
+          <td class="num muted">145 ₽</td>
+          <td class="muted">1 112 € на 200 кг</td>
+        </tr><tr>
+          <td>4. + пошлина 5%</td>
+          <td class="num">6 ₽</td>
+          <td class="num muted">151 ₽</td>
+          <td class="muted">от (товар + фрахт)</td>
+        </tr><tr>
+          <td>5. + НДС ввоз 22%</td>
+          <td class="num">27 ₽</td>
+          <td class="num muted">178 ₽</td>
+          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+        </tr><tr>
+          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
+          <td class="num">16 ₽</td>
+          <td class="num muted">194 ₽</td>
+          <td class="muted">фиксы партии</td>
+        </tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">194 ₽</td><td></td><td>касса 483 790 ₽ / 2 500 шт</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 167 ₽/шт, маржа к полке +49.8%. Заморозка всё равно включает НДС до вычета.</p>
+      <h3>Заморозка капитала — BASE</h3>
+      <table>
+        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Польша: товар AutoChill</td><td class="num">176 046 ₽</td><td class="muted">1 750 €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">363 410 ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">120 379 ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">659 836 ₽</td><td class="muted">товар считается дважды</td></tr>
+        </tbody>
+      </table>
+      <h3>Объём: земля и заморозка</h3>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
+        <tbody><tr>
+          <td>BASE</td>
+          <td class="num">2 500</td>
+          <td class="num">200</td>
+          <td class="num">1 750 €</td>
+          <td class="num">194 ₽</td>
+          <td class="num freeze">659 836 ₽</td>
+          <td class="num">483 790 ₽</td>
+          <td class="num good">+29.2%</td>
+          <td class="num">+141k</td>
+        </tr><tr>
+          <td>−30%</td>
+          <td class="num">1 750</td>
+          <td class="num">140</td>
+          <td class="num">1 225 €</td>
+          <td class="num">217 ₽</td>
+          <td class="num freeze">502 641 ₽</td>
+          <td class="num">379 408 ₽</td>
+          <td class="num good">+15.3%</td>
+          <td class="num">+58k</td>
+        </tr><tr>
+          <td>−50%</td>
+          <td class="num">1 250</td>
+          <td class="num">100</td>
+          <td class="num">875 €</td>
+          <td class="num">247 ₽</td>
+          <td class="num freeze">396 613 ₽</td>
+          <td class="num">308 589 ₽</td>
+          <td class="num good">+1.3%</td>
+          <td class="num">+4k</td>
+        </tr></tbody>
+      </table>
+    </section>
+    
+
+    <section class="sku" id="nordic">
+      <header>
+        <div>
+          <span class="tag">Редуктор</span>
+          <h2>AT09 Nordic</h2>
+          <p class="lead">Хит 4-го поколения до ~170 л.с. Не расходник.</p>
+        </div>
+        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">Полка Digitronic · 6 150 ₽ →</a>
+      </header>
+      <div class="kpis">
+        <div><small>Закупка инвойс</small><b>26.00 € · 2 616 ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>4 838 ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">6 150 ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="good">+27.1% · +262k</b></div>
+        <div><small>Заморозка BASE</small><b>1 490 676 ₽</b></div>
+      </div>
+      <h3>Стадии до земли — BASE, 1 шт</h3>
+      <table>
+        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <tbody><tr>
+          <td>1. Закупка по инвойсу AutoChill (netto)</td>
+          <td class="num">2 616 ₽</td>
+          <td class="num muted">2 616 ₽</td>
+          <td class="muted">26.00 € × 100,5980 ₽</td>
+        </tr><tr>
+          <td>2. + доля выкупа 750 €</td>
+          <td class="num">377 ₽</td>
+          <td class="num muted">2 993 ₽</td>
+          <td class="muted">фикс на партию</td>
+        </tr><tr>
+          <td>3. + доля логистики PL→МСК</td>
+          <td class="num">703 ₽</td>
+          <td class="num muted">3 696 ₽</td>
+          <td class="muted">1 398 € на 260 кг</td>
+        </tr><tr>
+          <td>4. + пошлина 5%</td>
+          <td class="num">166 ₽</td>
+          <td class="num muted">3 862 ₽</td>
+          <td class="muted">от (товар + фрахт)</td>
+        </tr><tr>
+          <td>5. + НДС ввоз 22%</td>
+          <td class="num">767 ₽</td>
+          <td class="num muted">4 629 ₽</td>
+          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+        </tr><tr>
+          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
+          <td class="num">210 ₽</td>
+          <td class="num muted">4 839 ₽</td>
+          <td class="muted">фиксы партии</td>
+        </tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">4 838 ₽</td><td></td><td>касса 967 566 ₽ / 200 шт</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 4 071 ₽/шт, маржа к полке +51.1%. Заморозка всё равно включает НДС до вычета.</p>
+      <h3>Заморозка капитала — BASE</h3>
+      <table>
+        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Польша: товар AutoChill</td><td class="num">523 110 ₽</td><td class="muted">5 200 €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">739 144 ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">228 422 ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">1 490 676 ₽</td><td class="muted">товар считается дважды</td></tr>
+        </tbody>
+      </table>
+      <h3>Объём: земля и заморозка</h3>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
+        <tbody><tr>
+          <td>BASE</td>
+          <td class="num">200</td>
+          <td class="num">260</td>
+          <td class="num">5 200 €</td>
+          <td class="num">4 838 ₽</td>
+          <td class="num freeze">1 490 676 ₽</td>
+          <td class="num">967 566 ₽</td>
+          <td class="num good">+27.1%</td>
+          <td class="num">+262k</td>
+        </tr><tr>
+          <td>−30%</td>
+          <td class="num">140</td>
+          <td class="num">182</td>
+          <td class="num">3 640 €</td>
+          <td class="num">5 134 ₽</td>
+          <td class="num freeze">1 084 967 ₽</td>
+          <td class="num">718 790 ₽</td>
+          <td class="num good">+19.8%</td>
+          <td class="num">+142k</td>
+        </tr><tr>
+          <td>−50%</td>
+          <td class="num">100</td>
+          <td class="num">130</td>
+          <td class="num">2 600 €</td>
+          <td class="num">5 505 ₽</td>
+          <td class="num freeze">812 033 ₽</td>
+          <td class="num">550 478 ₽</td>
+          <td class="num good">+11.7%</td>
+          <td class="num">+65k</td>
+        </tr></tbody>
+      </table>
+    </section>
+    
+
+    <section class="sku" id="fly">
+      <header>
+        <div>
+          <span class="tag">Фильтр</span>
+          <h2>FLY 12 / 2×12</h2>
+          <p class="lead">Y-образный неразборный. На dedicated-кубе маржа к полке тонкая.</p>
+        </div>
+        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">Полка Digitronic · 440 ₽ →</a>
+      </header>
+      <div class="kpis">
+        <div><small>Закупка инвойс</small><b>2.00 € · 201 ₽</b></div>
+        <div><small>Земля BASE / шт</small><b>388 ₽</b></div>
+        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">440 ₽</a></b></div>
+        <div><small>Маржа к полке BASE</small><b class="good">+13.4% · +104k</b></div>
+        <div><small>Заморозка BASE</small><b>1 178 592 ₽</b></div>
+      </div>
+      <h3>Стадии до земли — BASE, 1 шт</h3>
+      <table>
+        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <tbody><tr>
+          <td>1. Закупка по инвойсу AutoChill (netto)</td>
+          <td class="num">201 ₽</td>
+          <td class="num muted">201 ₽</td>
+          <td class="muted">2.00 € × 100,5980 ₽</td>
+        </tr><tr>
+          <td>2. + доля выкупа 750 €</td>
+          <td class="num">38 ₽</td>
+          <td class="num muted">239 ₽</td>
+          <td class="muted">фикс на партию</td>
+        </tr><tr>
+          <td>3. + доля логистики PL→МСК</td>
+          <td class="num">56 ₽</td>
+          <td class="num muted">295 ₽</td>
+          <td class="muted">1 112 € на 200 кг</td>
+        </tr><tr>
+          <td>4. + пошлина 5%</td>
+          <td class="num">13 ₽</td>
+          <td class="num muted">308 ₽</td>
+          <td class="muted">от (товар + фрахт)</td>
+        </tr><tr>
+          <td>5. + НДС ввоз 22%</td>
+          <td class="num">59 ₽</td>
+          <td class="num muted">367 ₽</td>
+          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+        </tr><tr>
+          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
+          <td class="num">21 ₽</td>
+          <td class="num muted">388 ₽</td>
+          <td class="muted">фиксы партии</td>
+        </tr>
+        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">388 ₽</td><td></td><td>касса 776 200 ₽ / 2 000 шт</td></tr>
+        </tbody>
+      </table>
+      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 329 ₽/шт, маржа к полке +33.9%. Заморозка всё равно включает НДС до вычета.</p>
+      <h3>Заморозка капитала — BASE</h3>
+      <table>
+        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Польша: товар AutoChill</td><td class="num">402 392 ₽</td><td class="muted">4 000 €</td></tr>
+          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">589 756 ₽</td><td class="muted">двойная оплата товара</td></tr>
+          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">186 444 ₽</td><td></td></tr>
+          <tr class="total"><td>Итого заморозка</td><td class="num">1 178 592 ₽</td><td class="muted">товар считается дважды</td></tr>
+        </tbody>
+      </table>
+      <h3>Объём: земля и заморозка</h3>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
+        <tbody><tr>
+          <td>BASE</td>
+          <td class="num">2 000</td>
+          <td class="num">200</td>
+          <td class="num">4 000 €</td>
+          <td class="num">388 ₽</td>
+          <td class="num freeze">1 178 592 ₽</td>
+          <td class="num">776 200 ₽</td>
+          <td class="num good">+13.4%</td>
+          <td class="num">+104k</td>
+        </tr><tr>
+          <td>−30%</td>
+          <td class="num">1 400</td>
+          <td class="num">140</td>
+          <td class="num">2 800 €</td>
+          <td class="num">416 ₽</td>
+          <td class="num freeze">864 046 ₽</td>
+          <td class="num">582 372 ₽</td>
+          <td class="num good">+5.8%</td>
+          <td class="num">+34k</td>
+        </tr><tr>
+          <td>−50%</td>
+          <td class="num">1 000</td>
+          <td class="num">100</td>
+          <td class="num">2 000 €</td>
+          <td class="num">455 ₽</td>
+          <td class="num freeze">655 991 ₽</td>
+          <td class="num">454 795 ₽</td>
+          <td class="num bad">-3.3%</td>
+          <td class="num">-15k</td>
+        </tr></tbody>
+      </table>
+    </section>
+    
+
+  <h3>Вводные</h3>
+  <div class="ass">
+    <div class="note">
+      <strong>Деньги</strong><br/>
+      EUR ЦБ 100,5980 на 04.09.2026. Выкуп 750 € фикс до инвойса 15 000 €.
+      Брокер 25 000 ₽. Сбор ФТС — шкала от ТС. МСК→Казань 12 000 ₽.
+    </div>
+    <div class="note">
+      <strong>Таможня и фрахт</strong><br/>
+      ТН ВЭД 8708 99 97. Пошлина 5% от (товар+фрахт). НДС ввоз 22%.
+      Логистика: 162,5 + 4,75 × кг €. BASE qty — реалистичная набивка ~1 м³.
+    </div>
+  </div>
+  <footer>
+    −20% «опт установщику» убран: это была гипотеза, не прайс Digitronic.
+    Сравнение — к ценнику на сайте. FLS / FLY / Nordic на dedicated-кубе живут хуже BLASTER Y и AT13 XP.
+  </footer>
+</div>
+</body>
+</html>
