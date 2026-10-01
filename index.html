@@ -3,1206 +3,893 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GBO поставка · Польша → Казань</title>
+<title>GBO поставка · полный расклад</title>
 <style>
   :root {
-    --bg:#0b0d10; --card:#12161c; --line:#222831; --text:#e8edf4; --muted:#8b95a5;
-    --accent:#6ee7b7; --bad:#f87171; --link:#93c5fd; --freeze:#c4b5fd;
+    --bg:#0c1016; --card:#141a22; --line:#273041; --text:#e8eef7; --muted:#8b97a8;
+    --good:#34d399; --ok:#fbbf24; --weak:#fb923c; --bad:#f87171; --link:#93c5fd;
   }
   * { box-sizing:border-box; }
-  body { margin:0; font:15px/1.4 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); }
-  .wrap { max-width:980px; margin:0 auto; padding:24px 14px 64px; }
-  h1 { font-size:clamp(22px,5vw,28px); letter-spacing:-.03em; margin:0 0 6px; font-weight:650; line-height:1.15; }
-  h2 { font-size:20px; margin:0 0 4px; font-weight:650; }
-  h3 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:22px 0 10px; font-weight:600; }
-  p, .lead { color:var(--muted); }
-  .sub { margin:0 0 16px; font-size:14px; }
+  body { margin:0; font:15px/1.45 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); }
+  .wrap { max-width:1040px; margin:0 auto; padding:22px 14px 72px; }
+  h1 { font-size:clamp(22px,4.5vw,30px); letter-spacing:-.03em; margin:0 0 8px; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:28px 0 12px; }
+  h3 { font-size:17px; margin:0 0 4px; }
+  p, .lead { color:var(--muted); margin:0; }
   a { color:var(--link); text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  .note { border:1px solid var(--line); background:var(--card); padding:12px 14px; border-radius:10px; margin:12px 0 18px; font-size:13.5px; line-height:1.45; }
-  .note strong { color:var(--text); }
-  .tiny { font-size:12px; margin:8px 0 0; }
+  .hero { background:linear-gradient(160deg,#152033,#10161f 55%,#0c1016); border:1px solid var(--line); border-radius:14px; padding:16px 16px 14px; margin-bottom:18px; }
+  .hero .sub { margin-top:6px; font-size:14px; }
+  .callouts { display:grid; gap:8px; margin-top:12px; }
+  .callout { background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:13.5px; }
+  .callout b { color:var(--text); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 12px 10px; margin-bottom:10px; }
+  .card header { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:10px; }
+  .right { text-align:right; font-size:12.5px; color:var(--muted); }
+  .right b { color:var(--text); }
+  .tag { display:inline-block; font-size:9px; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--line); padding:1px 5px; border-radius:3px; color:var(--muted); margin-right:6px; }
+  .pill { display:inline-block; font-size:11px; font-weight:650; padding:3px 8px; border-radius:999px; border:1px solid var(--line); }
+  .pill.good, .good { color:var(--good); }
+  .pill.ok, .ok { color:var(--ok); }
+  .pill.weak, .weak { color:var(--weak); }
+  .pill.bad, .bad { color:var(--bad); }
   table { width:100%; border-collapse:collapse; font-size:12.5px; }
   th, td { border-bottom:1px solid var(--line); padding:6px 5px; text-align:left; vertical-align:top; }
-  th { color:var(--muted); font-weight:600; font-size:10px; text-transform:uppercase; letter-spacing:.04em; }
+  th { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.04em; }
   .num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
   .muted { color:var(--muted); }
-  .accent { font-weight:650; }
-  .good { color:var(--accent); }
-  .bad { color:var(--bad); }
-  .freeze { color:var(--freeze); font-weight:600; }
-  tr.total td { font-weight:650; border-bottom:none; padding-top:10px; }
-  .tag { display:inline-block; font-size:9px; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--line); padding:1px 5px; border-radius:3px; color:var(--muted); margin-right:6px; vertical-align:middle; }
-  .kpis { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:12px 0 8px; }
-  .kpis div { background:var(--card); border:1px solid var(--line); padding:10px 11px; border-radius:8px; }
-  .kpis small { display:block; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:3px; }
-  .kpis b { font-size:14px; font-weight:650; }
-  .sku { margin:36px 0; padding-top:6px; border-top:1px solid var(--line); }
-  .sku header { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
-  .dealer { border:1px solid var(--line); padding:7px 10px; border-radius:8px; white-space:nowrap; font-size:13px; }
-  .legend { display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:8px; color:var(--muted); font-size:11px; }
-  .legend i { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:5px; vertical-align:middle; }
-  .chart { width:100%; height:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
-  nav.toc { display:flex; flex-wrap:wrap; gap:6px; margin:16px 0 20px; }
-  nav.toc a { border:1px solid var(--line); padding:5px 9px; border-radius:999px; font-size:12px; color:var(--text); }
-  .ass { display:grid; grid-template-columns:1fr; gap:10px; }
+  .tiny { font-size:11px; }
+  .grid4 { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:8px; }
+  .grid4 div { background:#0e131a; border:1px solid var(--line); border-radius:8px; padding:8px 9px; }
+  .grid4 small { display:block; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:2px; }
+  .grid4 b { font-size:13px; }
+  ul.lines { margin:6px 0 0; padding-left:18px; color:var(--muted); font-size:12.5px; }
+  ul.lines b { color:var(--text); }
+  .scroll { overflow-x:auto; }
   footer { margin-top:28px; color:var(--muted); font-size:12px; }
-  .scards, .tcards { display:grid; gap:10px; }
-  .scard, .tcard { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 11px 8px; }
-  .scard.weak { border-color:#3a2a2a; }
-  .scard-h { display:flex; flex-direction:column; gap:4px; margin-bottom:8px; padding-bottom:8px; border-bottom:1px solid var(--line); }
-  .scard-name { color:var(--text); font-weight:650; font-size:15px; }
-  .scard-meta { display:flex; flex-wrap:wrap; gap:6px 12px; font-size:12px; color:var(--muted); }
-  .sgrid { display:grid; grid-template-columns:72px repeat(3,minmax(0,1fr)); gap:2px 4px; align-items:center; font-variant-numeric:tabular-nums; }
-  .shead { font-size:10px; color:var(--muted); text-align:right; text-transform:uppercase; letter-spacing:.04em; font-weight:600; padding:0 2px 4px; }
-  .shead:first-child { text-align:left; }
-  .slabel { font-size:11px; color:var(--muted); padding:3px 0; }
-  .sval { text-align:right; font-size:12.5px; padding:3px 2px; white-space:nowrap; }
-  .cap { font-size:12px; color:var(--muted); margin:8px 0 0; }
-  .verdict { color:var(--accent); margin:4px 0 10px; font-size:13.5px; }
-  .tkpis { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-bottom:10px; }
-  .tkpis div { background:#0e1218; border:1px solid var(--line); padding:8px 10px; border-radius:8px; }
-  .tkpis small { display:block; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:2px; }
-  .tkpis b { font-size:13px; }
-  .tline { font-size:12.5px; color:var(--muted); padding:3px 0; border-top:1px dashed var(--line); }
-  .tline b { color:var(--text); }
-  @media (min-width:640px) {
-    .wrap { padding:32px 20px 72px; }
-    .kpis, .tkpis { grid-template-columns:repeat(3,1fr); }
-    .scards, .tcards { grid-template-columns:1fr 1fr; gap:12px; }
-  }
-  @media (min-width:900px) {
-    .kpis { grid-template-columns:repeat(5,1fr); }
-    .tkpis { grid-template-columns:repeat(4,1fr); }
-    .ass { grid-template-columns:1fr 1fr; }
-  }
-  @media (max-width:800px) {
-    .sku header { flex-direction:column; }
-    .dealer { white-space:normal; }
+  @media (min-width:720px) {
+    .callouts { grid-template-columns:1fr 1fr; }
+    .grid4 { grid-template-columns:repeat(4,1fr); }
+    .card header { align-items:center; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>GBO поставка · Польша → Казань</h1>
-  <p class="sub">Фильтры и редукторы AutoChill / Tomasetto. Пересчёт 01.10.2026, EUR 94,8810. Полный ответ с вариантами рейса — в <code>VARIANTS.md</code>.</p>
-
-  <h3>Варианты первого рейса</h3>
-  <div class="tcards">
-      
-      <article class="tcard" id="trip-A">
-        <header>
-          <h2>A · только BLASTER Y</h2>
-          <p class="verdict">GO · лучший простой старт по фильтрам</p>
-        </header>
-        <div class="tkpis">
-          <div><small>Инвойс</small><b>4 950 € · 470k ₽</b></div>
-          <div><small>Логистика</small><b>1 103 € · 198 кг</b></div>
-          <div><small>Касса партии</small><b>849k ₽</b></div>
-          <div><small>НДС ввоз 22%</small><b>133k ₽</b></div>
-          <div><small>Заморозка</small><b class="freeze">1,32 млн</b></div>
-          <div><small>Прибыль к полке</small><b class="good">+526k · +62%</b></div>
-          <div><small>Если НДС к вычету (ОСНО)</small><b class="good">+659k · +92%</b></div>
-          <div><small>Полка Digitronic</small><b>1 375k ₽</b></div>
-        </div>
-        <div class="tlines"><div class='tline'><b>BLASTER Y 12×2/12</b> ×1 100 · земля 772 ₽ · кэш +526k · ОСНО +659k</div></div>
-      </article>
-      <article class="tcard" id="trip-B">
-        <header>
-          <h2>B · только AT13 XP</h2>
-          <p class="verdict">GO · максимум ₽/рейс и маржа, медленнее оборот</p>
-        </header>
-        <div class="tkpis">
-          <div><small>Инвойс</small><b>6 900 € · 655k ₽</b></div>
-          <div><small>Логистика</small><b>1 302 € · 240 кг</b></div>
-          <div><small>Касса партии</small><b>1 110k ₽</b></div>
-          <div><small>НДС ввоз 22%</small><b>180k ₽</b></div>
-          <div><small>Заморозка</small><b class="freeze">1,76 млн</b></div>
-          <div><small>Прибыль к полке</small><b class="good">+810k · +73%</b></div>
-          <div><small>Если НДС к вычету (ОСНО)</small><b class="good">+990k · +106%</b></div>
-          <div><small>Полка Digitronic</small><b>1 920k ₽</b></div>
-        </div>
-        <div class="tlines"><div class='tline'><b>AT13 XP</b> ×150 · земля 7 400 ₽ · кэш +810k · ОСНО +990k</div></div>
-      </article>
-      <article class="tcard" id="trip-C">
-        <header>
-          <h2>C · MIX BLASTER Y 800 + AT13 80</h2>
-          <p class="verdict">РЕКОМЕНДУЮ · расходник + дорогой чек в одном рейсе</p>
-        </header>
-        <div class="tkpis">
-          <div><small>Инвойс</small><b>7 280 € · 691k ₽</b></div>
-          <div><small>Логистика</small><b>1 454 € · 272 кг</b></div>
-          <div><small>Касса партии</small><b>1 175k ₽</b></div>
-          <div><small>НДС ввоз 22%</small><b>191k ₽</b></div>
-          <div><small>Заморозка</small><b class="freeze">1,87 млн</b></div>
-          <div><small>Прибыль к полке</small><b class="good">+849k · +72%</b></div>
-          <div><small>Если НДС к вычету (ОСНО)</small><b class="good">+1 041k · +106%</b></div>
-          <div><small>Полка Digitronic</small><b>2 024k ₽</b></div>
-        </div>
-        <div class="tlines"><div class='tline'><b>BLASTER Y 12×2/12</b> ×800 · земля 726 ₽ · кэш +419k · ОСНО +514k</div><div class='tline'><b>AT13 XP</b> ×80 · земля 7 423 ₽ · кэш +430k · ОСНО +527k</div></div>
-      </article>
-      <article class="tcard" id="trip-D">
-        <header>
-          <h2>D · MIX BLASTER Y 700 + Nordic XP 60 + AT13 40</h2>
-          <p class="verdict">GO · шире ассортимент, чуть ниже маржа чем C</p>
-        </header>
-        <div class="tkpis">
-          <div><small>Инвойс</small><b>7 030 € · 667k ₽</b></div>
-          <div><small>Логистика</small><b>1 464 € · 274 кг</b></div>
-          <div><small>Касса партии</small><b>1 145k ₽</b></div>
-          <div><small>НДС ввоз 22%</small><b>186k ₽</b></div>
-          <div><small>Заморозка</small><b class="freeze">1,81 млн</b></div>
-          <div><small>Прибыль к полке</small><b class="good">+794k · +69%</b></div>
-          <div><small>Если НДС к вычету (ОСНО)</small><b class="good">+980k · +102%</b></div>
-          <div><small>Полка Digitronic</small><b>1 939k ₽</b></div>
-        </div>
-        <div class="tlines"><div class='tline'><b>BLASTER Y 12×2/12</b> ×700 · земля 733 ₽ · кэш +362k · ОСНО +445k</div><div class='tline'><b>AT09 Nordic XP</b> ×60 · земля 5 540 ₽ · кэш +220k · ОСНО +274k</div><div class='tline'><b>AT13 XP</b> ×40 · земля 7 495 ₽ · кэш +212k · ОСНО +261k</div></div>
-      </article>
-      <article class="tcard" id="trip-E">
-        <header>
-          <h2>E · filters mix Y 900 + BLASTER 500 + FLS 1000</h2>
-          <p class="verdict">OK · объём расходников, без редукторов</p>
-        </header>
-        <div class="tkpis">
-          <div><small>Инвойс</small><b>6 500 € · 617k ₽</b></div>
-          <div><small>Логистика</small><b>1 668 € · 317 кг</b></div>
-          <div><small>Касса партии</small><b>1 106k ₽</b></div>
-          <div><small>НДС ввоз 22%</small><b>179k ₽</b></div>
-          <div><small>Заморозка</small><b class="freeze">1,72 млн</b></div>
-          <div><small>Прибыль к полке</small><b class="good">+709k · +64%</b></div>
-          <div><small>Если НДС к вычету (ОСНО)</small><b class="good">+888k · +96%</b></div>
-          <div><small>Полка Digitronic</small><b>1 815k ₽</b></div>
-        </div>
-        <div class="tlines"><div class='tline'><b>BLASTER Y 12×2/12</b> ×900 · земля 766 ₽ · кэш +436k · ОСНО +548k</div><div class='tline'><b>BLASTER 12×12</b> ×500 · земля 595 ₽ · кэш +142k · ОСНО +190k</div><div class='tline'><b>FLS 12×12</b> ×1 000 · земля 119 ₽ · кэш +131k · ОСНО +150k</div></div>
-      </article>
-      <article class="tcard" id="trip-A30">
-        <header>
-          <h2>A−30% · BLASTER Y 770</h2>
-          <p class="verdict">GO soft · меньше заморозка, EP хуже</p>
-        </header>
-        <div class="tkpis">
-          <div><small>Инвойс</small><b>3 465 € · 329k ₽</b></div>
-          <div><small>Логистика</small><b>821 € · 139 кг</b></div>
-          <div><small>Касса партии</small><b>632k ₽</b></div>
-          <div><small>НДС ввоз 22%</small><b>94k ₽</b></div>
-          <div><small>Заморозка</small><b class="freeze">0,96 млн</b></div>
-          <div><small>Прибыль к полке</small><b class="good">+331k · +52%</b></div>
-          <div><small>Если НДС к вычету (ОСНО)</small><b class="good">+425k · +79%</b></div>
-          <div><small>Полка Digitronic</small><b>962k ₽</b></div>
-        </div>
-        <div class="tlines"><div class='tline'><b>BLASTER Y 12×2/12</b> ×770 · земля 820 ₽ · кэш +331k · ОСНО +425k</div></div>
-      </article>
+  <div class="hero">
+    <h1>GBO поставка · полный расклад</h1>
+    <p class="sub">PL → Казань · EUR ЦБ <b>94,8810</b> на 01.10.2026 · товар из аванса, <b>без двойной заморозки</b></p>
+    <div class="callouts">
+      <div class="callout"><b>Касса = landed один раз.</b> Аванс → оплата товара с аванса. Касса = landed один раз. Двойной оплаты товара нет.</div>
+      <div class="callout"><b>Лучший соло:</b> AT13 XP · +73% кэш · +810k. <b>Слабые:</b> FLY 12 / 2×12.</div>
+      <div class="callout"><b>Рекомендую комплект:</b> Топ-3 полный (BLASTER Y 800 + Nordic XP 60 + AT13 80) — см. блок компоновок.</div>
+      <div class="callout"><b>НДС:</b> ввоз 22% всегда в кассе. Полка Digitronic — с НДС 5% (другая ставка). ОСНО = если ввозной НДС к вычету.</div>
+    </div>
   </div>
 
-  <h3>Сводка по SKU: земля, маржа к полке, заморозка</h3>
-  <div class="scards">
-      
-      <article class="scard " id="sum-at13">
-        <header class="scard-h">
-          <div>
-            <span class="tag">Редуктор</span>
-            <a class="scard-name" href="#at13">AT13 XP</a>
-          </div>
-          <div class="scard-meta">
-            <span>46.00 € · 4 365 ₽</span>
-            <a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">полка 12 800 ₽</a>
-          </div>
-        </header>
-        <div class="sgrid">
-          <div class="shead"></div>
-          <div class="shead">BASE</div>
-          <div class="shead">−30%</div>
-          <div class="shead">−50%</div>
-
-          <div class="slabel">Земля</div>
-          <div class="sval accent">7 400</div>
-          <div class="sval">7 780</div>
-          <div class="sval">8 253</div>
-
-          <div class="slabel">Маржа</div>
-          <div class="sval good">+73%</div>
-          <div class="sval good">+64%</div>
-          <div class="sval good">+55%</div>
-
-          <div class="slabel">₽ рейса</div>
-          <div class="sval">+810k</div>
-          <div class="sval">+527k</div>
-          <div class="sval">+341k</div>
-
-          <div class="slabel">Заморозка</div>
-          <div class="sval freeze">1,76 млн</div>
-          <div class="sval freeze">1,28 млн</div>
-          <div class="sval freeze">0,95 млн</div>
-        </div>
-      </article>
-      <article class="scard " id="sum-blaster_y">
-        <header class="scard-h">
-          <div>
-            <span class="tag">Фильтр</span>
-            <a class="scard-name" href="#blaster_y">BLASTER Y 12×2/12</a>
-          </div>
-          <div class="scard-meta">
-            <span>4.50 € · 427 ₽</span>
-            <a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">полка 1 250 ₽</a>
-          </div>
-        </header>
-        <div class="sgrid">
-          <div class="shead"></div>
-          <div class="shead">BASE</div>
-          <div class="shead">−30%</div>
-          <div class="shead">−50%</div>
-
-          <div class="slabel">Земля</div>
-          <div class="sval accent">772</div>
-          <div class="sval">820</div>
-          <div class="sval">888</div>
-
-          <div class="slabel">Маржа</div>
-          <div class="sval good">+62%</div>
-          <div class="sval good">+52%</div>
-          <div class="sval good">+41%</div>
-
-          <div class="slabel">₽ рейса</div>
-          <div class="sval">+526k</div>
-          <div class="sval">+331k</div>
-          <div class="sval">+199k</div>
-
-          <div class="slabel">Заморозка</div>
-          <div class="sval freeze">1,32 млн</div>
-          <div class="sval freeze">0,96 млн</div>
-          <div class="sval freeze">0,72 млн</div>
-        </div>
-      </article>
-      <article class="scard " id="sum-nordic_xp">
-        <header class="scard-h">
-          <div>
-            <span class="tag">Редуктор</span>
-            <a class="scard-name" href="#nordic_xp">AT09 Nordic XP</a>
-          </div>
-          <div class="scard-meta">
-            <span>34.00 € · 3 226 ₽</span>
-            <a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">полка 9 200 ₽</a>
-          </div>
-        </header>
-        <div class="sgrid">
-          <div class="shead"></div>
-          <div class="shead">BASE</div>
-          <div class="shead">−30%</div>
-          <div class="shead">−50%</div>
-
-          <div class="slabel">Земля</div>
-          <div class="sval accent">5 679</div>
-          <div class="sval">5 995</div>
-          <div class="sval">6 389</div>
-
-          <div class="slabel">Маржа</div>
-          <div class="sval good">+62%</div>
-          <div class="sval good">+54%</div>
-          <div class="sval good">+44%</div>
-
-          <div class="slabel">₽ рейса</div>
-          <div class="sval">+634k</div>
-          <div class="sval">+404k</div>
-          <div class="sval">+253k</div>
-
-          <div class="slabel">Заморозка</div>
-          <div class="sval freeze">1,60 млн</div>
-          <div class="sval freeze">1,16 млн</div>
-          <div class="sval freeze">0,87 млн</div>
-        </div>
-      </article>
-      <article class="scard " id="sum-nordic">
-        <header class="scard-h">
-          <div>
-            <span class="tag">Редуктор</span>
-            <a class="scard-name" href="#nordic">AT09 Nordic</a>
-          </div>
-          <div class="scard-meta">
-            <span>26.00 € · 2 467 ₽</span>
-            <a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">полка 7 000 ₽</a>
-          </div>
-        </header>
-        <div class="sgrid">
-          <div class="shead"></div>
-          <div class="shead">BASE</div>
-          <div class="shead">−30%</div>
-          <div class="shead">−50%</div>
-
-          <div class="slabel">Земля</div>
-          <div class="sval accent">4 575</div>
-          <div class="sval">4 842</div>
-          <div class="sval">5 214</div>
-
-          <div class="slabel">Маржа</div>
-          <div class="sval good">+53%</div>
-          <div class="sval good">+45%</div>
-          <div class="sval good">+34%</div>
-
-          <div class="slabel">₽ рейса</div>
-          <div class="sval">+485k</div>
-          <div class="sval">+302k</div>
-          <div class="sval">+179k</div>
-
-          <div class="slabel">Заморозка</div>
-          <div class="sval freeze">1,41 млн</div>
-          <div class="sval freeze">1,02 млн</div>
-          <div class="sval freeze">0,77 млн</div>
-        </div>
-      </article>
-      <article class="scard " id="sum-blaster">
-        <header class="scard-h">
-          <div>
-            <span class="tag">Фильтр</span>
-            <a class="scard-name" href="#blaster">BLASTER 12×12</a>
-          </div>
-          <div class="scard-meta">
-            <span>3.50 € · 332 ₽</span>
-            <a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">полка 880 ₽</a>
-          </div>
-        </header>
-        <div class="sgrid">
-          <div class="shead"></div>
-          <div class="shead">BASE</div>
-          <div class="shead">−30%</div>
-          <div class="shead">−50%</div>
-
-          <div class="slabel">Земля</div>
-          <div class="sval accent">607</div>
-          <div class="sval">645</div>
-          <div class="sval">698</div>
-
-          <div class="slabel">Маржа</div>
-          <div class="sval good">+45%</div>
-          <div class="sval good">+36%</div>
-          <div class="sval good">+26%</div>
-
-          <div class="slabel">₽ рейса</div>
-          <div class="sval">+382k</div>
-          <div class="sval">+230k</div>
-          <div class="sval">+127k</div>
-
-          <div class="slabel">Заморозка</div>
-          <div class="sval freeze">1,31 млн</div>
-          <div class="sval freeze">0,96 млн</div>
-          <div class="sval freeze">0,72 млн</div>
-        </div>
-      </article>
-      <article class="scard " id="sum-fls">
-        <header class="scard-h">
-          <div>
-            <span class="tag">Фильтр</span>
-            <a class="scard-name" href="#fls">FLS 12×12</a>
-          </div>
-          <div class="scard-meta">
-            <span>0.70 € · 66 ₽</span>
-            <a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">полка 250 ₽</a>
-          </div>
-        </header>
-        <div class="sgrid">
-          <div class="shead"></div>
-          <div class="shead">BASE</div>
-          <div class="shead">−30%</div>
-          <div class="shead">−50%</div>
-
-          <div class="slabel">Земля</div>
-          <div class="sval accent">183</div>
-          <div class="sval">205</div>
-          <div class="sval">235</div>
-
-          <div class="slabel">Маржа</div>
-          <div class="sval good">+36%</div>
-          <div class="sval good">+22%</div>
-          <div class="sval ">+7%</div>
-
-          <div class="slabel">₽ рейса</div>
-          <div class="sval">+166k</div>
-          <div class="sval">+79k</div>
-          <div class="sval">+19k</div>
-
-          <div class="slabel">Заморозка</div>
-          <div class="sval freeze">0,62 млн</div>
-          <div class="sval freeze">0,48 млн</div>
-          <div class="sval freeze">0,38 млн</div>
-        </div>
-      </article>
-      <article class="scard " id="sum-fly">
-        <header class="scard-h">
-          <div>
-            <span class="tag">Фильтр</span>
-            <a class="scard-name" href="#fly">FLY 12 / 2×12</a>
-          </div>
-          <div class="scard-meta">
-            <span>2.00 € · 190 ₽</span>
-            <a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">полка 440 ₽</a>
-          </div>
-        </header>
-        <div class="sgrid">
-          <div class="shead"></div>
-          <div class="shead">BASE</div>
-          <div class="shead">−30%</div>
-          <div class="shead">−50%</div>
-
-          <div class="slabel">Земля</div>
-          <div class="sval accent">367</div>
-          <div class="sval">394</div>
-          <div class="sval">431</div>
-
-          <div class="slabel">Маржа</div>
-          <div class="sval ">+20%</div>
-          <div class="sval ">+12%</div>
-          <div class="sval ">+2%</div>
-
-          <div class="slabel">₽ рейса</div>
-          <div class="sval">+146k</div>
-          <div class="sval">+64k</div>
-          <div class="sval">+9k</div>
-
-          <div class="slabel">Заморозка</div>
-          <div class="sval freeze">1,11 млн</div>
-          <div class="sval freeze">0,82 млн</div>
-          <div class="sval freeze">0,62 млн</div>
-        </div>
-      </article>
-  </div>
-  <p class="cap">Полка — digitronicgas.ru на 01.10.2026. Заморозка = товар в PL + платёж РФ-партнёру (товар ещё раз + 750 € + логистика) + таможня. Курс ЦБ 94,8810 ₽/€.</p>
-
-  <h3>Себестоимость за штуку vs объём</h3>
-  <svg viewBox="0 0 720 280" class="chart" role="img" aria-label="Себестоимость за штуку растёт при снижении объёма"><line x1="52" y1="244.0" x2="704" y2="244.0" stroke="#1f2937"/><text x="44" y="248.0" text-anchor="end" fill="#6b7280" font-size="11">165</text><line x1="52" y1="187.0" x2="704" y2="187.0" stroke="#1f2937"/><text x="44" y="191.0" text-anchor="end" fill="#6b7280" font-size="11">2 352</text><line x1="52" y1="130.0" x2="704" y2="130.0" stroke="#1f2937"/><text x="44" y="134.0" text-anchor="end" fill="#6b7280" font-size="11">4 539</text><line x1="52" y1="73.0" x2="704" y2="73.0" stroke="#1f2937"/><text x="44" y="77.0" text-anchor="end" fill="#6b7280" font-size="11">6 726</text><line x1="52" y1="16.0" x2="704" y2="16.0" stroke="#1f2937"/><text x="44" y="20.0" text-anchor="end" fill="#6b7280" font-size="11">8 913</text><text x="52.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">BASE</text><text x="378.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">−30%</text><text x="704.0" y="270" text-anchor="middle" fill="#9ca3af" font-size="12">−50%</text><polyline fill="none" stroke="#3b82f6" stroke-width="2.2" points="52.0,55.4 378.0,45.5 704.0,33.2"/><circle cx="52.0" cy="55.4" r="3.2" fill="#3b82f6"/><circle cx="378.0" cy="45.5" r="3.2" fill="#3b82f6"/><circle cx="704.0" cy="33.2" r="3.2" fill="#3b82f6"/><polyline fill="none" stroke="#22c55e" stroke-width="2.2" points="52.0,228.2 378.0,226.9 704.0,225.1"/><circle cx="52.0" cy="228.2" r="3.2" fill="#22c55e"/><circle cx="378.0" cy="226.9" r="3.2" fill="#22c55e"/><circle cx="704.0" cy="225.1" r="3.2" fill="#22c55e"/><polyline fill="none" stroke="#eab308" stroke-width="2.2" points="52.0,100.3 378.0,92.1 704.0,81.8"/><circle cx="52.0" cy="100.3" r="3.2" fill="#eab308"/><circle cx="378.0" cy="92.1" r="3.2" fill="#eab308"/><circle cx="704.0" cy="81.8" r="3.2" fill="#eab308"/><polyline fill="none" stroke="#f97316" stroke-width="2.2" points="52.0,129.1 378.0,122.1 704.0,112.4"/><circle cx="52.0" cy="129.1" r="3.2" fill="#f97316"/><circle cx="378.0" cy="122.1" r="3.2" fill="#f97316"/><circle cx="704.0" cy="112.4" r="3.2" fill="#f97316"/><polyline fill="none" stroke="#a78bfa" stroke-width="2.2" points="52.0,232.5 378.0,231.5 704.0,230.1"/><circle cx="52.0" cy="232.5" r="3.2" fill="#a78bfa"/><circle cx="378.0" cy="231.5" r="3.2" fill="#a78bfa"/><circle cx="704.0" cy="230.1" r="3.2" fill="#a78bfa"/><polyline fill="none" stroke="#06b6d4" stroke-width="2.2" points="52.0,243.5 378.0,242.9 704.0,242.2"/><circle cx="52.0" cy="243.5" r="3.2" fill="#06b6d4"/><circle cx="378.0" cy="242.9" r="3.2" fill="#06b6d4"/><circle cx="704.0" cy="242.2" r="3.2" fill="#06b6d4"/><polyline fill="none" stroke="#ef4444" stroke-width="2.2" points="52.0,238.7 378.0,238.0 704.0,237.1"/><circle cx="52.0" cy="238.7" r="3.2" fill="#ef4444"/><circle cx="378.0" cy="238.0" r="3.2" fill="#ef4444"/><circle cx="704.0" cy="237.1" r="3.2" fill="#ef4444"/></svg><div class="legend"><span><i style="background:#3b82f6"></i>AT13 XP</span><span><i style="background:#22c55e"></i>BLASTER Y 12×2/12</span><span><i style="background:#eab308"></i>AT09 Nordic XP</span><span><i style="background:#f97316"></i>AT09 Nordic</span><span><i style="background:#a78bfa"></i>BLASTER 12×12</span><span><i style="background:#06b6d4"></i>FLS 12×12</span><span><i style="background:#ef4444"></i>FLY 12 / 2×12</span></div>
-  <p>Ось Y — земля ₽/шт. Направо партия меньше — EP растёт из‑за фиксов.</p>
-
-  <nav class="toc"><a href="#at13">AT13 XP</a><a href="#blaster_y">BLASTER Y 12×2/12</a><a href="#nordic_xp">AT09 Nordic XP</a><a href="#nordic">AT09 Nordic</a><a href="#blaster">BLASTER 12×12</a><a href="#fls">FLS 12×12</a><a href="#fly">FLY 12 / 2×12</a></nav>
-  
-    <section class="sku" id="at13">
-      <header>
-        <div>
-          <span class="tag">Редуктор</span>
-          <h2>AT13 XP</h2>
-          <p class="lead">Под мощные авто. Лучшая маржа среди редукторов. Полка 12 800 ₽.</p>
-        </div>
-        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">Полка Digitronic · 12 800 ₽ →</a>
-      </header>
-      <div class="kpis">
-        <div><small>Закупка инвойс</small><b>46.00 € · 4 365 ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>7 400 ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">12 800 ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="good">+73.0% · +810k</b></div>
-        <div><small>Заморозка BASE</small><b>1 764 717 ₽</b></div>
-      </div>
-      <h3>Стадии до земли — BASE, 1 шт</h3>
+  <h2>1. Что в инвойсе и на полке</h2>
+  <div class="card">
+    <p class="lead" style="margin-bottom:10px">Все 7 позиций есть и в прайсе AutoChill (инвойс EUR), и на digitronicgas.ru (полка ₽, скрины/сайт на 01.10.2026). Сравнение — земля vs полка.</p>
+    <div class="scroll">
       <table>
-        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
+        <thead>
+          <tr>
+            <th>SKU</th><th>полка ₽</th><th>земля кэш</th><th>земля без НДС</th>
+            <th>маржа</th><th>₽ кэш BASE</th><th>₽ ОСНО</th><th>касса</th><th></th>
+          </tr>
+        </thead>
         <tbody><tr>
-          <td>1. Закупка по инвойсу AutoChill (netto)</td>
-          <td class="num">4 365 ₽</td>
-          <td class="num muted">4 365 ₽</td>
-          <td class="muted">46.00 € × 94,8810 ₽</td>
-        </tr><tr>
-          <td>2. + доля выкупа 750 €</td>
-          <td class="num">474 ₽</td>
-          <td class="num muted">4 839 ₽</td>
-          <td class="muted">фикс на партию</td>
-        </tr><tr>
-          <td>3. + доля логистики PL→МСК</td>
-          <td class="num">824 ₽</td>
-          <td class="num muted">5 663 ₽</td>
-          <td class="muted">1 302 € на 240 кг</td>
-        </tr><tr>
-          <td>4. + пошлина 5%</td>
-          <td class="num">259 ₽</td>
-          <td class="num muted">5 922 ₽</td>
-          <td class="muted">от (товар + фрахт)</td>
-        </tr><tr>
-          <td>5. + НДС ввоз 22%</td>
-          <td class="num">1 199 ₽</td>
-          <td class="num muted">7 121 ₽</td>
-          <td class="muted">таможня, не 5% с ценника Digitronic</td>
-        </tr><tr>
-          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
-          <td class="num">279 ₽</td>
-          <td class="num muted">7 400 ₽</td>
-          <td class="muted">фиксы партии</td>
-        </tr>
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">7 400 ₽</td><td></td><td>касса 1 110 038 ₽ / 150 шт</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 6 202 ₽/шт, маржа к полке +106.4%. Заморозка всё равно включает НДС до вычета.</p>
-      <h3>Заморозка капитала — BASE</h3>
-      <table>
-        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
-        <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">654 679 ₽</td><td class="muted">6 900 €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">849 422 ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">260 615 ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">1 764 717 ₽</td><td class="muted">товар считается дважды</td></tr>
-        </tbody>
-      </table>
-      <h3>Объём: земля и заморозка</h3>
-      <table>
-        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
-        <tbody><tr>
-          <td>BASE</td>
-          <td class="num">150</td>
-          <td class="num">240</td>
-          <td class="num">6 900 €</td>
-          <td class="num">7 400 ₽</td>
-          <td class="num freeze">1 764 717 ₽</td>
-          <td class="num">1 110 038 ₽</td>
-          <td class="num good">+73.0%</td>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">AT13 XP</a><div class="muted tiny">Редуктор · 46.00 €</div></td>
+          <td class="num">12 800</td>
+          <td class="num">7 400</td>
+          <td class="num">6 202</td>
+          <td class="num good">+73%</td>
           <td class="num">+810k</td>
+          <td class="num">+990k</td>
+          <td class="num">1 110k</td>
+          <td><span class="pill good">выгодно</span></td>
         </tr><tr>
-          <td>−30%</td>
-          <td class="num">105</td>
-          <td class="num">168</td>
-          <td class="num">4 830 €</td>
-          <td class="num">7 780 ₽</td>
-          <td class="num freeze">1 275 152 ₽</td>
-          <td class="num">816 877 ₽</td>
-          <td class="num good">+64.5%</td>
-          <td class="num">+527k</td>
-        </tr><tr>
-          <td>−50%</td>
-          <td class="num">75</td>
-          <td class="num">120</td>
-          <td class="num">3 450 €</td>
-          <td class="num">8 253 ₽</td>
-          <td class="num freeze">946 314 ₽</td>
-          <td class="num">618 975 ₽</td>
-          <td class="num good">+55.1%</td>
-          <td class="num">+341k</td>
-        </tr></tbody>
-      </table>
-    </section>
-    
-
-    <section class="sku" id="blaster_y">
-      <header>
-        <div>
-          <span class="tag">Фильтр</span>
-          <h2>BLASTER Y 12×2/12</h2>
-          <p class="lead">Главный по марже к полке среди фильтров. Разборный расходник, меняют каждые 10–15 тыс. км.</p>
-        </div>
-        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">Полка Digitronic · 1 250 ₽ →</a>
-      </header>
-      <div class="kpis">
-        <div><small>Закупка инвойс</small><b>4.50 € · 427 ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>772 ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">1 250 ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="good">+62.0% · +526k</b></div>
-        <div><small>Заморозка BASE</small><b>1 318 443 ₽</b></div>
-      </div>
-      <h3>Стадии до земли — BASE, 1 шт</h3>
-      <table>
-        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
-        <tbody><tr>
-          <td>1. Закупка по инвойсу AutoChill (netto)</td>
-          <td class="num">427 ₽</td>
-          <td class="num muted">427 ₽</td>
-          <td class="muted">4.50 € × 94,8810 ₽</td>
-        </tr><tr>
-          <td>2. + доля выкупа 750 €</td>
-          <td class="num">65 ₽</td>
-          <td class="num muted">492 ₽</td>
-          <td class="muted">фикс на партию</td>
-        </tr><tr>
-          <td>3. + доля логистики PL→МСК</td>
-          <td class="num">95 ₽</td>
-          <td class="num muted">587 ₽</td>
-          <td class="muted">1 103 € на 198 кг</td>
-        </tr><tr>
-          <td>4. + пошлина 5%</td>
-          <td class="num">26 ₽</td>
-          <td class="num muted">613 ₽</td>
-          <td class="muted">от (товар + фрахт)</td>
-        </tr><tr>
-          <td>5. + НДС ввоз 22%</td>
-          <td class="num">121 ₽</td>
-          <td class="num muted">734 ₽</td>
-          <td class="muted">таможня, не 5% с ценника Digitronic</td>
-        </tr><tr>
-          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
-          <td class="num">38 ₽</td>
-          <td class="num muted">772 ₽</td>
-          <td class="muted">фиксы партии</td>
-        </tr>
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">772 ₽</td><td></td><td>касса 848 782 ₽ / 1 100 шт</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 651 ₽/шт, маржа к полке +92.0%. Заморозка всё равно включает НДС до вычета.</p>
-      <h3>Заморозка капитала — BASE</h3>
-      <table>
-        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
-        <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">469 661 ₽</td><td class="muted">4 950 €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">645 475 ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">203 306 ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">1 318 443 ₽</td><td class="muted">товар считается дважды</td></tr>
-        </tbody>
-      </table>
-      <h3>Объём: земля и заморозка</h3>
-      <table>
-        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
-        <tbody><tr>
-          <td>BASE</td>
-          <td class="num">1 100</td>
-          <td class="num">198</td>
-          <td class="num">4 950 €</td>
-          <td class="num">772 ₽</td>
-          <td class="num freeze">1 318 443 ₽</td>
-          <td class="num">848 782 ₽</td>
-          <td class="num good">+62.0%</td>
-          <td class="num">+526k</td>
-        </tr><tr>
-          <td>−30%</td>
-          <td class="num">770</td>
-          <td class="num">139</td>
-          <td class="num">3 465 €</td>
-          <td class="num">820 ₽</td>
-          <td class="num freeze">960 299 ₽</td>
-          <td class="num">631 536 ₽</td>
-          <td class="num good">+52.4%</td>
-          <td class="num">+331k</td>
-        </tr><tr>
-          <td>−50%</td>
-          <td class="num">550</td>
-          <td class="num">99</td>
-          <td class="num">2 475 €</td>
-          <td class="num">888 ₽</td>
-          <td class="num freeze">723 177 ₽</td>
-          <td class="num">488 347 ₽</td>
-          <td class="num good">+40.8%</td>
-          <td class="num">+199k</td>
-        </tr></tbody>
-      </table>
-    </section>
-    
-
-    <section class="sku" id="nordic_xp">
-      <header>
-        <div>
-          <span class="tag">Редуктор</span>
-          <h2>AT09 Nordic XP</h2>
-          <p class="lead">До 250 л.с. Живая цена Digitronic 9 200 ₽.</p>
-        </div>
-        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">Полка Digitronic · 9 200 ₽ →</a>
-      </header>
-      <div class="kpis">
-        <div><small>Закупка инвойс</small><b>34.00 € · 3 226 ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>5 679 ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">9 200 ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="good">+62.0% · +634k</b></div>
-        <div><small>Заморозка BASE</small><b>1 602 834 ₽</b></div>
-      </div>
-      <h3>Стадии до земли — BASE, 1 шт</h3>
-      <table>
-        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
-        <tbody><tr>
-          <td>1. Закупка по инвойсу AutoChill (netto)</td>
-          <td class="num">3 226 ₽</td>
-          <td class="num muted">3 226 ₽</td>
-          <td class="muted">34.00 € × 94,8810 ₽</td>
-        </tr><tr>
-          <td>2. + доля выкупа 750 €</td>
-          <td class="num">395 ₽</td>
-          <td class="num muted">3 621 ₽</td>
-          <td class="muted">фикс на партию</td>
-        </tr><tr>
-          <td>3. + доля логистики PL→МСК</td>
-          <td class="num">717 ₽</td>
-          <td class="num muted">4 338 ₽</td>
-          <td class="muted">1 360 € на 252 кг</td>
-        </tr><tr>
-          <td>4. + пошлина 5%</td>
-          <td class="num">197 ₽</td>
-          <td class="num muted">4 535 ₽</td>
-          <td class="muted">от (товар + фрахт)</td>
-        </tr><tr>
-          <td>5. + НДС ввоз 22%</td>
-          <td class="num">911 ₽</td>
-          <td class="num muted">5 446 ₽</td>
-          <td class="muted">таможня, не 5% с ценника Digitronic</td>
-        </tr><tr>
-          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
-          <td class="num">233 ₽</td>
-          <td class="num muted">5 679 ₽</td>
-          <td class="muted">фиксы партии</td>
-        </tr>
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">5 679 ₽</td><td></td><td>касса 1 022 162 ₽ / 180 шт</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 4 768 ₽/шт, маржа к полке +93.0%. Заморозка всё равно включает НДС до вычета.</p>
-      <h3>Заморозка капитала — BASE</h3>
-      <table>
-        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
-        <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">580 672 ₽</td><td class="muted">6 120 €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">780 823 ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">241 339 ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">1 602 834 ₽</td><td class="muted">товар считается дважды</td></tr>
-        </tbody>
-      </table>
-      <h3>Объём: земля и заморозка</h3>
-      <table>
-        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
-        <tbody><tr>
-          <td>BASE</td>
-          <td class="num">180</td>
-          <td class="num">252</td>
-          <td class="num">6 120 €</td>
-          <td class="num">5 679 ₽</td>
-          <td class="num freeze">1 602 834 ₽</td>
-          <td class="num">1 022 162 ₽</td>
-          <td class="num good">+62.0%</td>
-          <td class="num">+634k</td>
-        </tr><tr>
-          <td>−30%</td>
-          <td class="num">126</td>
-          <td class="num">176</td>
-          <td class="num">4 284 €</td>
-          <td class="num">5 995 ₽</td>
-          <td class="num freeze">1 161 834 ₽</td>
-          <td class="num">755 364 ₽</td>
-          <td class="num good">+53.5%</td>
-          <td class="num">+404k</td>
-        </tr><tr>
-          <td>−50%</td>
-          <td class="num">90</td>
-          <td class="num">126</td>
-          <td class="num">3 060 €</td>
-          <td class="num">6 389 ₽</td>
-          <td class="num freeze">865 373 ₽</td>
-          <td class="num">575 037 ₽</td>
-          <td class="num good">+44.0%</td>
-          <td class="num">+253k</td>
-        </tr></tbody>
-      </table>
-    </section>
-    
-
-    <section class="sku" id="nordic">
-      <header>
-        <div>
-          <span class="tag">Редуктор</span>
-          <h2>AT09 Nordic</h2>
-          <p class="lead">Хит 4-го поколения до ~170 л.с. Не расходник. Полка выросла до 7 000 ₽.</p>
-        </div>
-        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">Полка Digitronic · 7 000 ₽ →</a>
-      </header>
-      <div class="kpis">
-        <div><small>Закупка инвойс</small><b>26.00 € · 2 467 ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>4 575 ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">7 000 ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="good">+53.0% · +485k</b></div>
-        <div><small>Заморозка BASE</small><b>1 408 343 ₽</b></div>
-      </div>
-      <h3>Стадии до земли — BASE, 1 шт</h3>
-      <table>
-        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
-        <tbody><tr>
-          <td>1. Закупка по инвойсу AutoChill (netto)</td>
-          <td class="num">2 467 ₽</td>
-          <td class="num muted">2 467 ₽</td>
-          <td class="muted">26.00 € × 94,8810 ₽</td>
-        </tr><tr>
-          <td>2. + доля выкупа 750 €</td>
-          <td class="num">356 ₽</td>
-          <td class="num muted">2 823 ₽</td>
-          <td class="muted">фикс на партию</td>
-        </tr><tr>
-          <td>3. + доля логистики PL→МСК</td>
-          <td class="num">663 ₽</td>
-          <td class="num muted">3 486 ₽</td>
-          <td class="muted">1 398 € на 260 кг</td>
-        </tr><tr>
-          <td>4. + пошлина 5%</td>
-          <td class="num">156 ₽</td>
-          <td class="num muted">3 642 ₽</td>
-          <td class="muted">от (товар + фрахт)</td>
-        </tr><tr>
-          <td>5. + НДС ввоз 22%</td>
-          <td class="num">723 ₽</td>
-          <td class="num muted">4 365 ₽</td>
-          <td class="muted">таможня, не 5% с ценника Digitronic</td>
-        </tr><tr>
-          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
-          <td class="num">210 ₽</td>
-          <td class="num muted">4 575 ₽</td>
-          <td class="muted">фиксы партии</td>
-        </tr>
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">4 575 ₽</td><td></td><td>касса 914 962 ₽ / 200 шт</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 3 852 ₽/шт, маржа к полке +81.7%. Заморозка всё равно включает НДС до вычета.</p>
-      <h3>Заморозка капитала — BASE</h3>
-      <table>
-        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
-        <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">493 381 ₽</td><td class="muted">5 200 €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">697 138 ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">217 824 ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">1 408 343 ₽</td><td class="muted">товар считается дважды</td></tr>
-        </tbody>
-      </table>
-      <h3>Объём: земля и заморозка</h3>
-      <table>
-        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
-        <tbody><tr>
-          <td>BASE</td>
-          <td class="num">200</td>
-          <td class="num">260</td>
-          <td class="num">5 200 €</td>
-          <td class="num">4 575 ₽</td>
-          <td class="num freeze">1 408 343 ₽</td>
-          <td class="num">914 962 ₽</td>
-          <td class="num good">+53.0%</td>
-          <td class="num">+485k</td>
-        </tr><tr>
-          <td>−30%</td>
-          <td class="num">140</td>
-          <td class="num">182</td>
-          <td class="num">3 640 €</td>
-          <td class="num">4 842 ₽</td>
-          <td class="num freeze">1 023 229 ₽</td>
-          <td class="num">677 862 ₽</td>
-          <td class="num good">+44.6%</td>
-          <td class="num">+302k</td>
-        </tr><tr>
-          <td>−50%</td>
-          <td class="num">100</td>
-          <td class="num">130</td>
-          <td class="num">2 600 €</td>
-          <td class="num">5 214 ₽</td>
-          <td class="num freeze">768 127 ₽</td>
-          <td class="num">521 437 ₽</td>
-          <td class="num good">+34.2%</td>
-          <td class="num">+179k</td>
-        </tr></tbody>
-      </table>
-    </section>
-    
-
-    <section class="sku" id="blaster">
-      <header>
-        <div>
-          <span class="tag">Фильтр</span>
-          <h2>BLASTER 12×12</h2>
-          <p class="lead">Разборный центробежный. Слабее BLASTER Y, но тоже расходник.</p>
-        </div>
-        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">Полка Digitronic · 880 ₽ →</a>
-      </header>
-      <div class="kpis">
-        <div><small>Закупка инвойс</small><b>3.50 € · 332 ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>607 ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">880 ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="good">+45.0% · +382k</b></div>
-        <div><small>Заморозка BASE</small><b>1 314 550 ₽</b></div>
-      </div>
-      <h3>Стадии до земли — BASE, 1 шт</h3>
-      <table>
-        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
-        <tbody><tr>
-          <td>1. Закупка по инвойсу AutoChill (netto)</td>
-          <td class="num">332 ₽</td>
-          <td class="num muted">332 ₽</td>
-          <td class="muted">3.50 € × 94,8810 ₽</td>
-        </tr><tr>
-          <td>2. + доля выкупа 750 €</td>
-          <td class="num">51 ₽</td>
-          <td class="num muted">383 ₽</td>
-          <td class="muted">фикс на партию</td>
-        </tr><tr>
-          <td>3. + доля логистики PL→МСК</td>
-          <td class="num">79 ₽</td>
-          <td class="num muted">462 ₽</td>
-          <td class="muted">1 160 € на 210 кг</td>
-        </tr><tr>
-          <td>4. + пошлина 5%</td>
-          <td class="num">21 ₽</td>
-          <td class="num muted">483 ₽</td>
-          <td class="muted">от (товар + фрахт)</td>
-        </tr><tr>
-          <td>5. + НДС ввоз 22%</td>
-          <td class="num">95 ₽</td>
-          <td class="num muted">578 ₽</td>
-          <td class="muted">таможня, не 5% с ценника Digitronic</td>
-        </tr><tr>
-          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
-          <td class="num">30 ₽</td>
-          <td class="num muted">608 ₽</td>
-          <td class="muted">фиксы партии</td>
-        </tr>
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">607 ₽</td><td></td><td>касса 849 633 ₽ / 1 400 шт</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 512 ₽/шт, маржа к полке +71.9%. Заморозка всё равно включает НДС до вычета.</p>
-      <h3>Заморозка капитала — BASE</h3>
-      <table>
-        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
-        <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">464 917 ₽</td><td class="muted">4 900 €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">646 140 ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">203 493 ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">1 314 550 ₽</td><td class="muted">товар считается дважды</td></tr>
-        </tbody>
-      </table>
-      <h3>Объём: земля и заморозка</h3>
-      <table>
-        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
-        <tbody><tr>
-          <td>BASE</td>
-          <td class="num">1 400</td>
-          <td class="num">210</td>
-          <td class="num">4 900 €</td>
-          <td class="num">607 ₽</td>
-          <td class="num freeze">1 314 550 ₽</td>
-          <td class="num">849 633 ₽</td>
-          <td class="num good">+45.0%</td>
-          <td class="num">+382k</td>
-        </tr><tr>
-          <td>−30%</td>
-          <td class="num">980</td>
-          <td class="num">147</td>
-          <td class="num">3 430 €</td>
-          <td class="num">645 ₽</td>
-          <td class="num freeze">957 573 ₽</td>
-          <td class="num">632 131 ₽</td>
-          <td class="num good">+36.4%</td>
-          <td class="num">+230k</td>
-        </tr><tr>
-          <td>−50%</td>
-          <td class="num">700</td>
-          <td class="num">105</td>
-          <td class="num">2 450 €</td>
-          <td class="num">698 ₽</td>
-          <td class="num freeze">721 230 ₽</td>
-          <td class="num">488 772 ₽</td>
-          <td class="num good">+26.0%</td>
-          <td class="num">+127k</td>
-        </tr></tbody>
-      </table>
-    </section>
-    
-
-    <section class="sku" id="fls">
-      <header>
-        <div>
-          <span class="tag">Фильтр</span>
-          <h2>FLS 12×12</h2>
-          <p class="lead">Самый ходовой расходник. Фиксы сильно бьют по штуке на малой партии.</p>
-        </div>
-        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">Полка Digitronic · 250 ₽ →</a>
-      </header>
-      <div class="kpis">
-        <div><small>Закупка инвойс</small><b>0.70 € · 66 ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>183 ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">250 ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="good">+36.3% · +166k</b></div>
-        <div><small>Заморозка BASE</small><b>624 580 ₽</b></div>
-      </div>
-      <h3>Стадии до земли — BASE, 1 шт</h3>
-      <table>
-        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
-        <tbody><tr>
-          <td>1. Закупка по инвойсу AutoChill (netto)</td>
-          <td class="num">66 ₽</td>
-          <td class="num muted">66 ₽</td>
-          <td class="muted">0.70 € × 94,8810 ₽</td>
-        </tr><tr>
-          <td>2. + доля выкупа 750 €</td>
-          <td class="num">28 ₽</td>
-          <td class="num muted">94 ₽</td>
-          <td class="muted">фикс на партию</td>
-        </tr><tr>
-          <td>3. + доля логистики PL→МСК</td>
-          <td class="num">42 ₽</td>
-          <td class="num muted">136 ₽</td>
-          <td class="muted">1 112 € на 200 кг</td>
-        </tr><tr>
-          <td>4. + пошлина 5%</td>
-          <td class="num">5 ₽</td>
-          <td class="num muted">141 ₽</td>
-          <td class="muted">от (товар + фрахт)</td>
-        </tr><tr>
-          <td>5. + НДС ввоз 22%</td>
-          <td class="num">25 ₽</td>
-          <td class="num muted">166 ₽</td>
-          <td class="muted">таможня, не 5% с ценника Digitronic</td>
-        </tr><tr>
-          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
-          <td class="num">16 ₽</td>
-          <td class="num muted">182 ₽</td>
-          <td class="muted">фиксы партии</td>
-        </tr>
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">183 ₽</td><td></td><td>касса 458 538 ₽ / 2 500 шт</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 158 ₽/шт, маржа к полке +57.9%. Заморозка всё равно включает НДС до вычета.</p>
-      <h3>Заморозка капитала — BASE</h3>
-      <table>
-        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
-        <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">166 042 ₽</td><td class="muted">1 750 €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">342 758 ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">115 781 ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">624 580 ₽</td><td class="muted">товар считается дважды</td></tr>
-        </tbody>
-      </table>
-      <h3>Объём: земля и заморозка</h3>
-      <table>
-        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
-        <tbody><tr>
-          <td>BASE</td>
-          <td class="num">2 500</td>
-          <td class="num">200</td>
-          <td class="num">1 750 €</td>
-          <td class="num">183 ₽</td>
-          <td class="num freeze">624 580 ₽</td>
-          <td class="num">458 538 ₽</td>
-          <td class="num good">+36.3%</td>
-          <td class="num">+166k</td>
-        </tr><tr>
-          <td>−30%</td>
-          <td class="num">1 750</td>
-          <td class="num">140</td>
-          <td class="num">1 225 €</td>
-          <td class="num">205 ₽</td>
-          <td class="num freeze">475 087 ₽</td>
-          <td class="num">358 858 ₽</td>
-          <td class="num good">+21.9%</td>
-          <td class="num">+79k</td>
-        </tr><tr>
-          <td>−50%</td>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">BLASTER Y 12×2/12</a><div class="muted tiny">Фильтр · 4.50 €</div></td>
           <td class="num">1 250</td>
-          <td class="num">100</td>
-          <td class="num">875 €</td>
-          <td class="num">235 ₽</td>
-          <td class="num freeze">376 246 ₽</td>
-          <td class="num">293 225 ₽</td>
-          <td class="num good">+6.6%</td>
-          <td class="num">+19k</td>
-        </tr></tbody>
-      </table>
-    </section>
-    
-
-    <section class="sku" id="fly">
-      <header>
-        <div>
-          <span class="tag">Фильтр</span>
-          <h2>FLY 12 / 2×12</h2>
-          <p class="lead">Y-образный неразборный. На dedicated-кубе маржа к полке тонкая.</p>
-        </div>
-        <a class="dealer" href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">Полка Digitronic · 440 ₽ →</a>
-      </header>
-      <div class="kpis">
-        <div><small>Закупка инвойс</small><b>2.00 € · 190 ₽</b></div>
-        <div><small>Земля BASE / шт</small><b>367 ₽</b></div>
-        <div><small>Полка дилера (с НДС 5%)</small><b><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">440 ₽</a></b></div>
-        <div><small>Маржа к полке BASE</small><b class="good">+19.8% · +146k</b></div>
-        <div><small>Заморозка BASE</small><b>1 113 995 ₽</b></div>
-      </div>
-      <h3>Стадии до земли — BASE, 1 шт</h3>
-      <table>
-        <thead><tr><th>Стадия</th><th>На штуку</th><th>Накопительно</th><th></th></tr></thead>
-        <tbody><tr>
-          <td>1. Закупка по инвойсу AutoChill (netto)</td>
-          <td class="num">190 ₽</td>
-          <td class="num muted">190 ₽</td>
-          <td class="muted">2.00 € × 94,8810 ₽</td>
+          <td class="num">772</td>
+          <td class="num">651</td>
+          <td class="num good">+62%</td>
+          <td class="num">+526k</td>
+          <td class="num">+659k</td>
+          <td class="num">849k</td>
+          <td><span class="pill good">выгодно</span></td>
         </tr><tr>
-          <td>2. + доля выкупа 750 €</td>
-          <td class="num">36 ₽</td>
-          <td class="num muted">226 ₽</td>
-          <td class="muted">фикс на партию</td>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">AT09 Nordic XP</a><div class="muted tiny">Редуктор · 34.00 €</div></td>
+          <td class="num">9 200</td>
+          <td class="num">5 679</td>
+          <td class="num">4 768</td>
+          <td class="num good">+62%</td>
+          <td class="num">+634k</td>
+          <td class="num">+798k</td>
+          <td class="num">1 022k</td>
+          <td><span class="pill good">выгодно</span></td>
         </tr><tr>
-          <td>3. + доля логистики PL→МСК</td>
-          <td class="num">53 ₽</td>
-          <td class="num muted">279 ₽</td>
-          <td class="muted">1 112 € на 200 кг</td>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">AT09 Nordic</a><div class="muted tiny">Редуктор · 26.00 €</div></td>
+          <td class="num">7 000</td>
+          <td class="num">4 575</td>
+          <td class="num">3 852</td>
+          <td class="num good">+53%</td>
+          <td class="num">+485k</td>
+          <td class="num">+630k</td>
+          <td class="num">915k</td>
+          <td><span class="pill good">выгодно</span></td>
         </tr><tr>
-          <td>4. + пошлина 5%</td>
-          <td class="num">12 ₽</td>
-          <td class="num muted">291 ₽</td>
-          <td class="muted">от (товар + фрахт)</td>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">BLASTER 12×12</a><div class="muted tiny">Фильтр · 3.50 €</div></td>
+          <td class="num">880</td>
+          <td class="num">607</td>
+          <td class="num">512</td>
+          <td class="num good">+45%</td>
+          <td class="num">+382k</td>
+          <td class="num">+515k</td>
+          <td class="num">850k</td>
+          <td><span class="pill good">выгодно</span></td>
         </tr><tr>
-          <td>5. + НДС ввоз 22%</td>
-          <td class="num">56 ₽</td>
-          <td class="num muted">347 ₽</td>
-          <td class="muted">таможня, не 5% с ценника Digitronic</td>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">FLS 12×12</a><div class="muted tiny">Фильтр · 0.70 €</div></td>
+          <td class="num">250</td>
+          <td class="num">183</td>
+          <td class="num">158</td>
+          <td class="num ok">+36%</td>
+          <td class="num">+166k</td>
+          <td class="num">+229k</td>
+          <td class="num">459k</td>
+          <td><span class="pill ok">норм</span></td>
         </tr><tr>
-          <td>6. + брокер / сбор ФТС / МСК→Казань</td>
-          <td class="num">21 ₽</td>
-          <td class="num muted">368 ₽</td>
-          <td class="muted">фиксы партии</td>
-        </tr>
-        <tr class="total"><td>Себестоимость в Казани (кэш, НДС 22% внутри)</td><td class="num">367 ₽</td><td></td><td>касса 734 471 ₽ / 2 000 шт</td></tr>
-        </tbody>
-      </table>
-      <p class="tiny">Если юрлицо на ОСНО / УСН со ставкой 22% — ввозной НДС к вычету. Тогда экономическая земля BASE 311 ₽/шт, маржа к полке +41.4%. Заморозка всё равно включает НДС до вычета.</p>
-      <h3>Заморозка капитала — BASE</h3>
-      <table>
-        <thead><tr><th>Куда деньги</th><th>Сумма</th><th></th></tr></thead>
-        <tbody>
-          <tr><td>Польша: товар AutoChill</td><td class="num">379 524 ₽</td><td class="muted">4 000 €</td></tr>
-          <tr><td>РФ-партнёру: товар + 750 € + логистика</td><td class="num">556 240 ₽</td><td class="muted">двойная оплата товара</td></tr>
-          <tr><td>Таможня: пошлина + НДС 22% + брокер + Казань</td><td class="num">178 231 ₽</td><td></td></tr>
-          <tr class="total"><td>Итого заморозка</td><td class="num">1 113 995 ₽</td><td class="muted">товар считается дважды</td></tr>
-        </tbody>
-      </table>
-      <h3>Объём: земля и заморозка</h3>
-      <table>
-        <thead><tr><th>Сценарий</th><th>Шт</th><th>Кг</th><th>Инвойс</th><th>EP / шт</th><th>Заморозка</th><th>Касса партии</th><th>Маржа к полке</th><th>₽ с рейса</th></tr></thead>
-        <tbody><tr>
-          <td>BASE</td>
-          <td class="num">2 000</td>
-          <td class="num">200</td>
-          <td class="num">4 000 €</td>
-          <td class="num">367 ₽</td>
-          <td class="num freeze">1 113 995 ₽</td>
-          <td class="num">734 471 ₽</td>
-          <td class="num good">+19.8%</td>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">FLY 12 / 2×12</a><div class="muted tiny">Фильтр · 2.00 €</div></td>
+          <td class="num">440</td>
+          <td class="num">367</td>
+          <td class="num">311</td>
+          <td class="num weak">+20%</td>
           <td class="num">+146k</td>
-        </tr><tr>
-          <td>−30%</td>
-          <td class="num">1 400</td>
-          <td class="num">140</td>
-          <td class="num">2 800 €</td>
-          <td class="num">394 ₽</td>
-          <td class="num freeze">817 185 ₽</td>
-          <td class="num">551 518 ₽</td>
-          <td class="num good">+11.7%</td>
-          <td class="num">+64k</td>
-        </tr><tr>
-          <td>−50%</td>
-          <td class="num">1 000</td>
-          <td class="num">100</td>
-          <td class="num">2 000 €</td>
-          <td class="num">431 ₽</td>
-          <td class="num freeze">620 953 ₽</td>
-          <td class="num">431 191 ₽</td>
-          <td class="num good">+2.0%</td>
-          <td class="num">+9k</td>
+          <td class="num">+258k</td>
+          <td class="num">734k</td>
+          <td><span class="pill weak">слабо</span></td>
         </tr></tbody>
       </table>
-    </section>
-    
-
-  <h3>Вводные</h3>
-  <div class="ass">
-    <div class="note">
-      <strong>Деньги</strong><br/>
-      EUR ЦБ 94,8810 на 01.10.2026. Выкуп 750 € фикс до инвойса 15 000 €.
-      Брокер 25 000 ₽. Сбор ФТС — шкала от ТС. МСК→Казань 12 000 ₽.
-    </div>
-    <div class="note">
-      <strong>Таможня и фрахт</strong><br/>
-      ТН ВЭД 8708 99 97. Пошлина 5% от (товар+фрахт). НДС ввоз 22%.
-      Логистика: 162,5 + 4,75 × кг €. BASE qty — реалистичная набивка ~1 м³.
-      Полка Digitronic — с НДС 5%; ввозной НДС 22% — другая ставка.
     </div>
   </div>
+
+  <h2>2. Компоновки рейса (несколько SKU вместе)</h2>
+  
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Всё вместе · BASE qty каждого</h3>
+              <p class="lead">Один рейс: все 7 позиций из инвойса на базовых количествах. Фиксы делятся.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>33 820 € · 3 209k</b></div>
+            <div><small>Логистика</small><b>7 572 € · 1 560 кг</b></div>
+            <div><small>Касса (капитал)</small><b>5 247k ₽</b></div>
+            <div><small>НДС 22%</small><b>907k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>9 088k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+3 841k · +73%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+4 748k · +109%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>879k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×1 100 · земля 698 ₽ · <span class='good'>+79%</span> · +607k</li><li><b>BLASTER 12×12</b> ×1 400 · земля 543 ₽ · <span class='good'>+62%</span> · +472k</li><li><b>FLY 12 / 2×12</b> ×2 000 · земля 310 ₽ · <span class='good'>+42%</span> · +259k</li><li><b>FLS 12×12</b> ×2 500 · земля 109 ₽ · <span class='good'>+130%</span> · +354k</li><li><b>AT09 Nordic</b> ×200 · земля 4 034 ₽ · <span class='good'>+74%</span> · +593k</li><li><b>AT09 Nordic XP</b> ×180 · земля 5 275 ₽ · <span class='good'>+74%</span> · +707k</li><li><b>AT13 XP</b> ×150 · земля 7 136 ₽ · <span class='good'>+79%</span> · +850k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Всё вместе · −30% qty</h3>
+              <p class="lead">Тот же микс, объём меньше — EP хуже из‑за фиксов.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>23 674 € · 2 246k</b></div>
+            <div><small>Логистика</small><b>5 350 € · 1 092 кг</b></div>
+            <div><small>Касса (капитал)</small><b>3 695k ₽</b></div>
+            <div><small>НДС 22%</small><b>636k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>6 362k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+2 666k · +72%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+3 302k · +108%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>620k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×770 · земля 702 ₽ · <span class='good'>+78%</span> · +422k</li><li><b>BLASTER 12×12</b> ×980 · земля 546 ₽ · <span class='good'>+61%</span> · +327k</li><li><b>FLY 12 / 2×12</b> ×1 400 · земля 312 ₽ · <span class='good'>+41%</span> · +179k</li><li><b>FLS 12×12</b> ×1 750 · земля 109 ₽ · <span class='good'>+129%</span> · +246k</li><li><b>AT09 Nordic</b> ×140 · земля 4 058 ₽ · <span class='good'>+72%</span> · +412k</li><li><b>AT09 Nordic XP</b> ×126 · земля 5 307 ₽ · <span class='good'>+73%</span> · +490k</li><li><b>AT13 XP</b> ×105 · земля 7 180 ₽ · <span class='good'>+78%</span> · +590k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Топ-3 лёгкий · Y 400 + Nordic XP 40 + AT13 40</h3>
+              <p class="lead">Три самых маржинальных — по чуть-чуть в одном кубе.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>5 000 € · 474k</b></div>
+            <div><small>Логистика</small><b>1 074 € · 192 кг</b></div>
+            <div><small>Касса (капитал)</small><b>851k ₽</b></div>
+            <div><small>НДС 22%</small><b>133k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 380k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+529k · +62%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+662k · +92%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>173k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×400 · земля 766 ₽ · <span class='good'>+63%</span> · +193k</li><li><b>AT09 Nordic XP</b> ×40 · земля 5 789 ₽ · <span class='good'>+59%</span> · +136k</li><li><b>AT13 XP</b> ×40 · земля 7 833 ₽ · <span class='good'>+63%</span> · +199k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Топ-3 полный · Y 800 + Nordic XP 60 + AT13 80</h3>
+              <p class="lead">Рекомендуемый комплект: расходник + два сильных редуктора.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>9 320 € · 884k</b></div>
+            <div><small>Логистика</small><b>1 854 € · 356 кг</b></div>
+            <div><small>Касса (капитал)</small><b>1 471k ₽</b></div>
+            <div><small>НДС 22%</small><b>245k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>2 576k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+1 105k · +75%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+1 350k · +110%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>247k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×800 · земля 710 ₽ · <span class='good'>+76%</span> · +432k</li><li><b>AT09 Nordic XP</b> ×60 · земля 5 367 ₽ · <span class='good'>+71%</span> · +230k</li><li><b>AT13 XP</b> ×80 · земля 7 261 ₽ · <span class='good'>+76%</span> · +443k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Фильтры без FLY · Y+BLASTER+FLS</h3>
+              <p class="lead">Только ходовые фильтры. FLY убран — тянет маржу вниз.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>5 740 € · 545k</b></div>
+            <div><small>Логистика</small><b>1 573 € · 297 кг</b></div>
+            <div><small>Касса (капитал)</small><b>1 002k ₽</b></div>
+            <div><small>НДС 22%</small><b>160k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 615k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+613k · +61%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+773k · +92%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>220k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×700 · земля 786 ₽ · <span class='good'>+59%</span> · +325k</li><li><b>BLASTER 12×12</b> ×500 · земля 611 ₽ · <span class='good'>+44%</span> · +135k</li><li><b>FLS 12×12</b> ×1 200 · земля 122 ₽ · <span class='good'>+105%</span> · +153k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Редукторы микс · Nordic + XP + AT13</h3>
+              <p class="lead">Только редукторы. Высокий чек, оборот медленнее фильтров.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>6 420 € · 609k</b></div>
+            <div><small>Логистика</small><b>1 436 € · 268 кг</b></div>
+            <div><small>Касса (капитал)</small><b>1 068k ₽</b></div>
+            <div><small>НДС 22%</small><b>172k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 752k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+684k · +64%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+856k · +96%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>207k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>AT09 Nordic</b> ×80 · земля 4 325 ₽ · <span class='good'>+62%</span> · +214k</li><li><b>AT09 Nordic XP</b> ×60 · земля 5 655 ₽ · <span class='good'>+63%</span> · +213k</li><li><b>AT13 XP</b> ×50 · земля 7 651 ₽ · <span class='good'>+67%</span> · +257k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Широкий микс без FLY</h3>
+              <p class="lead">Почти всё из инвойса, но FLY выкинут как слабое звено.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>10 220 € · 970k</b></div>
+            <div><small>Логистика</small><b>2 348 € · 460 кг</b></div>
+            <div><small>Касса (капитал)</small><b>1 641k ₽</b></div>
+            <div><small>НДС 22%</small><b>275k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>2 822k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+1 181k · +72%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+1 457k · +107%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>294k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×600 · земля 722 ₽ · <span class='good'>+73%</span> · +317k</li><li><b>BLASTER 12×12</b> ×400 · земля 562 ₽ · <span class='good'>+57%</span> · +127k</li><li><b>FLS 12×12</b> ×800 · земля 112 ₽ · <span class='good'>+122%</span> · +110k</li><li><b>AT09 Nordic</b> ×60 · земля 4 174 ₽ · <span class='good'>+68%</span> · +170k</li><li><b>AT09 Nordic XP</b> ×50 · земля 5 458 ₽ · <span class='good'>+69%</span> · +187k</li><li><b>AT13 XP</b> ×50 · земля 7 384 ₽ · <span class='good'>+73%</span> · +271k</li></ul>
+        </article>
+
+  <h2>3. Если везти каждый SKU отдельно</h2>
+  
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · AT13 XP</h3>
+              <p class="lead">Только этот SKU, qty BASE 150.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>6 900 € · 655k</b></div>
+            <div><small>Логистика</small><b>1 302 € · 240 кг</b></div>
+            <div><small>Касса (капитал)</small><b>1 110k ₽</b></div>
+            <div><small>НДС 22%</small><b>180k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 920k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+810k · +73%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+990k · +106%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>195k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>AT13 XP</b> ×150 · земля 7 400 ₽ · <span class='good'>+73%</span> · +810k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · BLASTER Y 12×2/12</h3>
+              <p class="lead">Только этот SKU, qty BASE 1100.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>4 950 € · 470k</b></div>
+            <div><small>Логистика</small><b>1 103 € · 198 кг</b></div>
+            <div><small>Касса (капитал)</small><b>849k ₽</b></div>
+            <div><small>НДС 22%</small><b>133k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 375k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+526k · +62%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+659k · +92%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>176k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×1 100 · земля 772 ₽ · <span class='good'>+62%</span> · +526k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · AT09 Nordic XP</h3>
+              <p class="lead">Только этот SKU, qty BASE 180.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>6 120 € · 581k</b></div>
+            <div><small>Логистика</small><b>1 360 € · 252 кг</b></div>
+            <div><small>Касса (капитал)</small><b>1 022k ₽</b></div>
+            <div><small>НДС 22%</small><b>164k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 656k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+634k · +62%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+798k · +93%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>200k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>AT09 Nordic XP</b> ×180 · земля 5 679 ₽ · <span class='good'>+62%</span> · +634k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · AT09 Nordic</h3>
+              <p class="lead">Только этот SKU, qty BASE 200.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>5 200 € · 493k</b></div>
+            <div><small>Логистика</small><b>1 398 € · 260 кг</b></div>
+            <div><small>Касса (капитал)</small><b>915k ₽</b></div>
+            <div><small>НДС 22%</small><b>145k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 400k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+485k · +53%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+630k · +82%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>204k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>AT09 Nordic</b> ×200 · земля 4 575 ₽ · <span class='good'>+53%</span> · +485k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · BLASTER 12×12</h3>
+              <p class="lead">Только этот SKU, qty BASE 1400.</p>
+            </div>
+            <span class="pill good">выгодно</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>4 900 € · 465k</b></div>
+            <div><small>Логистика</small><b>1 160 € · 210 кг</b></div>
+            <div><small>Касса (капитал)</small><b>850k ₽</b></div>
+            <div><small>НДС 22%</small><b>133k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 232k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+382k · +45%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+515k · +72%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>181k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER 12×12</b> ×1 400 · земля 607 ₽ · <span class='good'>+45%</span> · +382k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · FLS 12×12</h3>
+              <p class="lead">Только этот SKU, qty BASE 2500.</p>
+            </div>
+            <span class="pill ok">норм</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>1 750 € · 166k</b></div>
+            <div><small>Логистика</small><b>1 112 € · 200 кг</b></div>
+            <div><small>Касса (капитал)</small><b>459k ₽</b></div>
+            <div><small>НДС 22%</small><b>63k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>625k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+166k · +36%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+229k · +58%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>177k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>FLS 12×12</b> ×2 500 · земля 183 ₽ · <span class='ok'>+36%</span> · +166k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · FLY 12 / 2×12</h3>
+              <p class="lead">Только этот SKU, qty BASE 2000.</p>
+            </div>
+            <span class="pill weak">слабо</span>
+          </header>
+          <div class="grid4">
+            <div><small>Инвойс</small><b>4 000 € · 380k</b></div>
+            <div><small>Логистика</small><b>1 112 € · 200 кг</b></div>
+            <div><small>Касса (капитал)</small><b>734k ₽</b></div>
+            <div><small>НДС 22%</small><b>112k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>880k ₽</b></div>
+            <div><small>Прибыль кэш</small><b class="good">+146k · +20%</b></div>
+            <div><small>Прибыль ОСНО</small><b class="good">+258k · +41%</b></div>
+            <div><small>Партнёр (выкуп+фрахт)</small><b>177k ₽</b></div>
+          </div>
+          <ul class="lines"><li><b>FLY 12 / 2×12</b> ×2 000 · земля 367 ₽ · <span class='weak'>+20%</span> · +146k</li></ul>
+        </article>
+
+  <h2>4. Доходность при разных объёмах (один SKU на рейсе)</h2>
+  
+        <article class="card" id="at13">
+          <header>
+            <div>
+              <span class="tag">Редуктор</span>
+              <h3>AT13 XP</h3>
+              <p class="lead">Мощные авто. Лучшая маржа среди редукторов. Полка 12 800 ₽. · в инвойсе, на полке Digitronic</p>
+            </div>
+            <div class="right">
+              <div>инвойс <b>46.00 €</b> · полка <b>12 800 ₽</b></div>
+              <span class="pill good">выгодно BASE</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">75</td>
+              <td class="num">3 450 €</td>
+              <td class="num">8 253</td>
+              <td class="num good">+55.1%</td>
+              <td class="num">+341k</td>
+              <td class="num">+433k</td>
+              <td class="num">619k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">105</td>
+              <td class="num">4 830 €</td>
+              <td class="num">7 780</td>
+              <td class="num good">+64.5%</td>
+              <td class="num">+527k</td>
+              <td class="num">+654k</td>
+              <td class="num">817k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">150</td>
+              <td class="num">6 900 €</td>
+              <td class="num">7 400</td>
+              <td class="num good">+73.0%</td>
+              <td class="num">+810k</td>
+              <td class="num">+990k</td>
+              <td class="num">1 110k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">195</td>
+              <td class="num">8 970 €</td>
+              <td class="num">7 196</td>
+              <td class="num good">+77.9%</td>
+              <td class="num">+1 093k</td>
+              <td class="num">+1 325k</td>
+              <td class="num">1 403k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">225</td>
+              <td class="num">10 350 €</td>
+              <td class="num">7 105</td>
+              <td class="num good">+80.2%</td>
+              <td class="num">+1 281k</td>
+              <td class="num">+1 549k</td>
+              <td class="num">1 599k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="blaster_y">
+          <header>
+            <div>
+              <span class="tag">Фильтр</span>
+              <h3>BLASTER Y 12×2/12</h3>
+              <p class="lead">Расходник. В инвойсе и на полке Digitronic. · в инвойсе, на полке Digitronic</p>
+            </div>
+            <div class="right">
+              <div>инвойс <b>4.50 €</b> · полка <b>1 250 ₽</b></div>
+              <span class="pill good">выгодно BASE</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">550</td>
+              <td class="num">2 475 €</td>
+              <td class="num">888</td>
+              <td class="num good">+40.8%</td>
+              <td class="num">+199k</td>
+              <td class="num">+267k</td>
+              <td class="num">488k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">770</td>
+              <td class="num">3 465 €</td>
+              <td class="num">820</td>
+              <td class="num good">+52.4%</td>
+              <td class="num">+331k</td>
+              <td class="num">+425k</td>
+              <td class="num">632k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">1 100</td>
+              <td class="num">4 950 €</td>
+              <td class="num">772</td>
+              <td class="num good">+62.0%</td>
+              <td class="num">+526k</td>
+              <td class="num">+659k</td>
+              <td class="num">849k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">1 430</td>
+              <td class="num">6 435 €</td>
+              <td class="num">744</td>
+              <td class="num good">+68.1%</td>
+              <td class="num">+724k</td>
+              <td class="num">+895k</td>
+              <td class="num">1 064k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">1 650</td>
+              <td class="num">7 425 €</td>
+              <td class="num">731</td>
+              <td class="num good">+70.9%</td>
+              <td class="num">+856k</td>
+              <td class="num">+1 053k</td>
+              <td class="num">1 207k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="nordic_xp">
+          <header>
+            <div>
+              <span class="tag">Редуктор</span>
+              <h3>AT09 Nordic XP</h3>
+              <p class="lead">До 250 л.с. Полка 9 200 ₽. · в инвойсе, на полке Digitronic</p>
+            </div>
+            <div class="right">
+              <div>инвойс <b>34.00 €</b> · полка <b>9 200 ₽</b></div>
+              <span class="pill good">выгодно BASE</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">90</td>
+              <td class="num">3 060 €</td>
+              <td class="num">6 389</td>
+              <td class="num good">+44.0%</td>
+              <td class="num">+253k</td>
+              <td class="num">+337k</td>
+              <td class="num">575k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">126</td>
+              <td class="num">4 284 €</td>
+              <td class="num">5 995</td>
+              <td class="num good">+53.5%</td>
+              <td class="num">+404k</td>
+              <td class="num">+520k</td>
+              <td class="num">755k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">180</td>
+              <td class="num">6 120 €</td>
+              <td class="num">5 679</td>
+              <td class="num good">+62.0%</td>
+              <td class="num">+634k</td>
+              <td class="num">+798k</td>
+              <td class="num">1 022k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">234</td>
+              <td class="num">7 956 €</td>
+              <td class="num">5 508</td>
+              <td class="num good">+67.0%</td>
+              <td class="num">+864k</td>
+              <td class="num">+1 076k</td>
+              <td class="num">1 289k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">270</td>
+              <td class="num">9 180 €</td>
+              <td class="num">5 433</td>
+              <td class="num good">+69.3%</td>
+              <td class="num">+1 017k</td>
+              <td class="num">+1 261k</td>
+              <td class="num">1 467k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="nordic">
+          <header>
+            <div>
+              <span class="tag">Редуктор</span>
+              <h3>AT09 Nordic</h3>
+              <p class="lead">До ~170 л.с. Полка Digitronic 7 000 ₽ (скрин 01.10). · в инвойсе, на полке Digitronic</p>
+            </div>
+            <div class="right">
+              <div>инвойс <b>26.00 €</b> · полка <b>7 000 ₽</b></div>
+              <span class="pill good">выгодно BASE</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">100</td>
+              <td class="num">2 600 €</td>
+              <td class="num">5 214</td>
+              <td class="num ok">+34.2%</td>
+              <td class="num">+179k</td>
+              <td class="num">+253k</td>
+              <td class="num">521k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">140</td>
+              <td class="num">3 640 €</td>
+              <td class="num">4 842</td>
+              <td class="num good">+44.6%</td>
+              <td class="num">+302k</td>
+              <td class="num">+404k</td>
+              <td class="num">678k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">200</td>
+              <td class="num">5 200 €</td>
+              <td class="num">4 575</td>
+              <td class="num good">+53.0%</td>
+              <td class="num">+485k</td>
+              <td class="num">+630k</td>
+              <td class="num">915k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">260</td>
+              <td class="num">6 760 €</td>
+              <td class="num">4 422</td>
+              <td class="num good">+58.3%</td>
+              <td class="num">+670k</td>
+              <td class="num">+857k</td>
+              <td class="num">1 150k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">300</td>
+              <td class="num">7 800 €</td>
+              <td class="num">4 353</td>
+              <td class="num good">+60.8%</td>
+              <td class="num">+794k</td>
+              <td class="num">+1 009k</td>
+              <td class="num">1 306k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="blaster">
+          <header>
+            <div>
+              <span class="tag">Фильтр</span>
+              <h3>BLASTER 12×12</h3>
+              <p class="lead">Расходник. В инвойсе и на полке. · в инвойсе, на полке Digitronic</p>
+            </div>
+            <div class="right">
+              <div>инвойс <b>3.50 €</b> · полка <b>880 ₽</b></div>
+              <span class="pill good">выгодно BASE</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">700</td>
+              <td class="num">2 450 €</td>
+              <td class="num">698</td>
+              <td class="num ok">+26.0%</td>
+              <td class="num">+127k</td>
+              <td class="num">+195k</td>
+              <td class="num">489k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">980</td>
+              <td class="num">3 430 €</td>
+              <td class="num">645</td>
+              <td class="num ok">+36.4%</td>
+              <td class="num">+230k</td>
+              <td class="num">+324k</td>
+              <td class="num">632k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">1 400</td>
+              <td class="num">4 900 €</td>
+              <td class="num">607</td>
+              <td class="num good">+45.0%</td>
+              <td class="num">+382k</td>
+              <td class="num">+515k</td>
+              <td class="num">850k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">1 820</td>
+              <td class="num">6 370 €</td>
+              <td class="num">585</td>
+              <td class="num good">+50.4%</td>
+              <td class="num">+537k</td>
+              <td class="num">+709k</td>
+              <td class="num">1 065k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">2 100</td>
+              <td class="num">7 350 €</td>
+              <td class="num">575</td>
+              <td class="num good">+53.0%</td>
+              <td class="num">+640k</td>
+              <td class="num">+837k</td>
+              <td class="num">1 208k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="fls">
+          <header>
+            <div>
+              <span class="tag">Фильтр</span>
+              <h3>FLS 12×12</h3>
+              <p class="lead">Ходовой дешёвый расходник. Фиксы бьют по штуке на малых qty. · в инвойсе, на полке Digitronic</p>
+            </div>
+            <div class="right">
+              <div>инвойс <b>0.70 €</b> · полка <b>250 ₽</b></div>
+              <span class="pill ok">норм BASE</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">1 250</td>
+              <td class="num">875 €</td>
+              <td class="num">235</td>
+              <td class="num weak">+6.6%</td>
+              <td class="num">+19k</td>
+              <td class="num">+52k</td>
+              <td class="num">293k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">1 750</td>
+              <td class="num">1 225 €</td>
+              <td class="num">205</td>
+              <td class="num ok">+21.9%</td>
+              <td class="num">+79k</td>
+              <td class="num">+124k</td>
+              <td class="num">359k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">2 500</td>
+              <td class="num">1 750 €</td>
+              <td class="num">183</td>
+              <td class="num ok">+36.3%</td>
+              <td class="num">+166k</td>
+              <td class="num">+229k</td>
+              <td class="num">459k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">3 250</td>
+              <td class="num">2 275 €</td>
+              <td class="num">171</td>
+              <td class="num good">+45.9%</td>
+              <td class="num">+256k</td>
+              <td class="num">+336k</td>
+              <td class="num">557k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">3 750</td>
+              <td class="num">2 625 €</td>
+              <td class="num">166</td>
+              <td class="num good">+50.6%</td>
+              <td class="num">+315k</td>
+              <td class="num">+407k</td>
+              <td class="num">623k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="fly">
+          <header>
+            <div>
+              <span class="tag">Фильтр</span>
+              <h3>FLY 12 / 2×12</h3>
+              <p class="lead">Неразборный. На dedicated-рейсе маржа тонкая. · в инвойсе, на полке Digitronic</p>
+            </div>
+            <div class="right">
+              <div>инвойс <b>2.00 €</b> · полка <b>440 ₽</b></div>
+              <span class="pill weak">слабо BASE</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">1 000</td>
+              <td class="num">2 000 €</td>
+              <td class="num">431</td>
+              <td class="num weak">+2.0%</td>
+              <td class="num">+9k</td>
+              <td class="num">+67k</td>
+              <td class="num">431k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">1 400</td>
+              <td class="num">2 800 €</td>
+              <td class="num">394</td>
+              <td class="num weak">+11.7%</td>
+              <td class="num">+64k</td>
+              <td class="num">+144k</td>
+              <td class="num">552k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">2 000</td>
+              <td class="num">4 000 €</td>
+              <td class="num">367</td>
+              <td class="num weak">+19.8%</td>
+              <td class="num">+146k</td>
+              <td class="num">+258k</td>
+              <td class="num">734k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">2 600</td>
+              <td class="num">5 200 €</td>
+              <td class="num">352</td>
+              <td class="num ok">+25.0%</td>
+              <td class="num">+229k</td>
+              <td class="num">+374k</td>
+              <td class="num">915k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">3 000</td>
+              <td class="num">6 000 €</td>
+              <td class="num">345</td>
+              <td class="num ok">+27.5%</td>
+              <td class="num">+285k</td>
+              <td class="num">+451k</td>
+              <td class="num">1 035k</td>
+            </tr></tbody>
+          </table>
+        </article>
+
+  <h2>5. Как читать цифры</h2>
+  <div class="card">
+    <table>
+      <tbody>
+        <tr><td>Товар</td><td class="muted">оплата из аванса, один раз</td></tr>
+        <tr><td>Партнёр</td><td class="muted">выкуп 750 € (или 5% если инвойс ≥15k €) + фрахт 162,5+4,75×кг €</td></tr>
+        <tr><td>Таможня</td><td class="muted">пошлина 5% от (товар+фрахт) + НДС 22% + брокер 25k + ФТС + Казань 12k</td></tr>
+        <tr><td>Касса / капитал</td><td class="muted">сумма всего выше = landed. Лишних 100% товара на счету нет</td></tr>
+        <tr><td>Кэш vs ОСНО</td><td class="muted">кэш сравнивает полку с землёй включая ввозной НДС; ОСНО — если НДС к вычету</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <footer>
-    Репозиторий GithubRavilS/gbo · проект вынесен из Private Assistant (15_gas-equipment-ru / старый gbo-investor).
-    FLY на dedicated-кубе слабее остальных. Главные: BLASTER Y и AT13 XP.
+    Пересчёт `01.10.2026` · `python3 build.py` · данные в data.json · этот файл index.html
   </footer>
 </div>
 </body>
