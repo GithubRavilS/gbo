@@ -1,18 +1,11 @@
-# Открыть сайт
+# Как открыть отчёт
 
-**Не открывай `index.html` как файл с диска.** Только по ссылке:
+**Публичная ссылка (работает в Safari/Chrome на Mac):**
 
-## Актуальный сайт (эта ветка)
 https://raw.githack.com/GithubRavilS/gbo/cursor/gbo-postavka-recalc-bddf/index.html
 
-Зеркало: https://cdn.jsdelivr.net/gh/GithubRavilS/gbo@cursor/gbo-postavka-recalc-bddf/index.html
+**Локальный файл после `git pull`:**
 
-## Старый деплой (main, устарел)
-https://githubravils.github.io/gbo/  
-https://gbo-seven.vercel.app/
+`/Users/ravilcrypto/Documents/Cursor/gbo/index.html`
 
-## Локально в облаке агента
-```bash
-python3 -m http.server 8080
-# затем http://127.0.0.1:8080/index.html
-```
+Не открывать `127.0.0.1` — это сервер в облаке, на твоём Mac его нет.

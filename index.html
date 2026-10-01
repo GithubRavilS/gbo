@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GBO поставка · полный расклад</title>
+<title>GBO · скрины Digitronic + поле</title>
 <style>
   :root {
     --bg:#0c1016; --card:#141a22; --line:#273041; --text:#e8eef7; --muted:#8b97a8;
@@ -11,7 +11,7 @@
   }
   * { box-sizing:border-box; }
   body { margin:0; font:15px/1.45 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); }
-  .wrap { max-width:1040px; margin:0 auto; padding:22px 14px 72px; }
+  .wrap { max-width:1080px; margin:0 auto; padding:22px 14px 72px; }
   h1 { font-size:clamp(22px,4.5vw,30px); letter-spacing:-.03em; margin:0 0 8px; }
   h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:28px 0 12px; }
   h3 { font-size:17px; margin:0 0 4px; }
@@ -56,412 +56,845 @@
 <body>
 <div class="wrap">
   <div class="hero">
-    <h1>GBO поставка · полный расклад</h1>
-    <p class="sub">PL → Казань · EUR ЦБ <b>94,8810</b> на 01.10.2026 · товар из аванса, <b>без двойной заморозки</b></p>
+    <h1>GBO · скрины Digitronic + поле</h1>
+    <p class="sub">PL → Казань · EUR <b>94,8810</b> · 01.10.2026 · товар из аванса, <b>без двойной заморозки</b></p>
     <div class="callouts">
       <div class="callout"><b>Касса = landed один раз.</b> Аванс → оплата товара с аванса. Касса = landed один раз. Двойной оплаты товара нет.</div>
-      <div class="callout"><b>Лучший соло:</b> AT13 XP · +73% кэш · +810k. <b>Слабые:</b> FLY 12 / 2×12.</div>
-      <div class="callout"><b>Рекомендую комплект:</b> Топ-3 полный (BLASTER Y 800 + Nordic XP 60 + AT13 80) — см. блок компоновок.</div>
-      <div class="callout"><b>НДС:</b> ввоз 22% всегда в кассе. Полка Digitronic — с НДС 5% (другая ставка). ОСНО = если ввозной НДС к вычету.</div>
+      <div class="callout"><b>Поле 25.09:</b> 25.09: доехал до установщика ГБО. Говорит ходовые позиции — до ~500 шт/мес микс. Китай есть, оригинал/Digitronic/Польша — дефицит. Берут дешевле, чем написано на сайте Digitronic.</div>
+      <div class="callout"><b>Поле 27.09:</b> 27.09: Марат дал 3 контакта — все заинтересованы. Доехал до одного сервиса (~4 бокса, очередь машин, ажиотаж). Оригинал редко в наличии — вопрос не цены. Когда появляется — берут на 20–30% дешевле полки Digitronic. По сайту ткнул позиции «берут до хера» (~100 шт отдельных). Остальных — на пн/вт.</div>
+      <div class="callout"><b>Vs полка:</b> AT13 XP +73%. <b>Vs рынок −25%:</b> AT13 XP +30%. Слабые vs полка: FLY 12 / 2×12, AEB полимер 4 цил. 1,9 Ом, Трубка 6×1 мм · 48 м IT, Тип 33 · 4 цил. 2 Ом BFC, Трубка 8×1 мм · 48 м IT, Sprint+ВЗУ A 220/225-30°.</div>
     </div>
   </div>
 
-  <h2>1. Что в инвойсе и на полке</h2>
+  <h2>1. Каталог со скринов Digitronic</h2>
   <div class="card">
-    <p class="lead" style="margin-bottom:10px">Все 7 позиций есть и в прайсе AutoChill (инвойс EUR), и на digitronicgas.ru (полка ₽, скрины/сайт на 01.10.2026). Сравнение — земля vs полка.</p>
+    <p class="lead" style="margin-bottom:10px">
+      Все позиции с присланных скринов + 2 фильтра из инвойса (Y, FLY), которых на скринах не было.
+      Закуп: <b>инвойс AutoChill</b> где есть; иначе <b>PL-прокси</b> (нетто zł / 4.25 × 0,94).
+      Рынок установщиков = полка −25% (аудио).
+    </p>
     <div class="scroll">
       <table>
         <thead>
           <tr>
-            <th>SKU</th><th>полка ₽</th><th>земля кэш</th><th>земля без НДС</th>
-            <th>маржа</th><th>₽ кэш BASE</th><th>₽ ОСНО</th><th>касса</th><th></th>
+            <th>SKU</th><th>полка ₽</th><th>наличие</th><th>закуп €</th><th>рынок −25%</th><th>заметка</th>
           </tr>
         </thead>
         <tbody><tr>
-          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">AT13 XP</a><div class="muted tiny">Редуктор · 46.00 €</div></td>
-          <td class="num">12 800</td>
-          <td class="num">7 400</td>
-          <td class="num">6 202</td>
-          <td class="num good">+73%</td>
-          <td class="num">+810k</td>
-          <td class="num">+990k</td>
-          <td class="num">1 110k</td>
-          <td><span class="pill good">выгодно</span></td>
+          <td><b>MP32 PT-MAP 4 цил.</b><div class="muted tiny">Электроника · 616000573</div></td>
+          <td class="num">13 200<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">62.94 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">9 900<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. PL-прокси ZAMEL MP32. Ходовой комплект 4 цил.</td>
         </tr><tr>
-          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">BLASTER Y 12×2/12</a><div class="muted tiny">Фильтр · 4.50 €</div></td>
-          <td class="num">1 250</td>
-          <td class="num">772</td>
-          <td class="num">651</td>
-          <td class="num good">+62%</td>
-          <td class="num">+526k</td>
-          <td class="num">+659k</td>
-          <td class="num">849k</td>
-          <td><span class="pill good">выгодно</span></td>
+          <td><b>MP48 4 цил.</b><div class="muted tiny">Электроника · 616000087</div></td>
+          <td class="num">15 600<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">65.09 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">11 700<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. PL-прокси Jacuś MP48. В наличии на Digitronic.</td>
         </tr><tr>
-          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">AT09 Nordic XP</a><div class="muted tiny">Редуктор · 34.00 €</div></td>
-          <td class="num">9 200</td>
-          <td class="num">5 679</td>
-          <td class="num">4 768</td>
-          <td class="num good">+62%</td>
-          <td class="num">+634k</td>
-          <td class="num">+798k</td>
-          <td class="num">1 022k</td>
-          <td><span class="pill good">выгодно</span></td>
+          <td><b>MP48 OBD 4 цил.</b><div class="muted tiny">Электроника · 616000089</div></td>
+          <td class="num">18 200<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">74.09 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">13 650<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. PL-прокси Jacuś MP48 OBD. Дороже обычного MP48.</td>
         </tr><tr>
-          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">AT09 Nordic</a><div class="muted tiny">Редуктор · 26.00 €</div></td>
-          <td class="num">7 000</td>
-          <td class="num">4 575</td>
-          <td class="num">3 852</td>
-          <td class="num good">+53%</td>
-          <td class="num">+485k</td>
-          <td class="num">+630k</td>
-          <td class="num">915k</td>
-          <td><span class="pill good">выгодно</span></td>
+          <td><b>Maxi-2 TITAN 4 цил.</b><div class="muted tiny">Электроника · WEG-AMD024409999-000</div></td>
+          <td class="num">13 300<div class="muted tiny">НДС 5%</div></td>
+          <td class="bad">нет</td>
+          <td class="num">—<div class="muted tiny">нет €</div></td>
+          <td class="num">9 975<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. Временно нет в наличии. Нет цены PL/инвойса — маржу не считаем.</td>
         </tr><tr>
-          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">BLASTER 12×12</a><div class="muted tiny">Фильтр · 3.50 €</div></td>
-          <td class="num">880</td>
-          <td class="num">607</td>
-          <td class="num">512</td>
-          <td class="num good">+45%</td>
-          <td class="num">+382k</td>
-          <td class="num">+515k</td>
-          <td class="num">850k</td>
-          <td><span class="pill good">выгодно</span></td>
+          <td><b>iQ 4 цил.</b><div class="muted tiny">Электроника · WEG-AMD028409999-300</div></td>
+          <td class="num">23 500<div class="muted tiny">НДС 5%</div></td>
+          <td class="bad">нет</td>
+          <td class="num">—<div class="muted tiny">нет €</div></td>
+          <td class="num">17 625<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. OOS. Премиум линейка — без цены закупки.</td>
         </tr><tr>
-          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">FLS 12×12</a><div class="muted tiny">Фильтр · 0.70 €</div></td>
-          <td class="num">250</td>
-          <td class="num">183</td>
-          <td class="num">158</td>
-          <td class="num ok">+36%</td>
-          <td class="num">+166k</td>
-          <td class="num">+229k</td>
-          <td class="num">459k</td>
-          <td><span class="pill ok">норм</span></td>
+          <td><b>iQ 3D-6 ц.</b><div class="muted tiny">Электроника · WEG-AMD030609999-300</div></td>
+          <td class="num">23 300<div class="muted tiny">НДС 0%</div></td>
+          <td class="bad">нет</td>
+          <td class="num">—<div class="muted tiny">нет €</div></td>
+          <td class="num">17 475<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. OOS. НДС полки 0%.</td>
         </tr><tr>
-          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">FLY 12 / 2×12</a><div class="muted tiny">Фильтр · 2.00 €</div></td>
-          <td class="num">440</td>
-          <td class="num">367</td>
-          <td class="num">311</td>
-          <td class="num weak">+20%</td>
-          <td class="num">+146k</td>
-          <td class="num">+258k</td>
-          <td class="num">734k</td>
-          <td><span class="pill weak">слабо</span></td>
+          <td><b>iQ 3D-8 ц.</b><div class="muted tiny">Электроника · WEG-AMD030809999-300</div></td>
+          <td class="num">28 000<div class="muted tiny">НДС 5%</div></td>
+          <td class="bad">нет</td>
+          <td class="num">—<div class="muted tiny">нет €</div></td>
+          <td class="num">21 000<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. OOS.</td>
+        </tr><tr>
+          <td><b>AT09 Nordic</b><div class="muted tiny">Редуктор · RGDG3890</div></td>
+          <td class="num">7 000<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">26.00 €<div class="muted tiny">инвойс AutoChill</div></td>
+          <td class="num">5 250<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин + инвойс AutoChill 26€. До ~170 л.с.</td>
+        </tr><tr>
+          <td><b>AT09 Nordic XP</b><div class="muted tiny">Редуктор · RGDG3895</div></td>
+          <td class="num">9 200<div class="muted tiny">НДС 20%</div></td>
+          <td class="good">много</td>
+          <td class="num">34.00 €<div class="muted tiny">инвойс AutoChill</div></td>
+          <td class="num">6 900<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин + инвойс 34€. Полка с НДС 20%.</td>
+        </tr><tr>
+          <td><b>AT13 XP</b><div class="muted tiny">Редуктор · RGDG3990</div></td>
+          <td class="num">12 800<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">46.00 €<div class="muted tiny">инвойс AutoChill</div></td>
+          <td class="num">9 600<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин + инвойс 46€. Лучшая маржа среди редукторов.</td>
+        </tr><tr>
+          <td><b>AT02 Sprint A 315-30°</b><div class="muted tiny">Мультиклапан · MVDG0205.1</div></td>
+          <td class="num">5 550<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">22.93 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">4 162<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. PL-прокси по AT02 Sprint. Класс A.</td>
+        </tr><tr>
+          <td><b>Sprint+ВЗУ A 220/225-30°</b><div class="muted tiny">Мультиклапан · MVDG0012</div></td>
+          <td class="num">4 150<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">25.80 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">3 112<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. С ВЗУ. Полка дешевле 315 — проверить комплектацию.</td>
+        </tr><tr>
+          <td><b>AEB полимер 4 цил. 1,9 Ом</b><div class="muted tiny">Рейка · 620500170</div></td>
+          <td class="num">8 000<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">39.81 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">6 000<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. PL-прокси оценка — уточнить у AutoChill.</td>
+        </tr><tr>
+          <td><b>Тип 33 · 4 цил. 2 Ом BFC</b><div class="muted tiny">Рейка · 33.EVG.13</div></td>
+          <td class="num">5 550<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">28.75 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">4 162<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. PL-прокси оценка.</td>
+        </tr><tr>
+          <td><b>Трубка 6×1 мм · 48 м IT</b><div class="muted tiny">Трубка · TP6-48</div></td>
+          <td class="num">11 300<div class="muted tiny">НДС 0%</div></td>
+          <td class="good">много</td>
+          <td class="num">48.66 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">8 475<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. Бухта 48 м. НДС полки 0%. PL-прокси оценка.</td>
+        </tr><tr>
+          <td><b>Трубка 8×1 мм · 48 м IT</b><div class="muted tiny">Трубка · ТР8-48</div></td>
+          <td class="num">13 900<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">59.72 €<div class="muted tiny">PL-прокси</div></td>
+          <td class="num">10 425<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин. Бухта 48 м. PL-прокси оценка.</td>
+        </tr><tr>
+          <td><b>FLS 12×12</b><div class="muted tiny">Фильтр · FL01S 12/12</div></td>
+          <td class="num">250<div class="muted tiny">НДС 0%</div></td>
+          <td class="good">много</td>
+          <td class="num">0.70 €<div class="muted tiny">инвойс AutoChill</div></td>
+          <td class="num">188<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин + инвойс 0.70€. Ходовой расходник.</td>
+        </tr><tr>
+          <td><b>BLASTER 12×12</b><div class="muted tiny">Фильтр · BLASTER 12х12</div></td>
+          <td class="num">880<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">много</td>
+          <td class="num">3.50 €<div class="muted tiny">инвойс AutoChill</div></td>
+          <td class="num">660<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">Скрин + инвойс 3.50€.</td>
+        </tr><tr>
+          <td><b>BLASTER Y 12×2/12</b><div class="muted tiny">Фильтр · BLASTER Y 12x2/12</div></td>
+          <td class="num">1 250<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">сайт</td>
+          <td class="num">4.50 €<div class="muted tiny">инвойс AutoChill</div></td>
+          <td class="num">938<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">В инвойсе и на сайте Digitronic; в присланных скринах не было.</td>
+        </tr><tr>
+          <td><b>FLY 12 / 2×12</b><div class="muted tiny">Фильтр · FL01Y 12/12</div></td>
+          <td class="num">440<div class="muted tiny">НДС 5%</div></td>
+          <td class="good">сайт</td>
+          <td class="num">2.00 €<div class="muted tiny">инвойс AutoChill</div></td>
+          <td class="num">330<div class="muted tiny">−25% полки</div></td>
+          <td class="muted tiny">В инвойсе. Dedicated слабо; в миксе без него.</td>
         </tr></tbody>
       </table>
     </div>
   </div>
 
-  <h2>2. Компоновки рейса (несколько SKU вместе)</h2>
+  <h2>2. Нет в наличии на Digitronic (со скринов)</h2>
+  <div class="card">
+    <p class="lead" style="margin-bottom:8px">Установщик говорил: оригинал редко есть. Эти позиции уже OOS на полке — спрос/дыра.</p>
+    <ul class="lines"><li><b>Maxi-2 TITAN 4 цил.</b> · полка 13 300 ₽ · WEG-AMD024409999-000</li><li><b>iQ 4 цил.</b> · полка 23 500 ₽ · WEG-AMD028409999-300</li><li><b>iQ 3D-6 ц.</b> · полка 23 300 ₽ · WEG-AMD030609999-300</li><li><b>iQ 3D-8 ц.</b> · полка 28 000 ₽ · WEG-AMD030809999-300</li></ul>
+  </div>
+
+  <h2>3. Маржа: земля vs полка vs рынок −25%</h2>
+  <div class="card">
+    <p class="lead" style="margin-bottom:10px">Только позиции с ценой закупки. «Vs полка» — если продавать по Digitronic; «vs рынок» — если как установщики (−25%).</p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>SKU</th><th>полка</th><th>рынок</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок</th><th>₽ полка</th><th>₽ рынок</th><th></th>
+          </tr>
+        </thead>
+        <tbody><tr>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at13_xp/" target="_blank" rel="noopener">AT13 XP</a>
+            <div class="muted tiny">Редуктор · 46.00 € · инвойс AutoChill</div></td>
+          <td class="num">12 800</td>
+          <td class="num">9 600</td>
+          <td class="num">7 400</td>
+          <td class="num good">+73%</td>
+          <td class="num ok">+30%</td>
+          <td class="num">+810k</td>
+          <td class="num">+330k</td>
+          <td><span class="pill good">выгодно</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic_xp_do_250_l_s/" target="_blank" rel="noopener">AT09 Nordic XP</a>
+            <div class="muted tiny">Редуктор · 34.00 € · инвойс AutoChill</div></td>
+          <td class="num">9 200</td>
+          <td class="num">6 900</td>
+          <td class="num">5 679</td>
+          <td class="num good">+62%</td>
+          <td class="num ok">+22%</td>
+          <td class="num">+634k</td>
+          <td class="num">+220k</td>
+          <td><span class="pill good">выгодно</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_y_12_x_2_12/" target="_blank" rel="noopener">BLASTER Y 12×2/12</a>
+            <div class="muted tiny">Фильтр · 4.50 € · инвойс AutoChill</div></td>
+          <td class="num">1 250</td>
+          <td class="num">938</td>
+          <td class="num">772</td>
+          <td class="num good">+62%</td>
+          <td class="num ok">+22%</td>
+          <td class="num">+526k</td>
+          <td class="num">+183k</td>
+          <td><span class="pill good">выгодно</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">MP48 OBD 4 цил.</a>
+            <div class="muted tiny">Электроника · 74.09 € · PL-прокси</div></td>
+          <td class="num">18 200</td>
+          <td class="num">13 650</td>
+          <td class="num">11 883</td>
+          <td class="num good">+53%</td>
+          <td class="num weak">+15%</td>
+          <td class="num">+379k</td>
+          <td class="num">+106k</td>
+          <td><span class="pill good">выгодно</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/reduktor_tomasetto_at09_nordic/" target="_blank" rel="noopener">AT09 Nordic</a>
+            <div class="muted tiny">Редуктор · 26.00 € · инвойс AutoChill</div></td>
+          <td class="num">7 000</td>
+          <td class="num">5 250</td>
+          <td class="num">4 575</td>
+          <td class="num good">+53%</td>
+          <td class="num weak">+15%</td>
+          <td class="num">+485k</td>
+          <td class="num">+135k</td>
+          <td><span class="pill good">выгодно</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">MP48 4 цил.</a>
+            <div class="muted tiny">Электроника · 65.09 € · PL-прокси</div></td>
+          <td class="num">15 600</td>
+          <td class="num">11 700</td>
+          <td class="num">10 444</td>
+          <td class="num good">+49%</td>
+          <td class="num weak">+12%</td>
+          <td class="num">+361k</td>
+          <td class="num">+88k</td>
+          <td><span class="pill good">выгодно</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_razbornyy_tsentrobezhnyy_blaster_12_x12/" target="_blank" rel="noopener">BLASTER 12×12</a>
+            <div class="muted tiny">Фильтр · 3.50 € · инвойс AutoChill</div></td>
+          <td class="num">880</td>
+          <td class="num">660</td>
+          <td class="num">607</td>
+          <td class="num good">+45%</td>
+          <td class="num weak">+9%</td>
+          <td class="num">+382k</td>
+          <td class="num">+74k</td>
+          <td><span class="pill good">выгодно</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fls_12x12_mm/" target="_blank" rel="noopener">FLS 12×12</a>
+            <div class="muted tiny">Фильтр · 0.70 € · инвойс AutoChill</div></td>
+          <td class="num">250</td>
+          <td class="num">188</td>
+          <td class="num">183</td>
+          <td class="num ok">+36%</td>
+          <td class="num weak">+2%</td>
+          <td class="num">+166k</td>
+          <td class="num">+11k</td>
+          <td><span class="pill ok">норм</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">MP32 PT-MAP 4 цил.</a>
+            <div class="muted tiny">Электроника · 62.94 € · PL-прокси</div></td>
+          <td class="num">13 200</td>
+          <td class="num">9 900</td>
+          <td class="num">9 917</td>
+          <td class="num ok">+33%</td>
+          <td class="num bad">-0%</td>
+          <td class="num">+263k</td>
+          <td class="num">-1k</td>
+          <td><span class="pill ok">норм</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">AT02 Sprint A 315-30°</a>
+            <div class="muted tiny">Мультиклапан · 22.93 € · PL-прокси</div></td>
+          <td class="num">5 550</td>
+          <td class="num">4 162</td>
+          <td class="num">4 581</td>
+          <td class="num ok">+21%</td>
+          <td class="num bad">-9%</td>
+          <td class="num">+97k</td>
+          <td class="num">-42k</td>
+          <td><span class="pill ok">норм</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/catalog/d/filtr_nizkogo_davleniya_nerazbornyy_fly_12_2x12/" target="_blank" rel="noopener">FLY 12 / 2×12</a>
+            <div class="muted tiny">Фильтр · 2.00 € · инвойс AutoChill</div></td>
+          <td class="num">440</td>
+          <td class="num">330</td>
+          <td class="num">367</td>
+          <td class="num weak">+20%</td>
+          <td class="num bad">-10%</td>
+          <td class="num">+146k</td>
+          <td class="num">-74k</td>
+          <td><span class="pill weak">слабо</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">AEB полимер 4 цил. 1,9 Ом</a>
+            <div class="muted tiny">Рейка · 39.81 € · PL-прокси</div></td>
+          <td class="num">8 000</td>
+          <td class="num">6 000</td>
+          <td class="num">6 786</td>
+          <td class="num weak">+18%</td>
+          <td class="num bad">-12%</td>
+          <td class="num">+97k</td>
+          <td class="num">-63k</td>
+          <td><span class="pill weak">слабо</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">Трубка 6×1 мм · 48 м IT</a>
+            <div class="muted tiny">Трубка · 48.66 € · PL-прокси</div></td>
+          <td class="num">11 300</td>
+          <td class="num">8 475</td>
+          <td class="num">11 021</td>
+          <td class="num weak">+2%</td>
+          <td class="num bad">-23%</td>
+          <td class="num">+11k</td>
+          <td class="num">-102k</td>
+          <td><span class="pill weak">слабо</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">Тип 33 · 4 цил. 2 Ом BFC</a>
+            <div class="muted tiny">Рейка · 28.75 € · PL-прокси</div></td>
+          <td class="num">5 550</td>
+          <td class="num">4 162</td>
+          <td class="num">5 499</td>
+          <td class="num weak">+1%</td>
+          <td class="num bad">-24%</td>
+          <td class="num">+4k</td>
+          <td class="num">-107k</td>
+          <td><span class="pill weak">слабо</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">Трубка 8×1 мм · 48 м IT</a>
+            <div class="muted tiny">Трубка · 59.72 € · PL-прокси</div></td>
+          <td class="num">13 900</td>
+          <td class="num">10 425</td>
+          <td class="num">14 202</td>
+          <td class="num bad">-2%</td>
+          <td class="num bad">-27%</td>
+          <td class="num">-9k</td>
+          <td class="num">-113k</td>
+          <td><span class="pill bad">в минус</span></td>
+        </tr><tr>
+          <td><a href="https://www.digitronicgas.ru/" target="_blank" rel="noopener">Sprint+ВЗУ A 220/225-30°</a>
+            <div class="muted tiny">Мультиклапан · 25.80 € · PL-прокси</div></td>
+          <td class="num">4 150</td>
+          <td class="num">3 112</td>
+          <td class="num">5 017</td>
+          <td class="num bad">-17%</td>
+          <td class="num bad">-38%</td>
+          <td class="num">-87k</td>
+          <td class="num">-190k</td>
+          <td><span class="pill bad">в минус</span></td>
+        </tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2>4. Компоновки рейса</h2>
   
         <article class="card trip">
           <header>
             <div>
-              <h3>Всё вместе · BASE qty каждого</h3>
-              <p class="lead">Один рейс: все 7 позиций из инвойса на базовых количествах. Фиксы делятся.</p>
+              <h3>Ходовой микс со скринов (~½ месяца сервиса)</h3>
+              <p class="lead">Электроника + редукторы + мультиклапаны + рейки + фильтры. Ориентир на «берут до хера» из аудио 27.09. OOS iQ/Maxi не включены.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>33 820 € · 3 209k</b></div>
-            <div><small>Логистика</small><b>7 572 € · 1 560 кг</b></div>
-            <div><small>Касса (капитал)</small><b>5 247k ₽</b></div>
-            <div><small>НДС 22%</small><b>907k ₽</b></div>
-            <div><small>Полка Digitronic</small><b>9 088k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+3 841k · +73%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+4 748k · +109%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>879k ₽</b></div>
+            <div><small>Закуп</small><b>14 148 € · 1 342k</b></div>
+            <div><small>Логистика</small><b>2 082 € · 404 кг</b></div>
+            <div><small>Касса</small><b>2 094k ₽</b></div>
+            <div><small>НДС 22%</small><b>356k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>3 306k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>2 480k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+1 212k · +58%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="weak">+386k · +18%</b></div>
           </div>
-          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×1 100 · земля 698 ₽ · <span class='good'>+79%</span> · +607k</li><li><b>BLASTER 12×12</b> ×1 400 · земля 543 ₽ · <span class='good'>+62%</span> · +472k</li><li><b>FLY 12 / 2×12</b> ×2 000 · земля 310 ₽ · <span class='good'>+42%</span> · +259k</li><li><b>FLS 12×12</b> ×2 500 · земля 109 ₽ · <span class='good'>+130%</span> · +354k</li><li><b>AT09 Nordic</b> ×200 · земля 4 034 ₽ · <span class='good'>+74%</span> · +593k</li><li><b>AT09 Nordic XP</b> ×180 · земля 5 275 ₽ · <span class='good'>+74%</span> · +707k</li><li><b>AT13 XP</b> ×150 · земля 7 136 ₽ · <span class='good'>+79%</span> · +850k</li></ul>
+          <ul class="lines"><li><b>MP32 PT-MAP 4 цил.</b> ×40 · земля 9 317 ₽ · полка <span class='good'>+42%</span> · рынок +6% · +155k</li><li><b>MP48 4 цил.</b> ×30 · земля 9 635 ₽ · полка <span class='good'>+62%</span> · рынок +21% · +179k</li><li><b>MP48 OBD 4 цил.</b> ×20 · земля 10 967 ₽ · полка <span class='good'>+66%</span> · рынок +24% · +145k</li><li><b>AT09 Nordic</b> ×40 · земля 3 849 ₽ · полка <span class='good'>+82%</span> · рынок +36% · +126k</li><li><b>AT09 Nordic XP</b> ×30 · земля 5 033 ₽ · полка <span class='good'>+83%</span> · рынок +37% · +125k</li><li><b>AT13 XP</b> ×25 · земля 6 809 ₽ · полка <span class='good'>+88%</span> · рынок +41% · +150k</li><li><b>AT02 Sprint A 315-30°</b> ×40 · земля 3 394 ₽ · полка <span class='good'>+64%</span> · рынок +23% · +86k</li><li><b>Sprint+ВЗУ A 220/225-30°</b> ×40 · земля 3 819 ₽ · полка <span class='weak'>+9%</span> · рынок -18% · +13k</li><li><b>AEB полимер 4 цил. 1,9 Ом</b> ×30 · земля 5 893 ₽ · полка <span class='ok'>+36%</span> · рынок +2% · +63k</li><li><b>Тип 33 · 4 цил. 2 Ом BFC</b> ×30 · земля 4 256 ₽ · полка <span class='ok'>+30%</span> · рынок -2% · +39k</li><li><b>BLASTER 12×12</b> ×200 · земля 518 ₽ · полка <span class='good'>+70%</span> · рынок +27% · +72k</li><li><b>FLS 12×12</b> ×400 · земля 104 ₽ · полка <span class='good'>+141%</span> · рынок +81% · +59k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
-              <h3>Всё вместе · −30% qty</h3>
-              <p class="lead">Тот же микс, объём меньше — EP хуже из‑за фиксов.</p>
+              <h3>Электроника + сильные редукторы + расходники</h3>
+              <p class="lead">Упор на комплекты MP (в наличии на Digitronic) + AT13/XP + фильтры.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>23 674 € · 2 246k</b></div>
-            <div><small>Логистика</small><b>5 350 € · 1 092 кг</b></div>
-            <div><small>Касса (капитал)</small><b>3 695k ₽</b></div>
-            <div><small>НДС 22%</small><b>636k ₽</b></div>
-            <div><small>Полка Digitronic</small><b>6 362k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+2 666k · +72%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+3 302k · +108%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>620k ₽</b></div>
+            <div><small>Закуп</small><b>13 224 € · 1 255k</b></div>
+            <div><small>Логистика</small><b>1 811 € · 347 кг</b></div>
+            <div><small>Касса</small><b>1 949k ₽</b></div>
+            <div><small>НДС 22%</small><b>330k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>3 255k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>2 442k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+1 306k · +67%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="ok">+492k · +25%</b></div>
           </div>
-          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×770 · земля 702 ₽ · <span class='good'>+78%</span> · +422k</li><li><b>BLASTER 12×12</b> ×980 · земля 546 ₽ · <span class='good'>+61%</span> · +327k</li><li><b>FLY 12 / 2×12</b> ×1 400 · земля 312 ₽ · <span class='good'>+41%</span> · +179k</li><li><b>FLS 12×12</b> ×1 750 · земля 109 ₽ · <span class='good'>+129%</span> · +246k</li><li><b>AT09 Nordic</b> ×140 · земля 4 058 ₽ · <span class='good'>+72%</span> · +412k</li><li><b>AT09 Nordic XP</b> ×126 · земля 5 307 ₽ · <span class='good'>+73%</span> · +490k</li><li><b>AT13 XP</b> ×105 · земля 7 180 ₽ · <span class='good'>+78%</span> · +590k</li></ul>
+          <ul class="lines"><li><b>MP48 4 цил.</b> ×50 · земля 9 593 ₽ · полка <span class='good'>+63%</span> · рынок +22% · +300k</li><li><b>MP48 OBD 4 цил.</b> ×30 · земля 10 920 ₽ · полка <span class='good'>+67%</span> · рынок +25% · +218k</li><li><b>MP32 PT-MAP 4 цил.</b> ×50 · земля 9 277 ₽ · полка <span class='good'>+42%</span> · рынок +7% · +196k</li><li><b>AT09 Nordic XP</b> ×40 · земля 5 011 ₽ · полка <span class='good'>+84%</span> · рынок +38% · +168k</li><li><b>AT13 XP</b> ×40 · земля 6 780 ₽ · полка <span class='good'>+89%</span> · рынок +42% · +241k</li><li><b>BLASTER 12×12</b> ×300 · земля 516 ₽ · полка <span class='good'>+71%</span> · рынок +28% · +109k</li><li><b>FLS 12×12</b> ×500 · земля 103 ₽ · полка <span class='good'>+142%</span> · рынок +82% · +73k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
-              <h3>Топ-3 лёгкий · Y 400 + Nordic XP 40 + AT13 40</h3>
-              <p class="lead">Три самых маржинальных — по чуть-чуть в одном кубе.</p>
+              <h3>Топ-3 инвойс · Y 800 + Nordic XP 60 + AT13 80</h3>
+              <p class="lead">Старый сильный комплект только из AutoChill-инвойса (точные €).</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>5 000 € · 474k</b></div>
-            <div><small>Логистика</small><b>1 074 € · 192 кг</b></div>
-            <div><small>Касса (капитал)</small><b>851k ₽</b></div>
-            <div><small>НДС 22%</small><b>133k ₽</b></div>
-            <div><small>Полка Digitronic</small><b>1 380k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+529k · +62%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+662k · +92%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>173k ₽</b></div>
-          </div>
-          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×400 · земля 766 ₽ · <span class='good'>+63%</span> · +193k</li><li><b>AT09 Nordic XP</b> ×40 · земля 5 789 ₽ · <span class='good'>+59%</span> · +136k</li><li><b>AT13 XP</b> ×40 · земля 7 833 ₽ · <span class='good'>+63%</span> · +199k</li></ul>
-        </article>
-        <article class="card trip">
-          <header>
-            <div>
-              <h3>Топ-3 полный · Y 800 + Nordic XP 60 + AT13 80</h3>
-              <p class="lead">Рекомендуемый комплект: расходник + два сильных редуктора.</p>
-            </div>
-            <span class="pill good">выгодно</span>
-          </header>
-          <div class="grid4">
-            <div><small>Инвойс</small><b>9 320 € · 884k</b></div>
+            <div><small>Закуп</small><b>9 320 € · 884k</b></div>
             <div><small>Логистика</small><b>1 854 € · 356 кг</b></div>
-            <div><small>Касса (капитал)</small><b>1 471k ₽</b></div>
+            <div><small>Касса</small><b>1 471k ₽</b></div>
             <div><small>НДС 22%</small><b>245k ₽</b></div>
             <div><small>Полка Digitronic</small><b>2 576k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+1 105k · +75%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+1 350k · +110%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>247k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>1 932k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+1 105k · +75%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="ok">+461k · +31%</b></div>
           </div>
-          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×800 · земля 710 ₽ · <span class='good'>+76%</span> · +432k</li><li><b>AT09 Nordic XP</b> ×60 · земля 5 367 ₽ · <span class='good'>+71%</span> · +230k</li><li><b>AT13 XP</b> ×80 · земля 7 261 ₽ · <span class='good'>+76%</span> · +443k</li></ul>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×800 · земля 710 ₽ · полка <span class='good'>+76%</span> · рынок +32% · +432k</li><li><b>AT09 Nordic XP</b> ×60 · земля 5 367 ₽ · полка <span class='good'>+71%</span> · рынок +29% · +230k</li><li><b>AT13 XP</b> ×80 · земля 7 261 ₽ · полка <span class='good'>+76%</span> · рынок +32% · +443k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
-              <h3>Фильтры без FLY · Y+BLASTER+FLS</h3>
-              <p class="lead">Только ходовые фильтры. FLY убран — тянет маржу вниз.</p>
+              <h3>Механика · редукторы + мультиклапаны</h3>
+              <p class="lead">Без электроники. Высокий чек, медленнее оборот фильтров.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>5 740 € · 545k</b></div>
-            <div><small>Логистика</small><b>1 573 € · 297 кг</b></div>
-            <div><small>Касса (капитал)</small><b>1 002k ₽</b></div>
-            <div><small>НДС 22%</small><b>160k ₽</b></div>
-            <div><small>Полка Digitronic</small><b>1 615k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+613k · +61%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+773k · +92%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>220k ₽</b></div>
+            <div><small>Закуп</small><b>9 344 € · 887k</b></div>
+            <div><small>Логистика</small><b>1 963 € · 379 кг</b></div>
+            <div><small>Касса</small><b>1 487k ₽</b></div>
+            <div><small>НДС 22%</small><b>248k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>2 334k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>1 750k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+847k · +57%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="weak">+263k · +18%</b></div>
           </div>
-          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×700 · земля 786 ₽ · <span class='good'>+59%</span> · +325k</li><li><b>BLASTER 12×12</b> ×500 · земля 611 ₽ · <span class='good'>+44%</span> · +135k</li><li><b>FLS 12×12</b> ×1 200 · земля 122 ₽ · <span class='good'>+105%</span> · +153k</li></ul>
+          <ul class="lines"><li><b>AT09 Nordic</b> ×80 · земля 4 139 ₽ · полка <span class='good'>+69%</span> · рынок +27% · +229k</li><li><b>AT09 Nordic XP</b> ×60 · земля 5 412 ₽ · полка <span class='good'>+70%</span> · рынок +28% · +227k</li><li><b>AT13 XP</b> ×50 · земля 7 322 ₽ · полка <span class='good'>+75%</span> · рынок +31% · +274k</li><li><b>AT02 Sprint A 315-30°</b> ×60 · земля 3 650 ₽ · полка <span class='good'>+52%</span> · рынок +14% · +114k</li><li><b>Sprint+ВЗУ A 220/225-30°</b> ×60 · земля 4 107 ₽ · полка <span class='weak'>+1%</span> · рынок -24% · +3k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
-              <h3>Редукторы микс · Nordic + XP + AT13</h3>
-              <p class="lead">Только редукторы. Высокий чек, оборот медленнее фильтров.</p>
+              <h3>Инвойс широкий без FLY</h3>
+              <p class="lead">Все точные € из AutoChill, FLY выкинут.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>6 420 € · 609k</b></div>
-            <div><small>Логистика</small><b>1 436 € · 268 кг</b></div>
-            <div><small>Касса (капитал)</small><b>1 068k ₽</b></div>
-            <div><small>НДС 22%</small><b>172k ₽</b></div>
-            <div><small>Полка Digitronic</small><b>1 752k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+684k · +64%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+856k · +96%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>207k ₽</b></div>
-          </div>
-          <ul class="lines"><li><b>AT09 Nordic</b> ×80 · земля 4 325 ₽ · <span class='good'>+62%</span> · +214k</li><li><b>AT09 Nordic XP</b> ×60 · земля 5 655 ₽ · <span class='good'>+63%</span> · +213k</li><li><b>AT13 XP</b> ×50 · земля 7 651 ₽ · <span class='good'>+67%</span> · +257k</li></ul>
-        </article>
-        <article class="card trip">
-          <header>
-            <div>
-              <h3>Широкий микс без FLY</h3>
-              <p class="lead">Почти всё из инвойса, но FLY выкинут как слабое звено.</p>
-            </div>
-            <span class="pill good">выгодно</span>
-          </header>
-          <div class="grid4">
-            <div><small>Инвойс</small><b>10 220 € · 970k</b></div>
+            <div><small>Закуп</small><b>10 220 € · 970k</b></div>
             <div><small>Логистика</small><b>2 348 € · 460 кг</b></div>
-            <div><small>Касса (капитал)</small><b>1 641k ₽</b></div>
+            <div><small>Касса</small><b>1 641k ₽</b></div>
             <div><small>НДС 22%</small><b>275k ₽</b></div>
             <div><small>Полка Digitronic</small><b>2 822k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+1 181k · +72%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+1 457k · +107%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>294k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>2 117k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+1 181k · +72%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="ok">+477k · +29%</b></div>
           </div>
-          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×600 · земля 722 ₽ · <span class='good'>+73%</span> · +317k</li><li><b>BLASTER 12×12</b> ×400 · земля 562 ₽ · <span class='good'>+57%</span> · +127k</li><li><b>FLS 12×12</b> ×800 · земля 112 ₽ · <span class='good'>+122%</span> · +110k</li><li><b>AT09 Nordic</b> ×60 · земля 4 174 ₽ · <span class='good'>+68%</span> · +170k</li><li><b>AT09 Nordic XP</b> ×50 · земля 5 458 ₽ · <span class='good'>+69%</span> · +187k</li><li><b>AT13 XP</b> ×50 · земля 7 384 ₽ · <span class='good'>+73%</span> · +271k</li></ul>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×600 · земля 722 ₽ · полка <span class='good'>+73%</span> · рынок +30% · +317k</li><li><b>BLASTER 12×12</b> ×400 · земля 562 ₽ · полка <span class='good'>+57%</span> · рынок +18% · +127k</li><li><b>FLS 12×12</b> ×800 · земля 112 ₽ · полка <span class='good'>+122%</span> · рынок +67% · +110k</li><li><b>AT09 Nordic</b> ×60 · земля 4 174 ₽ · полка <span class='good'>+68%</span> · рынок +26% · +170k</li><li><b>AT09 Nordic XP</b> ×50 · земля 5 458 ₽ · полка <span class='good'>+69%</span> · рынок +26% · +187k</li><li><b>AT13 XP</b> ×50 · земля 7 384 ₽ · полка <span class='good'>+73%</span> · рынок +30% · +271k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Месяц сервиса · ~500+ шт микс</h3>
+              <p class="lead">Ориентир аудио 25.09 «до 500 шт/мес разных». Крупный рейс.</p>
+            </div>
+            <span class="pill good">выгодно vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>23 958 € · 2 273k</b></div>
+            <div><small>Логистика</small><b>3 623 € · 728 кг</b></div>
+            <div><small>Касса</small><b>3 516k ₽</b></div>
+            <div><small>НДС 22%</small><b>604k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>5 695k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>4 272k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+2 179k · +62%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="ok">+755k · +22%</b></div>
+          </div>
+          <ul class="lines"><li><b>MP32 PT-MAP 4 цил.</b> ×60 · земля 9 238 ₽ · полка <span class='good'>+43%</span> · рынок +7% · +238k</li><li><b>MP48 4 цил.</b> ×50 · земля 9 554 ₽ · полка <span class='good'>+63%</span> · рынок +22% · +302k</li><li><b>MP48 OBD 4 цил.</b> ×40 · земля 10 875 ₽ · полка <span class='good'>+67%</span> · рынок +26% · +293k</li><li><b>AT09 Nordic</b> ×60 · земля 3 816 ₽ · полка <span class='good'>+83%</span> · рынок +38% · +191k</li><li><b>AT09 Nordic XP</b> ×50 · земля 4 990 ₽ · полка <span class='good'>+84%</span> · рынок +38% · +210k</li><li><b>AT13 XP</b> ×40 · земля 6 752 ₽ · полка <span class='good'>+90%</span> · рынок +42% · +242k</li><li><b>AT02 Sprint A 315-30°</b> ×50 · земля 3 366 ₽ · полка <span class='good'>+65%</span> · рынок +24% · +109k</li><li><b>Sprint+ВЗУ A 220/225-30°</b> ×50 · земля 3 787 ₽ · полка <span class='weak'>+10%</span> · рынок -18% · +18k</li><li><b>AEB полимер 4 цил. 1,9 Ом</b> ×40 · земля 5 843 ₽ · полка <span class='ok'>+37%</span> · рынок +3% · +86k</li><li><b>Тип 33 · 4 цил. 2 Ом BFC</b> ×40 · земля 4 220 ₽ · полка <span class='ok'>+32%</span> · рынок -1% · +53k</li><li><b>Трубка 6×1 мм · 48 м IT</b> ×10 · земля 7 142 ₽ · полка <span class='good'>+58%</span> · рынок +19% · +42k</li><li><b>Трубка 8×1 мм · 48 м IT</b> ×8 · земля 8 765 ₽ · полка <span class='good'>+59%</span> · рынок +19% · +41k</li><li><b>BLASTER 12×12</b> ×400 · земля 514 ₽ · полка <span class='good'>+71%</span> · рынок +28% · +147k</li><li><b>FLS 12×12</b> ×600 · земля 103 ₽ · полка <span class='good'>+143%</span> · рынок +83% · +88k</li><li><b>BLASTER Y 12×2/12</b> ×200 · земля 660 ₽ · полка <span class='good'>+89%</span> · рынок +42% · +118k</li></ul>
         </article>
 
-  <h2>3. Если везти каждый SKU отдельно</h2>
+  <h2>5. Каждый SKU отдельно</h2>
   
         <article class="card trip">
           <header>
             <div>
               <h3>Отдельно · AT13 XP</h3>
-              <p class="lead">Только этот SKU, qty BASE 150.</p>
+              <p class="lead">Только этот SKU, qty BASE 150. Источник €: invoice.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>6 900 € · 655k</b></div>
+            <div><small>Закуп</small><b>6 900 € · 655k</b></div>
             <div><small>Логистика</small><b>1 302 € · 240 кг</b></div>
-            <div><small>Касса (капитал)</small><b>1 110k ₽</b></div>
+            <div><small>Касса</small><b>1 110k ₽</b></div>
             <div><small>НДС 22%</small><b>180k ₽</b></div>
             <div><small>Полка Digitronic</small><b>1 920k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+810k · +73%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+990k · +106%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>195k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>1 440k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+810k · +73%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="ok">+330k · +30%</b></div>
           </div>
-          <ul class="lines"><li><b>AT13 XP</b> ×150 · земля 7 400 ₽ · <span class='good'>+73%</span> · +810k</li></ul>
-        </article>
-        <article class="card trip">
-          <header>
-            <div>
-              <h3>Отдельно · BLASTER Y 12×2/12</h3>
-              <p class="lead">Только этот SKU, qty BASE 1100.</p>
-            </div>
-            <span class="pill good">выгодно</span>
-          </header>
-          <div class="grid4">
-            <div><small>Инвойс</small><b>4 950 € · 470k</b></div>
-            <div><small>Логистика</small><b>1 103 € · 198 кг</b></div>
-            <div><small>Касса (капитал)</small><b>849k ₽</b></div>
-            <div><small>НДС 22%</small><b>133k ₽</b></div>
-            <div><small>Полка Digitronic</small><b>1 375k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+526k · +62%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+659k · +92%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>176k ₽</b></div>
-          </div>
-          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×1 100 · земля 772 ₽ · <span class='good'>+62%</span> · +526k</li></ul>
+          <ul class="lines"><li><b>AT13 XP</b> ×150 · земля 7 400 ₽ · полка <span class='good'>+73%</span> · рынок +30% · +810k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
               <h3>Отдельно · AT09 Nordic XP</h3>
-              <p class="lead">Только этот SKU, qty BASE 180.</p>
+              <p class="lead">Только этот SKU, qty BASE 180. Источник €: invoice.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>6 120 € · 581k</b></div>
+            <div><small>Закуп</small><b>6 120 € · 581k</b></div>
             <div><small>Логистика</small><b>1 360 € · 252 кг</b></div>
-            <div><small>Касса (капитал)</small><b>1 022k ₽</b></div>
+            <div><small>Касса</small><b>1 022k ₽</b></div>
             <div><small>НДС 22%</small><b>164k ₽</b></div>
             <div><small>Полка Digitronic</small><b>1 656k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+634k · +62%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+798k · +93%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>200k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>1 242k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+634k · +62%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="ok">+220k · +22%</b></div>
           </div>
-          <ul class="lines"><li><b>AT09 Nordic XP</b> ×180 · земля 5 679 ₽ · <span class='good'>+62%</span> · +634k</li></ul>
+          <ul class="lines"><li><b>AT09 Nordic XP</b> ×180 · земля 5 679 ₽ · полка <span class='good'>+62%</span> · рынок +22% · +634k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · BLASTER Y 12×2/12</h3>
+              <p class="lead">Только этот SKU, qty BASE 1100. Источник €: invoice.</p>
+            </div>
+            <span class="pill good">выгодно vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>4 950 € · 470k</b></div>
+            <div><small>Логистика</small><b>1 103 € · 198 кг</b></div>
+            <div><small>Касса</small><b>849k ₽</b></div>
+            <div><small>НДС 22%</small><b>133k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 375k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>1 032k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+526k · +62%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="ok">+183k · +22%</b></div>
+          </div>
+          <ul class="lines"><li><b>BLASTER Y 12×2/12</b> ×1 100 · земля 772 ₽ · полка <span class='good'>+62%</span> · рынок +22% · +526k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · MP48 OBD 4 цил.</h3>
+              <p class="lead">Только этот SKU, qty BASE 60. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill good">выгодно vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>4 445 € · 422k</b></div>
+            <div><small>Логистика</small><b>490 € · 69 кг</b></div>
+            <div><small>Касса</small><b>713k ₽</b></div>
+            <div><small>НДС 22%</small><b>108k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 092k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>819k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+379k · +53%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="weak">+106k · +15%</b></div>
+          </div>
+          <ul class="lines"><li><b>MP48 OBD 4 цил.</b> ×60 · земля 11 883 ₽ · полка <span class='good'>+53%</span> · рынок +15% · +379k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
               <h3>Отдельно · AT09 Nordic</h3>
-              <p class="lead">Только этот SKU, qty BASE 200.</p>
+              <p class="lead">Только этот SKU, qty BASE 200. Источник €: invoice.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>5 200 € · 493k</b></div>
+            <div><small>Закуп</small><b>5 200 € · 493k</b></div>
             <div><small>Логистика</small><b>1 398 € · 260 кг</b></div>
-            <div><small>Касса (капитал)</small><b>915k ₽</b></div>
+            <div><small>Касса</small><b>915k ₽</b></div>
             <div><small>НДС 22%</small><b>145k ₽</b></div>
             <div><small>Полка Digitronic</small><b>1 400k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+485k · +53%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+630k · +82%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>204k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>1 050k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+485k · +53%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="weak">+135k · +15%</b></div>
           </div>
-          <ul class="lines"><li><b>AT09 Nordic</b> ×200 · земля 4 575 ₽ · <span class='good'>+53%</span> · +485k</li></ul>
+          <ul class="lines"><li><b>AT09 Nordic</b> ×200 · земля 4 575 ₽ · полка <span class='good'>+53%</span> · рынок +15% · +485k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · MP48 4 цил.</h3>
+              <p class="lead">Только этот SKU, qty BASE 70. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill good">выгодно vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>4 556 € · 432k</b></div>
+            <div><small>Логистика</small><b>528 € · 77 кг</b></div>
+            <div><small>Касса</small><b>731k ₽</b></div>
+            <div><small>НДС 22%</small><b>111k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 092k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>819k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+361k · +49%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="weak">+88k · +12%</b></div>
+          </div>
+          <ul class="lines"><li><b>MP48 4 цил.</b> ×70 · земля 10 444 ₽ · полка <span class='good'>+49%</span> · рынок +12% · +361k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
               <h3>Отдельно · BLASTER 12×12</h3>
-              <p class="lead">Только этот SKU, qty BASE 1400.</p>
+              <p class="lead">Только этот SKU, qty BASE 1400. Источник €: invoice.</p>
             </div>
-            <span class="pill good">выгодно</span>
+            <span class="pill good">выгодно vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>4 900 € · 465k</b></div>
+            <div><small>Закуп</small><b>4 900 € · 465k</b></div>
             <div><small>Логистика</small><b>1 160 € · 210 кг</b></div>
-            <div><small>Касса (капитал)</small><b>850k ₽</b></div>
+            <div><small>Касса</small><b>850k ₽</b></div>
             <div><small>НДС 22%</small><b>133k ₽</b></div>
             <div><small>Полка Digitronic</small><b>1 232k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+382k · +45%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+515k · +72%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>181k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>924k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+382k · +45%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="weak">+74k · +9%</b></div>
           </div>
-          <ul class="lines"><li><b>BLASTER 12×12</b> ×1 400 · земля 607 ₽ · <span class='good'>+45%</span> · +382k</li></ul>
+          <ul class="lines"><li><b>BLASTER 12×12</b> ×1 400 · земля 607 ₽ · полка <span class='good'>+45%</span> · рынок +9% · +382k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
               <h3>Отдельно · FLS 12×12</h3>
-              <p class="lead">Только этот SKU, qty BASE 2500.</p>
+              <p class="lead">Только этот SKU, qty BASE 2500. Источник €: invoice.</p>
             </div>
-            <span class="pill ok">норм</span>
+            <span class="pill ok">норм vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>1 750 € · 166k</b></div>
+            <div><small>Закуп</small><b>1 750 € · 166k</b></div>
             <div><small>Логистика</small><b>1 112 € · 200 кг</b></div>
-            <div><small>Касса (капитал)</small><b>459k ₽</b></div>
+            <div><small>Касса</small><b>459k ₽</b></div>
             <div><small>НДС 22%</small><b>63k ₽</b></div>
             <div><small>Полка Digitronic</small><b>625k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+166k · +36%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+229k · +58%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>177k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>470k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+166k · +36%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="weak">+11k · +2%</b></div>
           </div>
-          <ul class="lines"><li><b>FLS 12×12</b> ×2 500 · земля 183 ₽ · <span class='ok'>+36%</span> · +166k</li></ul>
+          <ul class="lines"><li><b>FLS 12×12</b> ×2 500 · земля 183 ₽ · полка <span class='ok'>+36%</span> · рынок +2% · +166k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · MP32 PT-MAP 4 цил.</h3>
+              <p class="lead">Только этот SKU, qty BASE 80. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill ok">норм vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>5 035 € · 478k</b></div>
+            <div><small>Логистика</small><b>562 € · 84 кг</b></div>
+            <div><small>Касса</small><b>793k ₽</b></div>
+            <div><small>НДС 22%</small><b>123k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>1 056k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>792k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+263k · +33%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-1k · -0%</b></div>
+          </div>
+          <ul class="lines"><li><b>MP32 PT-MAP 4 цил.</b> ×80 · земля 9 917 ₽ · полка <span class='ok'>+33%</span> · рынок -0% · +263k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · AT02 Sprint A 315-30°</h3>
+              <p class="lead">Только этот SKU, qty BASE 100. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill ok">норм vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>2 293 € · 218k</b></div>
+            <div><small>Логистика</small><b>566 € · 85 кг</b></div>
+            <div><small>Касса</small><b>458k ₽</b></div>
+            <div><small>НДС 22%</small><b>63k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>555k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>416k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+97k · +21%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-42k · -9%</b></div>
+          </div>
+          <ul class="lines"><li><b>AT02 Sprint A 315-30°</b> ×100 · земля 4 581 ₽ · полка <span class='ok'>+21%</span> · рынок -9% · +97k</li></ul>
         </article>
         <article class="card trip">
           <header>
             <div>
               <h3>Отдельно · FLY 12 / 2×12</h3>
-              <p class="lead">Только этот SKU, qty BASE 2000.</p>
+              <p class="lead">Только этот SKU, qty BASE 2000. Источник €: invoice.</p>
             </div>
-            <span class="pill weak">слабо</span>
+            <span class="pill weak">слабо vs полка</span>
           </header>
           <div class="grid4">
-            <div><small>Инвойс</small><b>4 000 € · 380k</b></div>
+            <div><small>Закуп</small><b>4 000 € · 380k</b></div>
             <div><small>Логистика</small><b>1 112 € · 200 кг</b></div>
-            <div><small>Касса (капитал)</small><b>734k ₽</b></div>
+            <div><small>Касса</small><b>734k ₽</b></div>
             <div><small>НДС 22%</small><b>112k ₽</b></div>
             <div><small>Полка Digitronic</small><b>880k ₽</b></div>
-            <div><small>Прибыль кэш</small><b class="good">+146k · +20%</b></div>
-            <div><small>Прибыль ОСНО</small><b class="good">+258k · +41%</b></div>
-            <div><small>Партнёр (выкуп+фрахт)</small><b>177k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>660k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+146k · +20%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-74k · -10%</b></div>
           </div>
-          <ul class="lines"><li><b>FLY 12 / 2×12</b> ×2 000 · земля 367 ₽ · <span class='weak'>+20%</span> · +146k</li></ul>
+          <ul class="lines"><li><b>FLY 12 / 2×12</b> ×2 000 · земля 367 ₽ · полка <span class='weak'>+20%</span> · рынок -10% · +146k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · AEB полимер 4 цил. 1,9 Ом</h3>
+              <p class="lead">Только этот SKU, qty BASE 80. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill weak">слабо vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>3 185 € · 302k</b></div>
+            <div><small>Логистика</small><b>372 € · 44 кг</b></div>
+            <div><small>Касса</small><b>543k ₽</b></div>
+            <div><small>НДС 22%</small><b>78k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>640k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>480k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+97k · +18%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-63k · -12%</b></div>
+          </div>
+          <ul class="lines"><li><b>AEB полимер 4 цил. 1,9 Ом</b> ×80 · земля 6 786 ₽ · полка <span class='weak'>+18%</span> · рынок -12% · +97k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · Трубка 6×1 мм · 48 м IT</h3>
+              <p class="lead">Только этот SKU, qty BASE 40. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill weak">слабо vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>1 946 € · 185k</b></div>
+            <div><small>Логистика</small><b>770 € · 128 кг</b></div>
+            <div><small>Касса</small><b>441k ₽</b></div>
+            <div><small>НДС 22%</small><b>60k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>452k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>339k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+11k · +2%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-102k · -23%</b></div>
+          </div>
+          <ul class="lines"><li><b>Трубка 6×1 мм · 48 м IT</b> ×40 · земля 11 021 ₽ · полка <span class='weak'>+2%</span> · рынок -23% · +11k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · Тип 33 · 4 цил. 2 Ом BFC</h3>
+              <p class="lead">Только этот SKU, qty BASE 80. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill weak">слабо vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>2 300 € · 218k</b></div>
+            <div><small>Логистика</small><b>410 € · 52 кг</b></div>
+            <div><small>Касса</small><b>440k ₽</b></div>
+            <div><small>НДС 22%</small><b>59k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>444k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>333k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">+4k · +1%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-107k · -24%</b></div>
+          </div>
+          <ul class="lines"><li><b>Тип 33 · 4 цил. 2 Ом BFC</b> ×80 · земля 5 499 ₽ · полка <span class='weak'>+1%</span> · рынок -24% · +4k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · Трубка 8×1 мм · 48 м IT</h3>
+              <p class="lead">Только этот SKU, qty BASE 30. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill bad">в минус vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>1 792 € · 170k</b></div>
+            <div><small>Логистика</small><b>804 € · 135 кг</b></div>
+            <div><small>Касса</small><b>426k ₽</b></div>
+            <div><small>НДС 22%</small><b>57k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>417k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>313k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">-9k · -2%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-113k · -27%</b></div>
+          </div>
+          <ul class="lines"><li><b>Трубка 8×1 мм · 48 м IT</b> ×30 · земля 14 202 ₽ · полка <span class='bad'>-2%</span> · рынок -27% · -9k</li></ul>
+        </article>
+        <article class="card trip">
+          <header>
+            <div>
+              <h3>Отдельно · Sprint+ВЗУ A 220/225-30°</h3>
+              <p class="lead">Только этот SKU, qty BASE 100. Источник €: pl_proxy.</p>
+            </div>
+            <span class="pill bad">в минус vs полка</span>
+          </header>
+          <div class="grid4">
+            <div><small>Закуп</small><b>2 580 € · 245k</b></div>
+            <div><small>Логистика</small><b>638 € · 100 кг</b></div>
+            <div><small>Касса</small><b>502k ₽</b></div>
+            <div><small>НДС 22%</small><b>71k ₽</b></div>
+            <div><small>Полка Digitronic</small><b>415k ₽</b></div>
+            <div><small>Рынок установщиков −25%</small><b>311k ₽</b></div>
+            <div><small>Прибыль vs полка</small><b class="good">-87k · -17%</b></div>
+            <div><small>Прибыль vs рынок</small><b class="bad">-190k · -38%</b></div>
+          </div>
+          <ul class="lines"><li><b>Sprint+ВЗУ A 220/225-30°</b> ×100 · земля 5 017 ₽ · полка <span class='bad'>-17%</span> · рынок -38% · -87k</li></ul>
         </article>
 
-  <h2>4. Доходность при разных объёмах (один SKU на рейсе)</h2>
+  <h2>6. Объёмы</h2>
   
         <article class="card" id="at13">
           <header>
             <div>
               <span class="tag">Редуктор</span>
               <h3>AT13 XP</h3>
-              <p class="lead">Мощные авто. Лучшая маржа среди редукторов. Полка 12 800 ₽. · в инвойсе, на полке Digitronic</p>
+              <p class="lead">Скрин + инвойс 46€. Лучшая маржа среди редукторов.</p>
             </div>
             <div class="right">
-              <div>инвойс <b>46.00 €</b> · полка <b>12 800 ₽</b></div>
-              <span class="pill good">выгодно BASE</span>
+              <div>€ <b>46.00</b> (инвойс AutoChill) · полка <b>12 800 ₽</b></div>
+              <span class="pill good">выгодно vs полка</span>
             </div>
           </header>
           <table>
-            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
             <tbody><tr>
               <td>−50%</td>
               <td class="num">75</td>
               <td class="num">3 450 €</td>
               <td class="num">8 253</td>
               <td class="num good">+55.1%</td>
+              <td class="num weak">+16.3%</td>
               <td class="num">+341k</td>
-              <td class="num">+433k</td>
+              <td class="num">+101k</td>
               <td class="num">619k</td>
             </tr><tr>
               <td>−30%</td>
@@ -469,8 +902,9 @@
               <td class="num">4 830 €</td>
               <td class="num">7 780</td>
               <td class="num good">+64.5%</td>
+              <td class="num ok">+23.4%</td>
               <td class="num">+527k</td>
-              <td class="num">+654k</td>
+              <td class="num">+191k</td>
               <td class="num">817k</td>
             </tr><tr>
               <td>BASE</td>
@@ -478,8 +912,9 @@
               <td class="num">6 900 €</td>
               <td class="num">7 400</td>
               <td class="num good">+73.0%</td>
+              <td class="num ok">+29.7%</td>
               <td class="num">+810k</td>
-              <td class="num">+990k</td>
+              <td class="num">+330k</td>
               <td class="num">1 110k</td>
             </tr><tr>
               <td>+30%</td>
@@ -487,8 +922,9 @@
               <td class="num">8 970 €</td>
               <td class="num">7 196</td>
               <td class="num good">+77.9%</td>
+              <td class="num ok">+33.4%</td>
               <td class="num">+1 093k</td>
-              <td class="num">+1 325k</td>
+              <td class="num">+469k</td>
               <td class="num">1 403k</td>
             </tr><tr>
               <td>+50%</td>
@@ -496,71 +932,10 @@
               <td class="num">10 350 €</td>
               <td class="num">7 105</td>
               <td class="num good">+80.2%</td>
+              <td class="num ok">+35.1%</td>
               <td class="num">+1 281k</td>
-              <td class="num">+1 549k</td>
+              <td class="num">+561k</td>
               <td class="num">1 599k</td>
-            </tr></tbody>
-          </table>
-        </article>
-        <article class="card" id="blaster_y">
-          <header>
-            <div>
-              <span class="tag">Фильтр</span>
-              <h3>BLASTER Y 12×2/12</h3>
-              <p class="lead">Расходник. В инвойсе и на полке Digitronic. · в инвойсе, на полке Digitronic</p>
-            </div>
-            <div class="right">
-              <div>инвойс <b>4.50 €</b> · полка <b>1 250 ₽</b></div>
-              <span class="pill good">выгодно BASE</span>
-            </div>
-          </header>
-          <table>
-            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
-            <tbody><tr>
-              <td>−50%</td>
-              <td class="num">550</td>
-              <td class="num">2 475 €</td>
-              <td class="num">888</td>
-              <td class="num good">+40.8%</td>
-              <td class="num">+199k</td>
-              <td class="num">+267k</td>
-              <td class="num">488k</td>
-            </tr><tr>
-              <td>−30%</td>
-              <td class="num">770</td>
-              <td class="num">3 465 €</td>
-              <td class="num">820</td>
-              <td class="num good">+52.4%</td>
-              <td class="num">+331k</td>
-              <td class="num">+425k</td>
-              <td class="num">632k</td>
-            </tr><tr>
-              <td>BASE</td>
-              <td class="num">1 100</td>
-              <td class="num">4 950 €</td>
-              <td class="num">772</td>
-              <td class="num good">+62.0%</td>
-              <td class="num">+526k</td>
-              <td class="num">+659k</td>
-              <td class="num">849k</td>
-            </tr><tr>
-              <td>+30%</td>
-              <td class="num">1 430</td>
-              <td class="num">6 435 €</td>
-              <td class="num">744</td>
-              <td class="num good">+68.1%</td>
-              <td class="num">+724k</td>
-              <td class="num">+895k</td>
-              <td class="num">1 064k</td>
-            </tr><tr>
-              <td>+50%</td>
-              <td class="num">1 650</td>
-              <td class="num">7 425 €</td>
-              <td class="num">731</td>
-              <td class="num good">+70.9%</td>
-              <td class="num">+856k</td>
-              <td class="num">+1 053k</td>
-              <td class="num">1 207k</td>
             </tr></tbody>
           </table>
         </article>
@@ -569,23 +944,25 @@
             <div>
               <span class="tag">Редуктор</span>
               <h3>AT09 Nordic XP</h3>
-              <p class="lead">До 250 л.с. Полка 9 200 ₽. · в инвойсе, на полке Digitronic</p>
+              <p class="lead">Скрин + инвойс 34€. Полка с НДС 20%.</p>
             </div>
             <div class="right">
-              <div>инвойс <b>34.00 €</b> · полка <b>9 200 ₽</b></div>
-              <span class="pill good">выгодно BASE</span>
+              <div>€ <b>34.00</b> (инвойс AutoChill) · полка <b>9 200 ₽</b></div>
+              <span class="pill good">выгодно vs полка</span>
             </div>
           </header>
           <table>
-            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
             <tbody><tr>
               <td>−50%</td>
               <td class="num">90</td>
               <td class="num">3 060 €</td>
               <td class="num">6 389</td>
               <td class="num good">+44.0%</td>
+              <td class="num weak">+8.0%</td>
               <td class="num">+253k</td>
-              <td class="num">+337k</td>
+              <td class="num">+46k</td>
               <td class="num">575k</td>
             </tr><tr>
               <td>−30%</td>
@@ -593,8 +970,9 @@
               <td class="num">4 284 €</td>
               <td class="num">5 995</td>
               <td class="num good">+53.5%</td>
+              <td class="num weak">+15.1%</td>
               <td class="num">+404k</td>
-              <td class="num">+520k</td>
+              <td class="num">+114k</td>
               <td class="num">755k</td>
             </tr><tr>
               <td>BASE</td>
@@ -602,8 +980,9 @@
               <td class="num">6 120 €</td>
               <td class="num">5 679</td>
               <td class="num good">+62.0%</td>
+              <td class="num ok">+21.5%</td>
               <td class="num">+634k</td>
-              <td class="num">+798k</td>
+              <td class="num">+220k</td>
               <td class="num">1 022k</td>
             </tr><tr>
               <td>+30%</td>
@@ -611,8 +990,9 @@
               <td class="num">7 956 €</td>
               <td class="num">5 508</td>
               <td class="num good">+67.0%</td>
+              <td class="num ok">+25.3%</td>
               <td class="num">+864k</td>
-              <td class="num">+1 076k</td>
+              <td class="num">+326k</td>
               <td class="num">1 289k</td>
             </tr><tr>
               <td>+50%</td>
@@ -620,9 +1000,146 @@
               <td class="num">9 180 €</td>
               <td class="num">5 433</td>
               <td class="num good">+69.3%</td>
+              <td class="num ok">+27.0%</td>
               <td class="num">+1 017k</td>
-              <td class="num">+1 261k</td>
+              <td class="num">+396k</td>
               <td class="num">1 467k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="blaster_y">
+          <header>
+            <div>
+              <span class="tag">Фильтр</span>
+              <h3>BLASTER Y 12×2/12</h3>
+              <p class="lead">В инвойсе и на сайте Digitronic; в присланных скринах не было.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>4.50</b> (инвойс AutoChill) · полка <b>1 250 ₽</b></div>
+              <span class="pill good">выгодно vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">550</td>
+              <td class="num">2 475 €</td>
+              <td class="num">888</td>
+              <td class="num good">+40.8%</td>
+              <td class="num weak">+5.6%</td>
+              <td class="num">+199k</td>
+              <td class="num">+28k</td>
+              <td class="num">488k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">770</td>
+              <td class="num">3 465 €</td>
+              <td class="num">820</td>
+              <td class="num good">+52.4%</td>
+              <td class="num weak">+14.4%</td>
+              <td class="num">+331k</td>
+              <td class="num">+91k</td>
+              <td class="num">632k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">1 100</td>
+              <td class="num">4 950 €</td>
+              <td class="num">772</td>
+              <td class="num good">+62.0%</td>
+              <td class="num ok">+21.6%</td>
+              <td class="num">+526k</td>
+              <td class="num">+183k</td>
+              <td class="num">849k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">1 430</td>
+              <td class="num">6 435 €</td>
+              <td class="num">744</td>
+              <td class="num good">+68.1%</td>
+              <td class="num ok">+26.1%</td>
+              <td class="num">+724k</td>
+              <td class="num">+278k</td>
+              <td class="num">1 064k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">1 650</td>
+              <td class="num">7 425 €</td>
+              <td class="num">731</td>
+              <td class="num good">+70.9%</td>
+              <td class="num ok">+28.3%</td>
+              <td class="num">+856k</td>
+              <td class="num">+341k</td>
+              <td class="num">1 207k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="mp48_obd">
+          <header>
+            <div>
+              <span class="tag">Электроника</span>
+              <h3>MP48 OBD 4 цил.</h3>
+              <p class="lead">Скрин. PL-прокси Jacuś MP48 OBD. Дороже обычного MP48.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>74.09</b> (PL-прокси) · полка <b>18 200 ₽</b></div>
+              <span class="pill good">выгодно vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">30</td>
+              <td class="num">2 223 €</td>
+              <td class="num">14 015</td>
+              <td class="num ok">+29.9%</td>
+              <td class="num bad">-2.6%</td>
+              <td class="num">+126k</td>
+              <td class="num">-11k</td>
+              <td class="num">420k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">42</td>
+              <td class="num">3 112 €</td>
+              <td class="num">12 773</td>
+              <td class="num good">+42.5%</td>
+              <td class="num weak">+6.9%</td>
+              <td class="num">+228k</td>
+              <td class="num">+37k</td>
+              <td class="num">536k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">60</td>
+              <td class="num">4 445 €</td>
+              <td class="num">11 883</td>
+              <td class="num good">+53.2%</td>
+              <td class="num weak">+14.9%</td>
+              <td class="num">+379k</td>
+              <td class="num">+106k</td>
+              <td class="num">713k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">78</td>
+              <td class="num">5 779 €</td>
+              <td class="num">11 372</td>
+              <td class="num good">+60.0%</td>
+              <td class="num ok">+20.0%</td>
+              <td class="num">+533k</td>
+              <td class="num">+178k</td>
+              <td class="num">887k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">90</td>
+              <td class="num">6 668 €</td>
+              <td class="num">11 145</td>
+              <td class="num good">+63.3%</td>
+              <td class="num ok">+22.5%</td>
+              <td class="num">+635k</td>
+              <td class="num">+225k</td>
+              <td class="num">1 003k</td>
             </tr></tbody>
           </table>
         </article>
@@ -631,23 +1148,25 @@
             <div>
               <span class="tag">Редуктор</span>
               <h3>AT09 Nordic</h3>
-              <p class="lead">До ~170 л.с. Полка Digitronic 7 000 ₽ (скрин 01.10). · в инвойсе, на полке Digitronic</p>
+              <p class="lead">Скрин + инвойс AutoChill 26€. До ~170 л.с.</p>
             </div>
             <div class="right">
-              <div>инвойс <b>26.00 €</b> · полка <b>7 000 ₽</b></div>
-              <span class="pill good">выгодно BASE</span>
+              <div>€ <b>26.00</b> (инвойс AutoChill) · полка <b>7 000 ₽</b></div>
+              <span class="pill good">выгодно vs полка</span>
             </div>
           </header>
           <table>
-            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
             <tbody><tr>
               <td>−50%</td>
               <td class="num">100</td>
               <td class="num">2 600 €</td>
               <td class="num">5 214</td>
               <td class="num ok">+34.2%</td>
+              <td class="num weak">+0.7%</td>
               <td class="num">+179k</td>
-              <td class="num">+253k</td>
+              <td class="num">+4k</td>
               <td class="num">521k</td>
             </tr><tr>
               <td>−30%</td>
@@ -655,8 +1174,9 @@
               <td class="num">3 640 €</td>
               <td class="num">4 842</td>
               <td class="num good">+44.6%</td>
+              <td class="num weak">+8.4%</td>
               <td class="num">+302k</td>
-              <td class="num">+404k</td>
+              <td class="num">+57k</td>
               <td class="num">678k</td>
             </tr><tr>
               <td>BASE</td>
@@ -664,8 +1184,9 @@
               <td class="num">5 200 €</td>
               <td class="num">4 575</td>
               <td class="num good">+53.0%</td>
+              <td class="num weak">+14.8%</td>
               <td class="num">+485k</td>
-              <td class="num">+630k</td>
+              <td class="num">+135k</td>
               <td class="num">915k</td>
             </tr><tr>
               <td>+30%</td>
@@ -673,8 +1194,9 @@
               <td class="num">6 760 €</td>
               <td class="num">4 422</td>
               <td class="num good">+58.3%</td>
+              <td class="num weak">+18.7%</td>
               <td class="num">+670k</td>
-              <td class="num">+857k</td>
+              <td class="num">+215k</td>
               <td class="num">1 150k</td>
             </tr><tr>
               <td>+50%</td>
@@ -682,9 +1204,78 @@
               <td class="num">7 800 €</td>
               <td class="num">4 353</td>
               <td class="num good">+60.8%</td>
+              <td class="num ok">+20.6%</td>
               <td class="num">+794k</td>
-              <td class="num">+1 009k</td>
+              <td class="num">+269k</td>
               <td class="num">1 306k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="mp48">
+          <header>
+            <div>
+              <span class="tag">Электроника</span>
+              <h3>MP48 4 цил.</h3>
+              <p class="lead">Скрин. PL-прокси Jacuś MP48. В наличии на Digitronic.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>65.09</b> (PL-прокси) · полка <b>15 600 ₽</b></div>
+              <span class="pill good">выгодно vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">35</td>
+              <td class="num">2 278 €</td>
+              <td class="num">12 271</td>
+              <td class="num ok">+27.1%</td>
+              <td class="num bad">-4.7%</td>
+              <td class="num">+117k</td>
+              <td class="num">-20k</td>
+              <td class="num">429k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">49</td>
+              <td class="num">3 189 €</td>
+              <td class="num">11 207</td>
+              <td class="num ok">+39.2%</td>
+              <td class="num weak">+4.4%</td>
+              <td class="num">+215k</td>
+              <td class="num">+24k</td>
+              <td class="num">549k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">70</td>
+              <td class="num">4 556 €</td>
+              <td class="num">10 444</td>
+              <td class="num good">+49.4%</td>
+              <td class="num weak">+12.0%</td>
+              <td class="num">+361k</td>
+              <td class="num">+88k</td>
+              <td class="num">731k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">91</td>
+              <td class="num">5 923 €</td>
+              <td class="num">10 006</td>
+              <td class="num good">+55.9%</td>
+              <td class="num weak">+16.9%</td>
+              <td class="num">+509k</td>
+              <td class="num">+154k</td>
+              <td class="num">911k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">105</td>
+              <td class="num">6 834 €</td>
+              <td class="num">9 811</td>
+              <td class="num good">+59.0%</td>
+              <td class="num weak">+19.2%</td>
+              <td class="num">+608k</td>
+              <td class="num">+198k</td>
+              <td class="num">1 030k</td>
             </tr></tbody>
           </table>
         </article>
@@ -693,23 +1284,25 @@
             <div>
               <span class="tag">Фильтр</span>
               <h3>BLASTER 12×12</h3>
-              <p class="lead">Расходник. В инвойсе и на полке. · в инвойсе, на полке Digitronic</p>
+              <p class="lead">Скрин + инвойс 3.50€.</p>
             </div>
             <div class="right">
-              <div>инвойс <b>3.50 €</b> · полка <b>880 ₽</b></div>
-              <span class="pill good">выгодно BASE</span>
+              <div>€ <b>3.50</b> (инвойс AutoChill) · полка <b>880 ₽</b></div>
+              <span class="pill good">выгодно vs полка</span>
             </div>
           </header>
           <table>
-            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
             <tbody><tr>
               <td>−50%</td>
               <td class="num">700</td>
               <td class="num">2 450 €</td>
               <td class="num">698</td>
               <td class="num ok">+26.0%</td>
+              <td class="num bad">-5.5%</td>
               <td class="num">+127k</td>
-              <td class="num">+195k</td>
+              <td class="num">-27k</td>
               <td class="num">489k</td>
             </tr><tr>
               <td>−30%</td>
@@ -717,8 +1310,9 @@
               <td class="num">3 430 €</td>
               <td class="num">645</td>
               <td class="num ok">+36.4%</td>
+              <td class="num weak">+2.3%</td>
               <td class="num">+230k</td>
-              <td class="num">+324k</td>
+              <td class="num">+15k</td>
               <td class="num">632k</td>
             </tr><tr>
               <td>BASE</td>
@@ -726,8 +1320,9 @@
               <td class="num">4 900 €</td>
               <td class="num">607</td>
               <td class="num good">+45.0%</td>
+              <td class="num weak">+8.8%</td>
               <td class="num">+382k</td>
-              <td class="num">+515k</td>
+              <td class="num">+74k</td>
               <td class="num">850k</td>
             </tr><tr>
               <td>+30%</td>
@@ -735,8 +1330,9 @@
               <td class="num">6 370 €</td>
               <td class="num">585</td>
               <td class="num good">+50.4%</td>
+              <td class="num weak">+12.8%</td>
               <td class="num">+537k</td>
-              <td class="num">+709k</td>
+              <td class="num">+137k</td>
               <td class="num">1 065k</td>
             </tr><tr>
               <td>+50%</td>
@@ -744,8 +1340,9 @@
               <td class="num">7 350 €</td>
               <td class="num">575</td>
               <td class="num good">+53.0%</td>
+              <td class="num weak">+14.7%</td>
               <td class="num">+640k</td>
-              <td class="num">+837k</td>
+              <td class="num">+178k</td>
               <td class="num">1 208k</td>
             </tr></tbody>
           </table>
@@ -755,23 +1352,25 @@
             <div>
               <span class="tag">Фильтр</span>
               <h3>FLS 12×12</h3>
-              <p class="lead">Ходовой дешёвый расходник. Фиксы бьют по штуке на малых qty. · в инвойсе, на полке Digitronic</p>
+              <p class="lead">Скрин + инвойс 0.70€. Ходовой расходник.</p>
             </div>
             <div class="right">
-              <div>инвойс <b>0.70 €</b> · полка <b>250 ₽</b></div>
-              <span class="pill ok">норм BASE</span>
+              <div>€ <b>0.70</b> (инвойс AutoChill) · полка <b>250 ₽</b></div>
+              <span class="pill ok">норм vs полка</span>
             </div>
           </header>
           <table>
-            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
             <tbody><tr>
               <td>−50%</td>
               <td class="num">1 250</td>
               <td class="num">875 €</td>
               <td class="num">235</td>
               <td class="num weak">+6.6%</td>
+              <td class="num bad">-19.9%</td>
               <td class="num">+19k</td>
-              <td class="num">+52k</td>
+              <td class="num">-58k</td>
               <td class="num">293k</td>
             </tr><tr>
               <td>−30%</td>
@@ -779,8 +1378,9 @@
               <td class="num">1 225 €</td>
               <td class="num">205</td>
               <td class="num ok">+21.9%</td>
+              <td class="num bad">-8.3%</td>
               <td class="num">+79k</td>
-              <td class="num">+124k</td>
+              <td class="num">-30k</td>
               <td class="num">359k</td>
             </tr><tr>
               <td>BASE</td>
@@ -788,8 +1388,9 @@
               <td class="num">1 750 €</td>
               <td class="num">183</td>
               <td class="num ok">+36.3%</td>
+              <td class="num weak">+2.5%</td>
               <td class="num">+166k</td>
-              <td class="num">+229k</td>
+              <td class="num">+11k</td>
               <td class="num">459k</td>
             </tr><tr>
               <td>+30%</td>
@@ -797,8 +1398,9 @@
               <td class="num">2 275 €</td>
               <td class="num">171</td>
               <td class="num good">+45.9%</td>
+              <td class="num weak">+9.7%</td>
               <td class="num">+256k</td>
-              <td class="num">+336k</td>
+              <td class="num">+54k</td>
               <td class="num">557k</td>
             </tr><tr>
               <td>+50%</td>
@@ -806,9 +1408,146 @@
               <td class="num">2 625 €</td>
               <td class="num">166</td>
               <td class="num good">+50.6%</td>
+              <td class="num weak">+13.2%</td>
               <td class="num">+315k</td>
-              <td class="num">+407k</td>
+              <td class="num">+82k</td>
               <td class="num">623k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="mp32">
+          <header>
+            <div>
+              <span class="tag">Электроника</span>
+              <h3>MP32 PT-MAP 4 цил.</h3>
+              <p class="lead">Скрин. PL-прокси ZAMEL MP32. Ходовой комплект 4 цил.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>62.94</b> (PL-прокси) · полка <b>13 200 ₽</b></div>
+              <span class="pill ok">норм vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">40</td>
+              <td class="num">2 518 €</td>
+              <td class="num">11 515</td>
+              <td class="num weak">+14.6%</td>
+              <td class="num bad">-14.0%</td>
+              <td class="num">+67k</td>
+              <td class="num">-65k</td>
+              <td class="num">461k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">56</td>
+              <td class="num">3 525 €</td>
+              <td class="num">10 584</td>
+              <td class="num ok">+24.7%</td>
+              <td class="num bad">-6.5%</td>
+              <td class="num">+146k</td>
+              <td class="num">-38k</td>
+              <td class="num">593k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">80</td>
+              <td class="num">5 035 €</td>
+              <td class="num">9 917</td>
+              <td class="num ok">+33.1%</td>
+              <td class="num bad">-0.2%</td>
+              <td class="num">+263k</td>
+              <td class="num">-1k</td>
+              <td class="num">793k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">104</td>
+              <td class="num">6 546 €</td>
+              <td class="num">9 533</td>
+              <td class="num ok">+38.5%</td>
+              <td class="num weak">+3.8%</td>
+              <td class="num">+381k</td>
+              <td class="num">+38k</td>
+              <td class="num">991k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">120</td>
+              <td class="num">7 553 €</td>
+              <td class="num">9 363</td>
+              <td class="num good">+41.0%</td>
+              <td class="num weak">+5.7%</td>
+              <td class="num">+460k</td>
+              <td class="num">+64k</td>
+              <td class="num">1 124k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="mv_315">
+          <header>
+            <div>
+              <span class="tag">Мультиклапан</span>
+              <h3>AT02 Sprint A 315-30°</h3>
+              <p class="lead">Скрин. PL-прокси по AT02 Sprint. Класс A.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>22.93</b> (PL-прокси) · полка <b>5 550 ₽</b></div>
+              <span class="pill ok">норм vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">50</td>
+              <td class="num">1 146 €</td>
+              <td class="num">5 861</td>
+              <td class="num bad">-5.3%</td>
+              <td class="num bad">-29.0%</td>
+              <td class="num">-16k</td>
+              <td class="num">-85k</td>
+              <td class="num">293k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">70</td>
+              <td class="num">1 605 €</td>
+              <td class="num">5 123</td>
+              <td class="num weak">+8.3%</td>
+              <td class="num bad">-18.8%</td>
+              <td class="num">+30k</td>
+              <td class="num">-67k</td>
+              <td class="num">359k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">100</td>
+              <td class="num">2 293 €</td>
+              <td class="num">4 581</td>
+              <td class="num ok">+21.1%</td>
+              <td class="num bad">-9.2%</td>
+              <td class="num">+97k</td>
+              <td class="num">-42k</td>
+              <td class="num">458k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">130</td>
+              <td class="num">2 981 €</td>
+              <td class="num">4 281</td>
+              <td class="num ok">+29.7%</td>
+              <td class="num bad">-2.8%</td>
+              <td class="num">+165k</td>
+              <td class="num">-15k</td>
+              <td class="num">556k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">150</td>
+              <td class="num">3 440 €</td>
+              <td class="num">4 147</td>
+              <td class="num ok">+33.8%</td>
+              <td class="num weak">+0.4%</td>
+              <td class="num">+210k</td>
+              <td class="num">+2k</td>
+              <td class="num">622k</td>
             </tr></tbody>
           </table>
         </article>
@@ -817,23 +1556,25 @@
             <div>
               <span class="tag">Фильтр</span>
               <h3>FLY 12 / 2×12</h3>
-              <p class="lead">Неразборный. На dedicated-рейсе маржа тонкая. · в инвойсе, на полке Digitronic</p>
+              <p class="lead">В инвойсе. Dedicated слабо; в миксе без него.</p>
             </div>
             <div class="right">
-              <div>инвойс <b>2.00 €</b> · полка <b>440 ₽</b></div>
-              <span class="pill weak">слабо BASE</span>
+              <div>€ <b>2.00</b> (инвойс AutoChill) · полка <b>440 ₽</b></div>
+              <span class="pill weak">слабо vs полка</span>
             </div>
           </header>
           <table>
-            <thead><tr><th>Объём</th><th>шт</th><th>инвойс</th><th>земля ₽</th><th>маржа кэш</th><th>₽ кэш</th><th>₽ ОСНО</th><th>касса</th></tr></thead>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
             <tbody><tr>
               <td>−50%</td>
               <td class="num">1 000</td>
               <td class="num">2 000 €</td>
               <td class="num">431</td>
               <td class="num weak">+2.0%</td>
+              <td class="num bad">-23.5%</td>
               <td class="num">+9k</td>
-              <td class="num">+67k</td>
+              <td class="num">-101k</td>
               <td class="num">431k</td>
             </tr><tr>
               <td>−30%</td>
@@ -841,8 +1582,9 @@
               <td class="num">2 800 €</td>
               <td class="num">394</td>
               <td class="num weak">+11.7%</td>
+              <td class="num bad">-16.2%</td>
               <td class="num">+64k</td>
-              <td class="num">+144k</td>
+              <td class="num">-90k</td>
               <td class="num">552k</td>
             </tr><tr>
               <td>BASE</td>
@@ -850,8 +1592,9 @@
               <td class="num">4 000 €</td>
               <td class="num">367</td>
               <td class="num weak">+19.8%</td>
+              <td class="num bad">-10.1%</td>
               <td class="num">+146k</td>
-              <td class="num">+258k</td>
+              <td class="num">-74k</td>
               <td class="num">734k</td>
             </tr><tr>
               <td>+30%</td>
@@ -859,8 +1602,9 @@
               <td class="num">5 200 €</td>
               <td class="num">352</td>
               <td class="num ok">+25.0%</td>
+              <td class="num bad">-6.2%</td>
               <td class="num">+229k</td>
-              <td class="num">+374k</td>
+              <td class="num">-57k</td>
               <td class="num">915k</td>
             </tr><tr>
               <td>+50%</td>
@@ -868,28 +1612,368 @@
               <td class="num">6 000 €</td>
               <td class="num">345</td>
               <td class="num ok">+27.5%</td>
+              <td class="num bad">-4.4%</td>
               <td class="num">+285k</td>
-              <td class="num">+451k</td>
+              <td class="num">-45k</td>
               <td class="num">1 035k</td>
             </tr></tbody>
           </table>
         </article>
+        <article class="card" id="aeb_rail">
+          <header>
+            <div>
+              <span class="tag">Рейка</span>
+              <h3>AEB полимер 4 цил. 1,9 Ом</h3>
+              <p class="lead">Скрин. PL-прокси оценка — уточнить у AutoChill.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>39.81</b> (PL-прокси) · полка <b>8 000 ₽</b></div>
+              <span class="pill weak">слабо vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">40</td>
+              <td class="num">1 592 €</td>
+              <td class="num">8 385</td>
+              <td class="num bad">-4.6%</td>
+              <td class="num bad">-28.4%</td>
+              <td class="num">-15k</td>
+              <td class="num">-95k</td>
+              <td class="num">335k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">56</td>
+              <td class="num">2 229 €</td>
+              <td class="num">7 484</td>
+              <td class="num weak">+6.9%</td>
+              <td class="num bad">-19.8%</td>
+              <td class="num">+29k</td>
+              <td class="num">-83k</td>
+              <td class="num">419k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">80</td>
+              <td class="num">3 185 €</td>
+              <td class="num">6 786</td>
+              <td class="num weak">+17.9%</td>
+              <td class="num bad">-11.6%</td>
+              <td class="num">+97k</td>
+              <td class="num">-63k</td>
+              <td class="num">543k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">104</td>
+              <td class="num">4 140 €</td>
+              <td class="num">6 410</td>
+              <td class="num ok">+24.8%</td>
+              <td class="num bad">-6.4%</td>
+              <td class="num">+165k</td>
+              <td class="num">-43k</td>
+              <td class="num">667k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">120</td>
+              <td class="num">4 777 €</td>
+              <td class="num">6 263</td>
+              <td class="num ok">+27.7%</td>
+              <td class="num bad">-4.2%</td>
+              <td class="num">+208k</td>
+              <td class="num">-32k</td>
+              <td class="num">752k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="tp6">
+          <header>
+            <div>
+              <span class="tag">Трубка</span>
+              <h3>Трубка 6×1 мм · 48 м IT</h3>
+              <p class="lead">Скрин. Бухта 48 м. НДС полки 0%. PL-прокси оценка.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>48.66</b> (PL-прокси) · полка <b>11 300 ₽</b></div>
+              <span class="pill weak">слабо vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">20</td>
+              <td class="num">973 €</td>
+              <td class="num">14 219</td>
+              <td class="num bad">-20.5%</td>
+              <td class="num bad">-40.4%</td>
+              <td class="num">-58k</td>
+              <td class="num">-115k</td>
+              <td class="num">284k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">28</td>
+              <td class="num">1 362 €</td>
+              <td class="num">12 374</td>
+              <td class="num bad">-8.7%</td>
+              <td class="num bad">-31.5%</td>
+              <td class="num">-30k</td>
+              <td class="num">-109k</td>
+              <td class="num">346k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">40</td>
+              <td class="num">1 946 €</td>
+              <td class="num">11 021</td>
+              <td class="num weak">+2.5%</td>
+              <td class="num bad">-23.1%</td>
+              <td class="num">+11k</td>
+              <td class="num">-102k</td>
+              <td class="num">441k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">52</td>
+              <td class="num">2 530 €</td>
+              <td class="num">10 269</td>
+              <td class="num weak">+10.0%</td>
+              <td class="num bad">-17.5%</td>
+              <td class="num">+54k</td>
+              <td class="num">-93k</td>
+              <td class="num">534k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">60</td>
+              <td class="num">2 920 €</td>
+              <td class="num">9 935</td>
+              <td class="num weak">+13.7%</td>
+              <td class="num bad">-14.7%</td>
+              <td class="num">+82k</td>
+              <td class="num">-88k</td>
+              <td class="num">596k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="type33">
+          <header>
+            <div>
+              <span class="tag">Рейка</span>
+              <h3>Тип 33 · 4 цил. 2 Ом BFC</h3>
+              <p class="lead">Скрин. PL-прокси оценка.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>28.75</b> (PL-прокси) · полка <b>5 550 ₽</b></div>
+              <span class="pill weak">слабо vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">40</td>
+              <td class="num">1 150 €</td>
+              <td class="num">7 098</td>
+              <td class="num bad">-21.8%</td>
+              <td class="num bad">-41.4%</td>
+              <td class="num">-62k</td>
+              <td class="num">-117k</td>
+              <td class="num">284k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">56</td>
+              <td class="num">1 610 €</td>
+              <td class="num">6 176</td>
+              <td class="num bad">-10.1%</td>
+              <td class="num bad">-32.6%</td>
+              <td class="num">-35k</td>
+              <td class="num">-113k</td>
+              <td class="num">346k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">80</td>
+              <td class="num">2 300 €</td>
+              <td class="num">5 499</td>
+              <td class="num weak">+0.9%</td>
+              <td class="num bad">-24.3%</td>
+              <td class="num">+4k</td>
+              <td class="num">-107k</td>
+              <td class="num">440k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">104</td>
+              <td class="num">2 990 €</td>
+              <td class="num">5 123</td>
+              <td class="num weak">+8.3%</td>
+              <td class="num bad">-18.8%</td>
+              <td class="num">+44k</td>
+              <td class="num">-100k</td>
+              <td class="num">533k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">120</td>
+              <td class="num">3 450 €</td>
+              <td class="num">4 956</td>
+              <td class="num weak">+12.0%</td>
+              <td class="num bad">-16.0%</td>
+              <td class="num">+71k</td>
+              <td class="num">-95k</td>
+              <td class="num">595k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="tp8">
+          <header>
+            <div>
+              <span class="tag">Трубка</span>
+              <h3>Трубка 8×1 мм · 48 м IT</h3>
+              <p class="lead">Скрин. Бухта 48 м. PL-прокси оценка.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>59.72</b> (PL-прокси) · полка <b>13 900 ₽</b></div>
+              <span class="pill bad">в минус vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">15</td>
+              <td class="num">896 €</td>
+              <td class="num">18 466</td>
+              <td class="num bad">-24.7%</td>
+              <td class="num bad">-43.5%</td>
+              <td class="num">-68k</td>
+              <td class="num">-121k</td>
+              <td class="num">277k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">21</td>
+              <td class="num">1 254 €</td>
+              <td class="num">16 006</td>
+              <td class="num bad">-13.2%</td>
+              <td class="num bad">-34.9%</td>
+              <td class="num">-44k</td>
+              <td class="num">-117k</td>
+              <td class="num">336k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">30</td>
+              <td class="num">1 792 €</td>
+              <td class="num">14 202</td>
+              <td class="num bad">-2.1%</td>
+              <td class="num bad">-26.6%</td>
+              <td class="num">-9k</td>
+              <td class="num">-113k</td>
+              <td class="num">426k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">39</td>
+              <td class="num">2 329 €</td>
+              <td class="num">13 199</td>
+              <td class="num weak">+5.3%</td>
+              <td class="num bad">-21.0%</td>
+              <td class="num">+27k</td>
+              <td class="num">-108k</td>
+              <td class="num">515k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">45</td>
+              <td class="num">2 687 €</td>
+              <td class="num">12 754</td>
+              <td class="num weak">+9.0%</td>
+              <td class="num bad">-18.3%</td>
+              <td class="num">+52k</td>
+              <td class="num">-105k</td>
+              <td class="num">574k</td>
+            </tr></tbody>
+          </table>
+        </article>
+        <article class="card" id="mv_vzu">
+          <header>
+            <div>
+              <span class="tag">Мультиклапан</span>
+              <h3>Sprint+ВЗУ A 220/225-30°</h3>
+              <p class="lead">Скрин. С ВЗУ. Полка дешевле 315 — проверить комплектацию.</p>
+            </div>
+            <div class="right">
+              <div>€ <b>25.80</b> (PL-прокси) · полка <b>4 150 ₽</b></div>
+              <span class="pill bad">в минус vs полка</span>
+            </div>
+          </header>
+          <table>
+            <thead><tr><th>Объём</th><th>шт</th><th>закуп</th><th>земля</th>
+            <th>vs полка</th><th>vs рынок−25%</th><th>₽ полка</th><th>₽ рынок</th><th>касса</th></tr></thead>
+            <tbody><tr>
+              <td>−50%</td>
+              <td class="num">50</td>
+              <td class="num">1 290 €</td>
+              <td class="num">6 296</td>
+              <td class="num bad">-34.1%</td>
+              <td class="num bad">-50.6%</td>
+              <td class="num">-107k</td>
+              <td class="num">-159k</td>
+              <td class="num">315k</td>
+            </tr><tr>
+              <td>−30%</td>
+              <td class="num">70</td>
+              <td class="num">1 806 €</td>
+              <td class="num">5 576</td>
+              <td class="num bad">-25.6%</td>
+              <td class="num bad">-44.2%</td>
+              <td class="num">-100k</td>
+              <td class="num">-172k</td>
+              <td class="num">390k</td>
+            </tr><tr>
+              <td>BASE</td>
+              <td class="num">100</td>
+              <td class="num">2 580 €</td>
+              <td class="num">5 017</td>
+              <td class="num bad">-17.3%</td>
+              <td class="num bad">-38.0%</td>
+              <td class="num">-87k</td>
+              <td class="num">-190k</td>
+              <td class="num">502k</td>
+            </tr><tr>
+              <td>+30%</td>
+              <td class="num">130</td>
+              <td class="num">3 354 €</td>
+              <td class="num">4 716</td>
+              <td class="num bad">-12.0%</td>
+              <td class="num bad">-34.0%</td>
+              <td class="num">-74k</td>
+              <td class="num">-209k</td>
+              <td class="num">613k</td>
+            </tr><tr>
+              <td>+50%</td>
+              <td class="num">150</td>
+              <td class="num">3 870 €</td>
+              <td class="num">4 599</td>
+              <td class="num bad">-9.8%</td>
+              <td class="num bad">-32.3%</td>
+              <td class="num">-67k</td>
+              <td class="num">-223k</td>
+              <td class="num">690k</td>
+            </tr></tbody>
+          </table>
+        </article>
 
-  <h2>5. Как читать цифры</h2>
+  <h2>7. Как читать</h2>
   <div class="card">
     <table>
       <tbody>
-        <tr><td>Товар</td><td class="muted">оплата из аванса, один раз</td></tr>
-        <tr><td>Партнёр</td><td class="muted">выкуп 750 € (или 5% если инвойс ≥15k €) + фрахт 162,5+4,75×кг €</td></tr>
-        <tr><td>Таможня</td><td class="muted">пошлина 5% от (товар+фрахт) + НДС 22% + брокер 25k + ФТС + Казань 12k</td></tr>
-        <tr><td>Касса / капитал</td><td class="muted">сумма всего выше = landed. Лишних 100% товара на счету нет</td></tr>
-        <tr><td>Кэш vs ОСНО</td><td class="muted">кэш сравнивает полку с землёй включая ввозной НДС; ОСНО — если НДС к вычету</td></tr>
+        <tr><td>Инвойс AutoChill</td><td class="muted">точные €: редукторы + BLASTER/FLS/Y/FLY</td></tr>
+        <tr><td>PL-прокси</td><td class="muted">польский опт нетто → EUR×0,94 (калибровка Nordic). Уточнить у AutoChill перед заказом</td></tr>
+        <tr><td>Рынок −25%</td><td class="muted">аудио 27.09: берут на 20–30% дешевле полки Digitronic</td></tr>
+        <tr><td>Касса</td><td class="muted">landed один раз: товар + выкуп + фрахт + пошлина + НДС 22% + фиксы</td></tr>
       </tbody>
     </table>
   </div>
 
   <footer>
-    Пересчёт `01.10.2026` · `python3 build.py` · данные в data.json · этот файл index.html
+    Пересчёт `01.10.2026` · `python3 build.py` · data.json · index.html · аудио 25.09 + 27.09
   </footer>
 </div>
 </body>
