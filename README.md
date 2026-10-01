@@ -1,5 +1,29 @@
-# GBO PL→RU
+# GBO поставка
 
-Инвест-расчёт: фильтры и редукторы (AutoChill → Казань).
+Каталог со **скринов Digitronic** + аудио установщиков (25.09 / 27.09) + сверка с инвойсом AutoChill и польским оптом.
 
-Открой `index.html` или включи GitHub Pages (Settings → Pages → Deploy from branch `main` / root).
+## Открыть отчёт
+
+После пуша:
+- https://raw.githack.com/GithubRavilS/gbo/cursor/gbo-postavka-recalc-bddf/index.html
+
+Локально (Mac):
+- `/Users/ravilcrypto/Documents/Cursor/gbo/index.html`
+
+## Файлы
+
+- `index.html` — полный расклад
+- `VARIANTS.md` — краткая таблица
+- `FIELD_NOTES.md` — транскрипты WhatsApp
+- `build.py` / `data.json` — пересчёт
+
+```bash
+python3 build.py
+```
+
+## Важно
+
+- Касса = landed **один раз** (без двойной заморозки).
+- Точные € — только позиции из инвойса AutoChill (редукторы + фильтры).
+- Электроника / мультиклапаны / рейки / трубки — **PL-прокси**, уточнить у AutoChill.
+- Рынок установщиков ≈ полка Digitronic **−20…30%**.
