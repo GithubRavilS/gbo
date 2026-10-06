@@ -5,14 +5,16 @@
 ## Открыть отчёт
 
 После пуша:
-- https://raw.githack.com/GithubRavilS/gbo/cursor/gbo-postavka-recalc-bddf/index.html
+- https://raw.githack.com/GithubRavilS/gbo/cursor/gbo-spec-order-0e4a/index.html
 
 Локально (Mac):
 - `/Users/ravilcrypto/Documents/Cursor/gbo/index.html`
 
 ## Файлы
 
-- `SPEC.md` — все 20 позиций, что в инвойсе, какой заказ просить сейчас и текст контакту в Польше
+- `ORDER.md` — заказ из инвойса, математика без заморозки, текст поставщику
+- `zapros-assortiment.xlsx` — позиции, по которым её цены ещё нет
+- `SPEC.md` — все 20 позиций и что из них было в инвойсе
 - `index.html` — полный расклад
 - `VARIANTS.md` — краткая таблица
 - `FIELD_NOTES.md` — транскрипты WhatsApp
