@@ -247,95 +247,93 @@
 <div class="wrap">
 
   <header class="hero">
-    <div class="eyebrow"><i></i> GBO · ПВ Бридж · Digitronic → Казань · октябрь 2026</div>
+    <div class="eyebrow"><i></i> GBO · AutoChill · ПВ Бридж · Digitronic · октябрь 2026</div>
     <h1>Первый пробный заказ</h1>
     <p class="lead">
-      Прайсы Digitronic и тарифы <b>ПВ Бридж</b> из Telegram собраны. Продажа установщикам на <b>20% ниже</b> полки.
-      Курс ЦБ <span class="mono">90,2429 ₽/€</span>. Сразу партнёру в ₽ — <b>762 823</b>; таможня РФ отдельно.
+      Цепочка: <b>РФ → ПВ Бридж → AutoChill (PL) → Digitronic с VAT 23%</b> → Москва → таможня РФ.
+      Продажа установщикам <b>−20%</b> от полки. Курс <span class="mono">90,2429 ₽/€</span>.
+      Пик заморозки ≤ 1 млн; после возврата PL VAT экономика ниже.
     </p>
     <div class="kpis">
-      <div class="kpi"><span>Вложено</span><b>995 082 ₽</b></div>
-      <div class="kpi"><span>Выручка −20%</span><b>1 418 320 ₽</b></div>
-      <div class="kpi good"><span>Заработано</span><b>+423 238 ₽</b></div>
-      <div class="kpi good"><span>К вложению</span><b>+42,5%</b></div>
+      <div class="kpi"><span>Пик заморозки</span><b>995 222 ₽</b></div>
+      <div class="kpi"><span>Экономика (−PL VAT)</span><b>883 410 ₽</b></div>
+      <div class="kpi"><span>Выручка −20%</span><b>1 203 280 ₽</b></div>
+      <div class="kpi good"><span>Заработано</span><b>+319 870 ₽</b></div>
     </div>
   </header>
 
-  <h2>0. Откуда цифры · схема оплаты</h2>
+  <h2>0. Последовательность и заморозка</h2>
   <div class="card">
-    <h3>Подтверждено из переписки ПВ Бридж</h3>
-    <p class="sub">Чат Telegram «ПВ Бридж» / Екатерина Беляева · котировка ГБО 24.06.2026 + схема оплаты 21.08. Проформа AutoChill ZO 0374/26 — сверка цен Digitronic.</p>
+    <h3>Да — польская фирма платит Digitronic с НДС</h3>
+    <p class="sub">ПВ Бридж платит не заводу, а вашей AutoChill. AutoChill закрывает Digitronic по фактуре с VAT 23%. Потом на границе РФ — ещё пошлина и ввозной НДС.</p>
+    <div class="journey">
+      <div class="stage pl">
+        <div class="flag">① РФ → ПВ Бридж</div>
+        <ul>
+          <li><span>В ₽ по курсу ЦБ</span><b>сразу</b></li>
+          <li><span>Брутто Digitronic</span><b>6 626 €</b></li>
+          <li><span>+ выкуп + лог</span><b>750 + 1 350</b></li>
+        </ul>
+        <div class="total"><span>Заморозка ①</span><b>787 460 ₽</b></div>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="stage lv">
+        <div class="flag">② ПВБ → AutoChill → Digitronic</div>
+        <ul>
+          <li><span>ПВБ платит</span><b>AutoChill €</b></li>
+          <li><span>AutoChill платит</span><b>с VAT 23%</b></li>
+          <li><span>Лаг</span><b>1–4 раб. дня</b></li>
+        </ul>
+        <div class="total"><span>На завод</span><b>6 626 €</b></div>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="stage ru">
+        <div class="flag">③ Таможня РФ · Казань</div>
+        <ul>
+          <li><span>Пошлина 5%</span><b>30 398 ₽</b></li>
+          <li><span>НДС ввоз 22%</span><b>140 440 ₽</b></li>
+          <li><span>Брокер + ФТС + Казань</span><b>36 924 ₽</b></li>
+        </ul>
+        <div class="total"><span>Заморозка ③</span><b>207 762 ₽</b></div>
+      </div>
+    </div>
+    <div class="note-box">
+      <div class="note">
+        <strong>Пик = 995 222 ₽</strong>
+        Сразу ПВБ 787k + таможня 208k. Это и есть полная заморозка «здесь», пока товар не продан.
+      </div>
+      <div class="note green">
+        <strong>Потом −111 812 ₽</strong>
+        AutoChill возвращает входной PL VAT → экономика партии 883k. Прибыль считается к экономике: +320k (+36%).
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Откуда цифры</h3>
     <div class="scroll">
       <table>
         <thead>
           <tr><th>Статья</th><th>Цифра</th><th>Источник</th><th>Статус</th></tr>
         </thead>
         <tbody>
-          <tr><td>Нетто Digitronic €</td><td class="num">из прайса</td><td class="muted">Excel Катерины 19–23.10</td><td><span class="pill">ок</span></td></tr>
-          <tr><td>Полка / продажа −20%</td><td class="num">скрины + поле</td><td class="muted">digitronicgas.ru · аудио</td><td><span class="pill">ок</span></td></tr>
-          <tr><td>Курс €/₽</td><td class="num">90,2429</td><td class="muted">ЦБ 24.10.2026</td><td><span class="pill">ок</span></td></tr>
-          <tr><td>Выкуп ПВ Бридж</td><td class="num">750 € (≤15k €)</td><td class="muted">Telegram 24.06 / 21.08</td><td><span class="pill">ок</span></td></tr>
-          <tr><td>Логистика ГБО</td><td class="num">1 350 €</td><td class="muted">Telegram 24.06 · ~1 м³ / 250 кг</td><td><span class="pill">ок</span></td></tr>
-          <tr><td>Оплата сразу в ₽</td><td class="num">курс ЦБ дня</td><td class="muted">₽ → они платят Digitronic за 1–4 дня</td><td><span class="pill">ок</span></td></tr>
-          <tr><td>Брокер / Казань</td><td class="num">20k / 12k ₽</td><td class="muted">брокер из котировки; Казань — оценка</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">Казань TBD</span></td></tr>
-          <tr><td>Пошлина 5% · НДС 22%</td><td class="num">на нас</td><td class="muted">прямой импорт · ставка модели</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">код ТН ВЭД</span></td></tr>
+          <tr><td>Нетто Digitronic</td><td class="num">прайс</td><td class="muted">Катерина 19–23.10</td><td><span class="pill">ок</span></td></tr>
+          <tr><td>VAT PL 23% в брутто</td><td class="num">×1,23</td><td class="muted">внутренняя покупка AutoChill←Digitronic</td><td><span class="pill">ок</span></td></tr>
+          <tr><td>Выкуп / логистика</td><td class="num">750 / 1 350 €</td><td class="muted">Telegram ПВ Бридж 24.06</td><td><span class="pill">ок</span></td></tr>
+          <tr><td>ПВБ платит AutoChill</td><td class="num">схема заказа</td><td class="muted">ваше уточнение · подтвердить у ПВБ</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">запрос</span></td></tr>
+          <tr><td>Пошлина 5% · НДС 22%</td><td class="num">на нас</td><td class="muted">таможня РФ · ставка модели</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">код ТН ВЭД</span></td></tr>
+          <tr><td>Казань 12k</td><td class="num">оценка</td><td class="muted">ПВБ только до Москвы</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">TBD</span></td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <div class="card">
-    <h3>Как платим · схема из переписки</h3>
-    <p class="sub">Сначала ₽ ПВ Бридж → они закрывают инвойс Digitronic в € → фрахт до Москвы → таможня на нас → местный рейс в Казань.</p>
-    <div class="journey">
-      <div class="stage pl">
-        <div class="flag">① Мы → ПВ Бридж</div>
-        <ul>
-          <li><span>Платёж</span><b>в ₽</b></li>
-          <li><span>Товар+выкуп+лог</span><b>8 453 €</b></li>
-          <li><span>Курс ЦБ дня</span><b>90,24</b></li>
-        </ul>
-        <div class="total"><span>Сразу им</span><b>762 823 ₽</b></div>
-      </div>
-      <div class="arrow" aria-hidden="true">→</div>
-      <div class="stage lv">
-        <div class="flag">② Они → Digitronic</div>
-        <ul>
-          <li><span>Оплата инвойса</span><b>в €</b></li>
-          <li><span>Товар нетто</span><b>6 353 €</b></li>
-          <li><span>Лаг</span><b>1–4 раб. дня</b></li>
-        </ul>
-        <div class="total"><span>Европейский инвойс</span><b>6 353 €</b></div>
-      </div>
-      <div class="arrow" aria-hidden="true">→</div>
-      <div class="stage ru">
-        <div class="flag">③ Таможня · Казань</div>
-        <ul>
-          <li><span>Пошлина + НДС</span><b>на нас</b></li>
-          <li><span>Брокер</span><b>~20 000 ₽</b></li>
-          <li><span>МСК → Казань</span><b>~12 000 ₽</b></li>
-        </ul>
-        <div class="total"><span>Россия</span><b>232 259 ₽</b></div>
-      </div>
-    </div>
-    <div class="note-box">
-      <div class="note">
-        <strong>Им сразу не миллион</strong>
-        ПВ Бридж получают 762 823 ₽. Пошлина, ввозной НДС, брокер и Казань — второй контур, ~232k.
-      </div>
-      <div class="note green">
-        <strong>Маржа держится</strong>
-        Все 4 SKU в плюсе к рынку −20%. Перед оплатой — короткое «тариф 1 350 € ещё жив?» (REPLY-LATVIA.md).
-      </div>
-    </div>
-  </div>
-
   <h2>1. Что заказываем · экономика по позициям</h2>
   <div class="card">
-    <h3>Рекомендуемая заявка <span class="pill rec">рекомендуем</span></h3>
+    <h3>Рекомендуемая заявка <span class="pill rec">пик ≤ 1 млн</span></h3>
     <p class="sub">
-      В одном ряду: закупка в Польше → земля в РФ → полка Digitronic → продажа (−20%) → маржа.
-      AT13 123 шт (не 125): при логистике 1 350 € чек ≤ 1 млн. Цены Digitronic — <b>до ноября</b>.
+      AT13 × 102 (не 123): в чек ПВБ входит брутто с VAT 23%, иначе пик 1,13 млн.
+      Земля ниже — после возврата PL VAT. Цены Digitronic фиксировать <b>до ноября</b>.
     </p>
     <div class="scroll">
       <table>
@@ -343,11 +341,11 @@
           <tr>
             <th>Позиция</th>
             <th class="num">Шт</th>
-            <th class="num">Нетто PL, €</th>
-            <th class="num">Закуп PL, ₽</th>
-            <th class="num">Земля РФ, ₽</th>
-            <th class="num">Полка сайта, ₽</th>
-            <th class="num">Продажа −20%, ₽</th>
+            <th class="num">Нетто €</th>
+            <th class="num">Закуп нетто ₽</th>
+            <th class="num">Земля эк. ₽</th>
+            <th class="num">Полка</th>
+            <th class="num">Продажа −20%</th>
             <th class="num">Маржа / шт</th>
             <th class="num">Маржа %</th>
             <th class="num">Итого ₽</th>
@@ -355,225 +353,162 @@
         </thead>
         <tbody>
           <tr>
-            <td class="sku"><b>AT13 XP</b><small>RGDG3990 · редуктор</small></td>
-            <td class="num">123</td>
+            <td class="sku"><b>AT13 XP</b><small>RGDG3990</small></td>
+            <td class="num">102</td>
             <td class="num">46,00</td>
             <td class="num">4 151</td>
-            <td class="num">7 205</td>
+            <td class="num">7 544</td>
             <td class="num">12 800</td>
             <td class="num">10 240</td>
-            <td class="num">+3 035</td>
-            <td class="num"><span class="pill">+42,1%</span></td>
-            <td class="num">+373 297</td>
+            <td class="num">+2 696</td>
+            <td class="num"><span class="pill">+35,7%</span></td>
+            <td class="num">+275 043</td>
           </tr>
           <tr>
-            <td class="sku"><b>BLASTER Y</b><small>12×2/12 · фильтр · до ноября 4,50 €</small></td>
+            <td class="sku"><b>BLASTER Y</b><small>до ноября 4,50 €</small></td>
             <td class="num">50</td>
             <td class="num">4,50</td>
             <td class="num">406</td>
-            <td class="num">705</td>
+            <td class="num">738</td>
             <td class="num">1 250</td>
             <td class="num">1 000</td>
-            <td class="num">+295</td>
-            <td class="num"><span class="pill">+41,9%</span></td>
-            <td class="num">+14 758</td>
+            <td class="num">+262</td>
+            <td class="num"><span class="pill">+35,5%</span></td>
+            <td class="num">+13 102</td>
           </tr>
           <tr>
-            <td class="sku"><b>Тип 33</b><small>33.EVG.13 · рейка 4 цил.</small></td>
+            <td class="sku"><b>Тип 33</b><small>33.EVG.13</small></td>
             <td class="num">20</td>
             <td class="num">20,00</td>
             <td class="num">1 805</td>
-            <td class="num">3 133</td>
+            <td class="num">3 280</td>
             <td class="num">5 550</td>
             <td class="num">4 440</td>
-            <td class="num">+1 307</td>
-            <td class="num"><span class="pill">+41,7%</span></td>
-            <td class="num">+26 147</td>
+            <td class="num">+1 160</td>
+            <td class="num"><span class="pill">+35,4%</span></td>
+            <td class="num">+23 204</td>
           </tr>
           <tr>
-            <td class="sku"><b>FLS 12×12</b><small>FL01S · фильтр расходник</small></td>
+            <td class="sku"><b>FLS 12×12</b><small>FL01S</small></td>
             <td class="num">100</td>
             <td class="num">0,70</td>
             <td class="num">63</td>
-            <td class="num">110</td>
+            <td class="num">115</td>
             <td class="num">250</td>
             <td class="num">200</td>
-            <td class="num">+90</td>
-            <td class="num"><span class="pill">+82,4%</span></td>
-            <td class="num">+9 036</td>
+            <td class="num">+85</td>
+            <td class="num"><span class="pill">+74,2%</span></td>
+            <td class="num">+8 521</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <h2>2. Из чего складывается себестоимость</h2>
+  <h2>2. Полная раскладка чека</h2>
   <div class="card">
-    <h3>Путь денег · тариф ПВ Бридж</h3>
-    <p class="sub">
-      Выкуп 750 € и логистика 1 350 € — из их котировки ГБО (Telegram 24.06).
-      Европейский VAT в нетто не входит. Пошлина и ввозной НДС 22% — на таможне РФ, не в чеке ПВБ.
-    </p>
-
-    <div class="journey">
-      <div class="stage pl">
-        <div class="flag">① Польша · Digitronic</div>
-        <ul>
-          <li><span>Товар нетто</span><b>6 353 €</b></li>
-          <li><span>в рублях</span><b>573 313 ₽</b></li>
-          <li><span>НДС EU</span><b class="muted">нет (экспорт)</b></li>
-          <li><span>Вес партии</span><b>227 кг</b></li>
-        </ul>
-        <div class="total"><span>Закупка</span><b>573 313 ₽</b></div>
-      </div>
-
-      <div class="arrow" aria-hidden="true">→</div>
-
-      <div class="stage lv">
-        <div class="flag">② ПВ Бридж · выкуп + фрахт</div>
-        <ul>
-          <li><span>Выкуп</span><b>750 € · 67 682 ₽</b></li>
-          <li><span>Логистика</span><b>1 350 € · 121 828 ₽</b></li>
-          <li><span>Маршрут</span><b>Белосток → Москва</b></li>
-          <li><span>Объём</span><b>~0,94 м³</b></li>
-        </ul>
-        <div class="total"><span>Чек ПВ Бридж</span><b>762 823 ₽</b></div>
-      </div>
-
-      <div class="arrow" aria-hidden="true">→</div>
-
-      <div class="stage ru">
-        <div class="flag">③ Россия · таможня · Казань</div>
-        <ul>
-          <li><span>Пошлина 5%</span><b>34 757 ₽</b></li>
-          <li><span>НДС ввоз 22%</span><b>160 578 ₽</b></li>
-          <li><span>ФТС + брокер</span><b>24 924 ₽</b></li>
-          <li><span>Москва → Казань</span><b>12 000 ₽</b></li>
-        </ul>
-        <div class="total"><span>Россия всего</span><b>232 259 ₽</b></div>
-      </div>
-    </div>
-
-    <div class="note-box">
-      <div class="note">
-        <strong>Касса = 995 082 ₽</strong>
-        ПВ Бридж 762 823 + Россия 232 259. Себестоимость партии на складе в Казани.
-      </div>
-      <div class="note green">
-        <strong>Продажа 1 418 320 ₽</strong>
-        Установщикам по полке Digitronic минус 20%. Прибыль +423 238 ₽ (+42,5%).
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Полная раскладка чека</h3>
+    <h3>Два контура заморозки</h3>
     <div class="scroll">
       <table>
         <thead>
           <tr><th>Статья</th><th>Где</th><th class="num">€</th><th class="num">₽</th></tr>
         </thead>
         <tbody>
-          <tr><td>Товар нетто Digitronic</td><td class="muted">Польша</td><td class="num">6 353</td><td class="num">573 313</td></tr>
+          <tr><td>Digitronic нетто</td><td class="muted">Польша</td><td class="num">5 387</td><td class="num">486 139</td></tr>
+          <tr><td>VAT PL 23%</td><td class="muted">в брутто AutoChill→Digitronic</td><td class="num">1 239</td><td class="num">111 812</td></tr>
+          <tr><td>Брутто (ПВБ → AutoChill)</td><td class="muted">PL</td><td class="num">6 626</td><td class="num">597 950</td></tr>
           <tr><td>Выкуп ПВ Бридж</td><td class="muted">партнёр</td><td class="num">750</td><td class="num">67 682</td></tr>
           <tr><td>Логистика Белосток → Москва</td><td class="muted">ПВ Бридж</td><td class="num">1 350</td><td class="num">121 828</td></tr>
-          <tr><td colspan="3"><b>Итого платёж ПВ Бридж</b></td><td class="num"><b>762 823</b></td></tr>
-          <tr><td>Пошлина 5% от (товар + фрахт)</td><td class="muted">РФ таможня</td><td class="num">—</td><td class="num">34 757</td></tr>
-          <tr><td>НДС ввоз 22%</td><td class="muted">РФ таможня</td><td class="num">—</td><td class="num">160 578</td></tr>
-          <tr><td>Сбор ФТС</td><td class="muted">РФ</td><td class="num">—</td><td class="num">4 924</td></tr>
-          <tr><td>Брокер</td><td class="muted">РФ</td><td class="num">—</td><td class="num">20 000</td></tr>
-          <tr><td>Доставка Москва → Казань</td><td class="muted">оценка</td><td class="num">—</td><td class="num">12 000</td></tr>
-          <tr><td colspan="3"><b>Итого Россия</b></td><td class="num"><b>232 259</b></td></tr>
-          <tr><td colspan="3"><b>Вложено / касса</b></td><td class="num"><b>995 082</b></td></tr>
-          <tr><td colspan="3">Выручка (продажа −20%)</td><td class="num">1 418 320</td></tr>
-          <tr><td colspan="3"><b style="color:var(--green)">Заработано</b></td><td class="num"><b style="color:var(--green)">+423 238</b></td></tr>
+          <tr><td colspan="3"><b>① Сразу ПВ Бридж</b></td><td class="num"><b>787 460</b></td></tr>
+          <tr><td>Пошлина 5% (нетто + фрахт)</td><td class="muted">РФ</td><td class="num">—</td><td class="num">30 398</td></tr>
+          <tr><td>НДС ввоз 22%</td><td class="muted">РФ</td><td class="num">—</td><td class="num">140 440</td></tr>
+          <tr><td>ФТС + брокер + Казань</td><td class="muted">РФ</td><td class="num">—</td><td class="num">36 924</td></tr>
+          <tr><td colspan="3"><b>③ Россия потом</b></td><td class="num"><b>207 762</b></td></tr>
+          <tr><td colspan="3"><b>Пик заморозки</b></td><td class="num"><b>995 222</b></td></tr>
+          <tr><td>Возврат PL VAT (позже)</td><td class="muted">Польша</td><td class="num">—</td><td class="num">−111 812</td></tr>
+          <tr><td colspan="3"><b>Экономика партии</b></td><td class="num"><b>883 410</b></td></tr>
+          <tr><td colspan="3">Выручка −20%</td><td class="num">1 203 280</td></tr>
+          <tr><td colspan="3"><b style="color:var(--green)">Заработано к экономике</b></td><td class="num"><b style="color:var(--green)">+319 870</b></td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <h2>3. Три конфигурации на выбор</h2>
+  <h2>3. Три конфигурации</h2>
   <div class="variants">
-
     <article class="variant featured">
       <span class="tag">Рекомендуем</span>
       <div>
-        <h3>Микс · фиксация цен</h3>
-        <p class="sub" style="margin:0">AT13 123 + Y 50 + Тип 33 20 + FLS 100</p>
+        <h3>Микс · пик ≤ 1 млн</h3>
+        <p class="sub" style="margin:0">AT13 102 + Y 50 + Тип 33 20 + FLS 100</p>
       </div>
       <div class="money">
-        <div><small>Вложено</small><b>995 082 ₽</b></div>
-        <div><small>Выручка −20%</small><b>1 418 320 ₽</b></div>
-        <div class="hi"><small>Заработано</small><b>+423 238 ₽</b></div>
-        <div class="hi"><small>К вложению</small><b>+42,5%</b></div>
+        <div><small>Пик заморозки</small><b>995 222 ₽</b></div>
+        <div><small>Экономика</small><b>883 410 ₽</b></div>
+        <div class="hi"><small>Заработано</small><b>+319 870 ₽</b></div>
+        <div class="hi"><small>К экономике</small><b>+36,2%</b></div>
       </div>
       <ul>
-        <li>Товар <b>6 353 €</b> · 227 кг · ~0,94 м³</li>
-        <li>Все линии <b>+42…82%</b> к рынку</li>
-        <li>Лочит <b>BLASTER Y @ 4,50</b> до ноябрьского 7 €</li>
-        <li>Сразу ПВБ <b>762 823 ₽</b></li>
+        <li>Сразу ПВБ <b>787 460 ₽</b></li>
+        <li>Фиксирует <b>Y @ 4,50</b> до ноября</li>
+        <li>Все линии в плюсе к рынку −20%</li>
       </ul>
     </article>
-
     <article class="variant">
-      <span class="tag alt">Альтернатива</span>
+      <span class="tag alt">Больше прибыли</span>
       <div>
-        <h3>Только AT13</h3>
-        <p class="sub" style="margin:0">Один артикул · 139 шт @ 46 €</p>
+        <h3>Микс AT13 × 123</h3>
+        <p class="sub" style="margin:0">Если ок пик ~1,13 млн до возврата VAT</p>
       </div>
       <div class="money">
-        <div><small>Вложено</small><b>999 822 ₽</b></div>
-        <div><small>Выручка −20%</small><b>1 423 360 ₽</b></div>
-        <div class="hi"><small>Заработано</small><b>+423 538 ₽</b></div>
-        <div class="hi"><small>К вложению</small><b>+42,4%</b></div>
+        <div><small>Пик заморозки</small><b>1 126 944 ₽</b></div>
+        <div><small>Экономика</small><b>995 082 ₽</b></div>
+        <div class="hi"><small>Заработано</small><b>+423 238 ₽</b></div>
+        <div class="hi"><small>К экономике</small><b>+42,5%</b></div>
+      </div>
+      <ul>
+        <li>Сильнее по абсолюту</li>
+        <li>Пик выше миллиона ~на 127k</li>
+        <li>127k потом возвращается как PL VAT</li>
+      </ul>
+    </article>
+    <article class="variant">
+      <span class="tag alt">Проще</span>
+      <div>
+        <h3>Только AT13 × 117</h3>
+        <p class="sub" style="margin:0">Один артикул · пик ≤ 1 млн</p>
+      </div>
+      <div class="money">
+        <div><small>Пик заморозки</small><b>994 541 ₽</b></div>
+        <div><small>Экономика</small><b>882 833 ₽</b></div>
+        <div class="hi"><small>Заработано</small><b>+315 247 ₽</b></div>
+        <div class="hi"><small>К экономике</small><b>+35,7%</b></div>
       </div>
       <ul>
         <li>Проще операционно</li>
-        <li>Прибыль почти та же</li>
-        <li>Не фиксирует Y и расходники</li>
-        <li>Установщику нужен не только редуктор</li>
-      </ul>
-    </article>
-
-    <article class="variant">
-      <span class="tag alt">Слабее</span>
-      <div>
-        <h3>Старый комплект B</h3>
-        <p class="sub" style="margin:0">Y 450 + FLS 200 + Nordic 20+25 + AT13 40</p>
-      </div>
-      <div class="money">
-        <div><small>Вложено</small><b>882 024 ₽</b></div>
-        <div><small>Выручка −20%</small><b>1 195 600 ₽</b></div>
-        <div class="hi"><small>Заработано</small><b>+313 576 ₽</b></div>
-        <div class="hi"><small>К вложению</small><b>+35,6%</b></div>
-      </div>
-      <ul>
-        <li>Дешевле вход</li>
-        <li>На <b>~110k</b> меньше прибыли</li>
-        <li>Меньше AT13 — главного плюса</li>
-        <li>Имеет смысл только если сервису нужен широкий микс сразу</li>
+        <li>Не фиксирует Y</li>
+        <li>Прибыль чуть ниже микса</li>
       </ul>
     </article>
   </div>
 
-  <h2>4. Вывод и предложение о запуске</h2>
+  <h2>4. Вывод</h2>
   <section class="verdict">
-    <h3>Запускаем микс · тариф ПВ Бридж уже в цифрах</h3>
+    <h3>Запускаем микс · подтверждаем звено AutoChill у ПВБ</h3>
     <p>
-      Состав: AT13 × 123 + BLASTER Y × 50 + Тип 33 × 20 + FLS × 100.
-      Сразу партнёру 763k ₽, полный чек 995k, выход +423k (+42,5%).
-      Перед оплатой: подтвердить Екатерине, что 1 350 € ещё актуально, и зафиксировать цены Digitronic до ноября.
+      Состав: AT13 × 102 + Y × 50 + Тип 33 × 20 + FLS × 100.
+      Пик 995k, экономика 883k, плюс +320k. Перед оплатой — письмо Екатерине: платите нашей AutoChill, в базу ₽ берёте брутто с VAT + 750 + 1 350.
     </p>
     <div class="grid">
-      <div><small>Конфигурация</small><b>Микс · 4 SKU</b></div>
-      <div><small>Вложено → выручка</small><b>0,995 → 1,42 млн</b></div>
-      <div><small>Прибыль</small><b>+423k · +42,5%</b></div>
+      <div><small>Сразу ПВБ</small><b>787k ₽</b></div>
+      <div><small>Пик → экономика</small><b>995 → 883k</b></div>
+      <div><small>Прибыль</small><b>+320k · +36%</b></div>
     </div>
-    <a class="cta" href="REPLY-LATVIA.md">Подтвердить тариф ПВ Бридж <span>→</span></a>
+    <a class="cta" href="REPLY-LATVIA.md">Текст для ПВ Бридж <span>→</span></a>
   </section>
 
   <footer>
-    Расчёт 26.10.2026 · EUR ЦБ 90,2429 · ПВ Бридж 750+1350 € · продажа = полка × 0,80 · ветка <span class="mono">cursor/gbo-pv-bridge-recalc-bddf</span>
+    Расчёт 26.10.2026 · цепочка AutoChill + VAT 23% · ПВ Бридж 750+1350 € · ветка <span class="mono">cursor/gbo-pv-bridge-recalc-bddf</span>
   </footer>
 </div>
 </body>
