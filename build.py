@@ -13,15 +13,16 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-EUR = 94.8810  # ЦБ РФ ~01.10.2026
+EUR = 90.2429  # ЦБ РФ 24.10.2026
 PLN_EUR = 4.25
 PL_TO_INVOICE = 0.94  # Nordic: 26€ / (117.89zł/4.25) ≈ 0.94
-DATE = "01.10.2026"
-BUYOUT_EUR = 750
-BROKER = 25000
-KAZAN = 12000
+DATE = "26.10.2026"
+BUYOUT_EUR = 750  # ПВ Бридж: фикс ≤15k €, иначе 5%
+BROKER = 20000  # котировка ГБО ПВ Бридж (июнь)
+KAZAN = 12000  # местный МСК→Казань (ПВБ до Москвы)
 DUTY = 0.05
 VAT_IMPORT = 0.22
+LOGISTICS_EUR_GBO = 1350  # ПВ Бридж Белосток→Москва ~1 м³/250 кг
 
 
 def fts_fee(ts: float) -> int:
@@ -43,7 +44,13 @@ def fts_fee(ts: float) -> int:
 
 
 def logistics_eur(kg: float) -> float:
-    return 162.5 + 4.75 * kg
+    """ПВ Бридж: котировка ГБО 1 350 € на ~250 кг / 1 м³.
+    Для близкого паллета берём фикс; иначе пропорция от 250 кг."""
+    if kg <= 0:
+        return LOGISTICS_EUR_GBO
+    if 180 <= kg <= 280:
+        return float(LOGISTICS_EUR_GBO)
+    return LOGISTICS_EUR_GBO * (kg / 250.0)
 
 
 def pl_proxy(pln_net: float) -> float:

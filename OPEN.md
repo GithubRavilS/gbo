@@ -8,8 +8,8 @@ jsDelivr показывает **исходник** — так и должно б
 
 ```bash
 cd ~/Documents/Cursor/gbo
-git fetch origin cursor/gbo-katerina-quote-bddf
-git checkout cursor/gbo-katerina-quote-bddf
+git fetch origin cursor/gbo-pv-bridge-recalc-bddf
+git checkout cursor/gbo-pv-bridge-recalc-bddf
 open -a Safari index.html
 ```
 
@@ -18,7 +18,7 @@ open -a Safari index.html
 
 ## Онлайн-превью (без pull)
 
-https://htmlpreview.github.io/?https://github.com/GithubRavilS/gbo/blob/cursor/gbo-katerina-quote-bddf/index.html
+https://htmlpreview.github.io/?https://github.com/GithubRavilS/gbo/blob/cursor/gbo-pv-bridge-recalc-bddf/index.html
 
 ## После merge в main
 
