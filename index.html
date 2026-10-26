@@ -250,17 +250,84 @@
     <div class="eyebrow"><i></i> GBO · AutoChill → Казань · октябрь 2026</div>
     <h1>Первый пробный заказ</h1>
     <p class="lead">
-      Прайсы Digitronic получены. Ниже — состав заявки, себестоимость по этапам
-      Польша → Латвия → Россия и маржа при продаже установщикам на <b>20% ниже</b> полки digitronicgas.ru.
-      Курс ЦБ <span class="mono">90,2429 ₽/€</span> · чек до ~1 млн ₽.
+      Прайсы Digitronic получены. Ниже — состав заявки и маржа при продаже установщикам на <b>20% ниже</b> полки.
+      Курс ЦБ <span class="mono">90,2429 ₽/€</span>. Логистика Латвии в цифрах ниже — <b>из модели репо, переписку с партнёром в этой среде не нашли</b>; сумму «сразу в ₽» подтвердим после их ответа.
     </p>
     <div class="kpis">
-      <div class="kpi"><span>Вложено</span><b>999 735 ₽</b></div>
+      <div class="kpi"><span>Вложено (модель)</span><b>999 735 ₽</b></div>
       <div class="kpi"><span>Выручка −20%</span><b>1 438 800 ₽</b></div>
       <div class="kpi good"><span>Заработано</span><b>+439 065 ₽</b></div>
       <div class="kpi good"><span>К вложению</span><b>+43,9%</b></div>
     </div>
   </header>
+
+  <h2>0. Откуда цифры · схема оплаты</h2>
+  <div class="card">
+    <h3>Подтверждено vs из модели</h3>
+    <p class="sub">Без обмана: товар и полка — из документов. Выкуп/фрахт латышей — константы из `build.py` (с сентября), скрин Telegram с ними здесь не найден.</p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>Статья</th><th>Цифра</th><th>Источник</th><th>Статус</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Нетто Digitronic €</td><td class="num">из прайса</td><td class="muted">Excel Катерины 19–23.10</td><td><span class="pill">ок</span></td></tr>
+          <tr><td>Полка / продажа −20%</td><td class="num">скрины + поле</td><td class="muted">digitronicgas.ru · аудио</td><td><span class="pill">ок</span></td></tr>
+          <tr><td>Курс €/₽</td><td class="num">90,2429</td><td class="muted">ЦБ 24.10.2026</td><td><span class="pill">ок</span></td></tr>
+          <tr><td>Выкуп партнёра</td><td class="num">750 € (или 5%)</td><td class="muted">константа модели</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">уточнить</span></td></tr>
+          <tr><td>Фрахт</td><td class="num">162,5 + 4,75×кг €</td><td class="muted">константа модели</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">уточнить</span></td></tr>
+          <tr><td>Брокер / Казань</td><td class="num">25k / 12k ₽</td><td class="muted">оценка модели</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">уточнить</span></td></tr>
+          <tr><td>Пошлина 5% · НДС 22%</td><td class="num">формула</td><td class="muted">допущение модели</td><td><span class="pill" style="background:#fff4e5;color:var(--amber)">уточнить</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Как хотим платить (нужно подтверждение латышей)</h3>
+    <p class="sub">Последовательность обратная привычной «сначала € производителю»: сначала ₽ партнёру, они закрывают европейский инвойс.</p>
+    <div class="journey">
+      <div class="stage pl">
+        <div class="flag">① Ты → Латвия</div>
+        <ul>
+          <li><span>Платёж</span><b>в ₽</b></li>
+          <li><span>Сумма</span><b class="muted">ждём их тариф</b></li>
+          <li><span>Вопрос</span><b class="muted">с НДС / без?</b></li>
+        </ul>
+        <div class="total"><span>Сразу из РФ</span><b>TBD ₽</b></div>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="stage lv">
+        <div class="flag">② Они → Digitronic</div>
+        <ul>
+          <li><span>Оплата инвойса</span><b>в €</b></li>
+          <li><span>Товар нетто</span><b>~6 445 €</b></li>
+          <li><span>Лаг</span><b class="muted">уточнить дней</b></li>
+        </ul>
+        <div class="total"><span>Европейский инвойс</span><b>~6,5k €</b></div>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="stage ru">
+        <div class="flag">③ Фрахт · таможня · Казань</div>
+        <ul>
+          <li><span>Что в их чеке</span><b class="muted">?</b></li>
+          <li><span>Пошлина / НДС РФ</span><b class="muted">у них или у нас?</b></li>
+          <li><span>Склад</span><b>Казань</b></li>
+        </ul>
+        <div class="total"><span>Земля финал</span><b>после тарифа</b></div>
+      </div>
+    </div>
+    <div class="note-box">
+      <div class="note">
+        <strong>Пока не шлём «миллион латышам»</strong>
+        Цифра 999 735 ₽ на сайте — полный landed модели. Сколько именно переводить партнёру первым платежом — только после их ответа (черновик в REPLY-LATVIA.md).
+      </div>
+      <div class="note green">
+        <strong>Маржа по товару уже считается</strong>
+        Нетто Digitronic и продажа −20% подтверждены. Логистика двигает землю, но не отменяет плюс по AT13 / Y / Тип 33 / FLS при разумном тарифе.
+      </div>
+    </div>
+  </div>
 
   <h2>1. Что заказываем · экономика по позициям</h2>
   <div class="card">
@@ -341,11 +408,11 @@
 
   <h2>2. Из чего складывается себестоимость</h2>
   <div class="card">
-    <h3>Путь денег: Польша → Латвия → Россия</h3>
+    <h3>Путь денег в модели (ориентир, не счёт латышей)</h3>
     <p class="sub">
-      Товар платится один раз из аванса. Двойной оплаты нет. Европейский НДС в цену закупки не входит —
-      Digitronic даёт нетто EUR. Ввозной НДС 22% платится на границе РФ и остаётся в чеке
-      (к вычету — только на ОСНО; в расчёте ниже он в кассе).
+      Ниже — как сейчас считает `build.py`. Выкуп 750 € и фрахт 162,5+4,75×кг — константы модели,
+      не выписка из найденной переписки. Европейский НДС в нетто Digitronic не входит.
+      Ввозной НДС 22% в модели лежит на таможне РФ — подтвердить, платит ли это партнёр из вашего ₽-платежа.
     </p>
 
     <div class="journey">
@@ -365,12 +432,12 @@
       <div class="stage lv">
         <div class="flag">② Латвия · выкуп + фрахт</div>
         <ul>
-          <li><span>Выкуп партнёра</span><b>750 € · 67 682 ₽</b></li>
-          <li><span>Фрахт</span><b>1 255 € · 113 255 ₽</b></li>
-          <li><span>формула</span><b class="muted">162,5+4,75×кг</b></li>
+          <li><span>Выкуп (модель)</span><b>750 € · 67 682 ₽</b></li>
+          <li><span>Фрахт (модель)</span><b>1 255 € · 113 255 ₽</b></li>
+          <li><span>формула</span><b class="muted">162,5+4,75×кг · уточнить</b></li>
           <li><span>Объём</span><b>0,95 м³</b></li>
         </ul>
-        <div class="total"><span>Европа всего</span><b>762 553 ₽</b></div>
+        <div class="total"><span>Европа · модель</span><b>762 553 ₽</b></div>
       </div>
 
       <div class="arrow" aria-hidden="true">→</div>
@@ -491,18 +558,18 @@
 
   <h2>4. Вывод и предложение о запуске</h2>
   <section class="verdict">
-    <h3>Запускаем рекомендуемый микс</h3>
+    <h3>Запускаем микс — после тарифа латышей</h3>
     <p>
-      AT13 × 125 + BLASTER Y × 50 + Тип 33 × 20 + FLS × 100.
-      Вложено около миллиона, на выходе ~1,44 млн при продаже на 20% ниже полки Digitronic.
-      Маржа ~+44%. Заказ оформить в ближайшие дни — пока Катерина держит текущие цены.
+      Состав: AT13 × 125 + BLASTER Y × 50 + Тип 33 × 20 + FLS × 100.
+      Маржа к рынку −20% по товару уже плюсовая. Перед оплатой: (1) ответ латышей на схему ₽→€,
+      (2) зафиксировать цены Digitronic до ноября, (3) подставить их тариф вместо констант модели.
     </p>
     <div class="grid">
       <div><small>Конфигурация</small><b>Микс · 4 SKU</b></div>
-      <div><small>Вложено → выручка</small><b>1,00 → 1,44 млн</b></div>
-      <div><small>Прибыль</small><b>+439k · +44%</b></div>
+      <div><small>Модель вложено → выручка</small><b>1,00 → 1,44 млн</b></div>
+      <div><small>Прибыль · модель</small><b>+439k · +44%</b></div>
     </div>
-    <a class="cta" href="order-confirm-katerina.xlsx">Дальше: подтвердить Digitronic <span>→</span></a>
+    <a class="cta" href="REPLY-LATVIA.md">Сначала запрос латышам <span>→</span></a>
   </section>
 
   <footer>
