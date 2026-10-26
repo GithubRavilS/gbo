@@ -1,11 +1,11 @@
-# Как открыть отчёт
+# Открыть сайт инвестору
 
-**Публичная ссылка (работает в Safari/Chrome на Mac):**
+**В Safari на Mac (публичная ссылка):**
 
-https://raw.githack.com/GithubRavilS/gbo/cursor/gbo-postavka-recalc-bddf/index.html
+https://raw.githack.com/GithubRavilS/gbo/cursor/gbo-katerina-quote-bddf/index.html
 
-**Локальный файл после `git pull`:**
+После `git pull` локально:
 
 `/Users/ravilcrypto/Documents/Cursor/gbo/index.html`
 
-Не открывать `127.0.0.1` — это сервер в облаке, на твоём Mac его нет.
+Не открывать `127.0.0.1` из облака — на Mac его нет.
