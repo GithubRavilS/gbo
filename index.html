@@ -103,8 +103,13 @@
   table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
   th {
     text-align: left; font-size: 10px; font-weight: 700;
-    letter-spacing: .05em; text-transform: uppercase; color: var(--muted);
-    padding: 8px 8px; border-bottom: 1px solid var(--line); white-space: nowrap;
+    letter-spacing: .04em; text-transform: uppercase; color: var(--muted);
+    padding: 8px 8px; border-bottom: 1px solid var(--line);
+    white-space: normal; min-width: 72px; vertical-align: bottom; line-height: 1.25;
+  }
+  th .th-sub {
+    display: block; font-size: 9px; font-weight: 500; letter-spacing: 0;
+    text-transform: none; color: #8e8e93; margin-top: 3px; max-width: 9.5em;
   }
   td {
     padding: 11px 8px; border-bottom: 1px solid var(--line);
@@ -414,8 +419,8 @@
   <div class="card">
     <h3>От завода до нашей цены</h3>
     <p class="sub">
-      В одном ряду: сколько стоит в Польше → что добавилось по дороге → наша себестоимость →
-      цена на сайте дилера → наша продажа (−20%) → сколько зарабатываем с штуки.
+      Все суммы в таблице — <b>рубли за 1 штуку</b> (евро и доллары пересчитаны по курсу ЦБ на 27.10:
+      1 € = 90,09 ₽, 1 $ = 80,49 ₽). Слева направо: закупка → надбавки → себестоимость → полка → наша цена → маржа.
     </p>
     <div class="scroll">
       <table>
@@ -423,23 +428,23 @@
           <tr>
             <th>Позиция</th>
             <th class="num">Шт</th>
-            <th class="num">В Польше</th>
-            <th class="num">Комиссия</th>
-            <th class="num">Доставка</th>
-            <th class="num">Пошлина</th>
-            <th class="num">НДС РФ</th>
-            <th class="num">Прочее</th>
-            <th class="num">Наша себест.</th>
-            <th class="num">Полка сайта</th>
-            <th class="num">Наша цена −20%</th>
-            <th class="num">Маржа / шт</th>
+            <th class="num">В Польше, ₽<span class="th-sub">цена завода в € × курс</span></th>
+            <th class="num">Комиссия, ₽<span class="th-sub">выкуп ПВБ: фикс 300 $ на партию</span></th>
+            <th class="num">Доставка, ₽<span class="th-sub">1 350 € на партию · доля на шт</span></th>
+            <th class="num">Пошлина, ₽<span class="th-sub">5% от товара + доставки</span></th>
+            <th class="num">НДС РФ, ₽<span class="th-sub">22% на таможне</span></th>
+            <th class="num">Прочее, ₽<span class="th-sub">брокер + ФТС + Казань</span></th>
+            <th class="num">Наша себест., ₽<span class="th-sub">сумма слева</span></th>
+            <th class="num">Полка сайта, ₽<span class="th-sub">digitronicgas.ru</span></th>
+            <th class="num">Наша цена, ₽<span class="th-sub">полка минус 20%</span></th>
+            <th class="num">Маржа / шт, ₽</th>
             <th class="num">Маржа %</th>
-            <th class="num">Прибыль</th>
+            <th class="num">Прибыль, ₽</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="sku"><b>AT13 XP</b><small>редуктор</small></td>
+            <td class="sku"><b>AT13 XP</b><small>редуктор · 46 €</small></td>
             <td class="num">123</td>
             <td class="num">4 144</td>
             <td class="num">175</td>
@@ -455,7 +460,7 @@
             <td class="num">+409k</td>
           </tr>
           <tr>
-            <td class="sku"><b>BLASTER Y</b><small>фильтр</small></td>
+            <td class="sku"><b>BLASTER Y</b><small>фильтр · 4,50 €</small></td>
             <td class="num">50</td>
             <td class="num">405</td>
             <td class="num">17</td>
@@ -471,7 +476,7 @@
             <td class="num">+16k</td>
           </tr>
           <tr>
-            <td class="sku"><b>Тип 33</b><small>рейка</small></td>
+            <td class="sku"><b>Тип 33</b><small>рейка · 20 €</small></td>
             <td class="num">20</td>
             <td class="num">1 802</td>
             <td class="num">76</td>
@@ -487,7 +492,7 @@
             <td class="num">+29k</td>
           </tr>
           <tr>
-            <td class="sku"><b>FLS 12×12</b><small>фильтр</small></td>
+            <td class="sku"><b>FLS 12×12</b><small>фильтр · 0,70 €</small></td>
             <td class="num">100</td>
             <td class="num">63</td>
             <td class="num">3</td>
@@ -506,8 +511,8 @@
       </table>
     </div>
     <p class="sub" style="margin-top:14px;margin-bottom:0">
-      «Полка сайта» — цена digitronicgas.ru. «Наша цена» — на 20% ниже, как берут установщики у дилеров.
-      «Прочее» — сбор таможни, брокер и доставка Москва → Казань, размазанные по штукам.
+      Комиссия 300 $ и доставка 1 350 € — на всю партию, здесь показана доля на одну штуку.
+      Полка — цена с digitronicgas.ru; наша цена — на 20% ниже (как берут установщики).
     </p>
   </div>
 
