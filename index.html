@@ -104,13 +104,19 @@
   th {
     text-align: left; font-size: 10px; font-weight: 700;
     letter-spacing: .04em; text-transform: uppercase; color: var(--muted);
-    padding: 8px 8px; border-bottom: 1px solid var(--line);
-    white-space: normal; min-width: 72px; vertical-align: bottom; line-height: 1.25;
+    padding: 10px 10px; border-bottom: 1px solid var(--line);
+    white-space: nowrap; vertical-align: bottom;
   }
-  th .th-sub {
-    display: block; font-size: 9px; font-weight: 500; letter-spacing: 0;
-    text-transform: none; color: #8e8e93; margin-top: 3px; max-width: 9.5em;
+  .legend {
+    margin-top: 16px; padding: 14px 16px; background: var(--bg);
+    border-radius: 12px; border: 1px solid var(--line); font-size: 13px;
+    color: var(--ink); line-height: 1.55;
   }
+  .legend b { font-weight: 700; }
+  .legend p { margin: 0 0 8px; color: var(--muted); }
+  .legend p:last-child { margin-bottom: 0; }
+  .legend .row { margin: 0 0 7px; }
+  .legend .row:last-child { margin-bottom: 0; }
   td {
     padding: 11px 8px; border-bottom: 1px solid var(--line);
     vertical-align: top; font-variant-numeric: tabular-nums;
@@ -419,8 +425,8 @@
   <div class="card">
     <h3>От завода до нашей цены</h3>
     <p class="sub">
-      Все суммы в таблице — <b>рубли за 1 штуку</b> (евро и доллары пересчитаны по курсу ЦБ на 27.10:
-      1 € = 90,09 ₽, 1 $ = 80,49 ₽). Слева направо: закупка → надбавки → себестоимость → полка → наша цена → маржа.
+      В таблице всё в <b>рублях за 1 штуку</b>. Курс ЦБ 27.10: <b>1 € = 90,09 ₽</b>, <b>1 $ = 80,49 ₽</b>.
+      Листайте таблицу вправо, если не видно правые столбцы.
     </p>
     <div class="scroll">
       <table>
@@ -428,15 +434,15 @@
           <tr>
             <th>Позиция</th>
             <th class="num">Шт</th>
-            <th class="num">В Польше, ₽<span class="th-sub">цена завода в € × курс</span></th>
-            <th class="num">Комиссия, ₽<span class="th-sub">выкуп ПВБ: фикс 300 $ на партию</span></th>
-            <th class="num">Доставка, ₽<span class="th-sub">1 350 € на партию · доля на шт</span></th>
-            <th class="num">Пошлина, ₽<span class="th-sub">5% от товара + доставки</span></th>
-            <th class="num">НДС РФ, ₽<span class="th-sub">22% на таможне</span></th>
-            <th class="num">Прочее, ₽<span class="th-sub">брокер + ФТС + Казань</span></th>
-            <th class="num">Наша себест., ₽<span class="th-sub">сумма слева</span></th>
-            <th class="num">Полка сайта, ₽<span class="th-sub">digitronicgas.ru</span></th>
-            <th class="num">Наша цена, ₽<span class="th-sub">полка минус 20%</span></th>
+            <th class="num">В Польше, ₽</th>
+            <th class="num">Комиссия, ₽</th>
+            <th class="num">Доставка, ₽</th>
+            <th class="num">Пошлина, ₽</th>
+            <th class="num">НДС РФ, ₽</th>
+            <th class="num">Прочее, ₽</th>
+            <th class="num">Себестоимость, ₽</th>
+            <th class="num">Полка сайта, ₽</th>
+            <th class="num">Наша цена −20%, ₽</th>
             <th class="num">Маржа / шт, ₽</th>
             <th class="num">Маржа %</th>
             <th class="num">Прибыль, ₽</th>
@@ -510,10 +516,21 @@
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px;margin-bottom:0">
-      Комиссия 300 $ и доставка 1 350 € — на всю партию, здесь показана доля на одну штуку.
-      Полка — цена с digitronicgas.ru; наша цена — на 20% ниже (как берут установщики).
-    </p>
+
+    <div class="legend">
+      <p><b>Как считается каждый столбец (на примере AT13 XP = 46 €)</b></p>
+      <div class="row"><b>В Польше</b> — цена завода в евро × курс. 46 × 90,09 = <b>4 144 ₽</b>.</div>
+      <div class="row"><b>Комиссия</b> — услуга выкупа ПВ Бридж: фикс <b>300 $ на всю партию</b> (= 24 147 ₽). Делится не поровну на штуки, а <b>пропорционально цене закупки</b>: дорогая позиция тянет большую долю. На 1 € товара ≈ 3,80 ₽ комиссии → на AT13: 46 × 3,80 ≈ <b>175 ₽</b>.</div>
+      <div class="row"><b>Доставка</b> — фрахт <b>1 350 € на всю партию</b> (= 121 626 ₽). Тоже пропорционально цене закупки, не «1350 ÷ число штук». На 1 € товара ≈ 19,14 ₽ доставки → на AT13: 46 × 19,14 ≈ <b>881 ₽</b>.</div>
+      <div class="row"><b>Пошлина</b> — <b>5%</b> от (весь товар + вся доставка) по партии, затем та же доля на штуку. Для AT13 выходит ≈ <b>251 ₽</b>.</div>
+      <div class="row"><b>НДС РФ</b> — <b>22%</b> на таможне от (товар + доставка + пошлина), доля на штуку. Для AT13 ≈ <b>1 161 ₽</b>.</div>
+      <div class="row"><b>Прочее</b> — брокер (~25 000 ₽) + сбор ФТС + доставка Москва→Казань (~12 000 ₽), тоже пропорционально цене. Для AT13 ≈ <b>304 ₽</b>.</div>
+      <div class="row"><b>Себестоимость</b> — сумма всех столбцов слева: 4 144 + 175 + 881 + 251 + 1 161 + 304 = <b>6 915 ₽</b>.</div>
+      <div class="row"><b>Полка сайта</b> — цена с digitronicgas.ru (для AT13 — 12 800 ₽).</div>
+      <div class="row"><b>Наша цена −20%</b> — полка × 0,8 (как берут установщики): 12 800 × 0,8 = <b>10 240 ₽</b>.</div>
+      <div class="row"><b>Маржа / шт</b> — наша цена минус себестоимость: 10 240 − 6 915 = <b>+3 325 ₽</b> (~48%).</div>
+      <div class="row"><b>Прибыль</b> — маржа с штуки × количество: 3 325 × 123 ≈ <b>+409k ₽</b>.</div>
+    </div>
   </div>
 
   <h2>5. Решение</h2>
