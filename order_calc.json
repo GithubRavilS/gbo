@@ -18,13 +18,13 @@
     "vat_ru": 160312,
     "fee": 4924,
     "broker": 25000,
-    "kazan": 12000,
-    "russia": 236935,
-    "invested": 955073,
+    "kazan": 24000,
+    "russia": 248935,
+    "invested": 967073,
     "market": 1418320,
     "shelf": 1772900,
-    "profit": 463247,
-    "pct": 48.5,
+    "profit": 451247,
+    "pct": 46.7,
     "rows": [
       {
         "name": "AT13 XP",
@@ -38,13 +38,13 @@
         "logistics": 881,
         "duty": 251,
         "vat_ru": 1161,
-        "other": 304,
-        "cost": 6915,
+        "other": 390,
+        "cost": 7002,
         "shelf": 12800,
         "sell": 10240,
-        "margin": 3325,
-        "pct": 48.1,
-        "profit_line": 408929
+        "margin": 3238,
+        "pct": 46.2,
+        "profit_line": 398242
       },
       {
         "name": "BLASTER Y",
@@ -58,13 +58,13 @@
         "logistics": 86,
         "duty": 25,
         "vat_ru": 114,
-        "other": 30,
-        "cost": 677,
+        "other": 38,
+        "cost": 685,
         "shelf": 1250,
         "sell": 1000,
-        "margin": 323,
-        "pct": 47.8,
-        "profit_line": 16175
+        "margin": 315,
+        "pct": 46.0,
+        "profit_line": 15750
       },
       {
         "name": "Тип 33",
@@ -78,13 +78,13 @@
         "logistics": 383,
         "duty": 109,
         "vat_ru": 505,
-        "other": 132,
-        "cost": 3007,
+        "other": 170,
+        "cost": 3044,
         "shelf": 5550,
         "sell": 4440,
-        "margin": 1433,
-        "pct": 47.7,
-        "profit_line": 28666
+        "margin": 1396,
+        "pct": 45.8,
+        "profit_line": 27911
       },
       {
         "name": "FLS 12×12",
@@ -98,13 +98,13 @@
         "logistics": 13,
         "duty": 4,
         "vat_ru": 18,
-        "other": 5,
-        "cost": 105,
+        "other": 6,
+        "cost": 107,
         "shelf": 250,
         "sell": 200,
-        "margin": 95,
-        "pct": 90.1,
-        "profit_line": 9477
+        "margin": 93,
+        "pct": 87.7,
+        "profit_line": 9344
       }
     ]
   }
