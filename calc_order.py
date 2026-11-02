@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-"""Первый заказ ГБО · расчёт на круг после подтверждения ПВ Бридж (27.10.2026).
+"""Заказ ГБО после цен ноября 2026.
 
-Схема (подтверждено):
-  РФ → АЗИЗОГЛУ (HK) в ₽ за товар+комиссию
-  РФ → ООО ПВ Бридж — ТЭУ (логистика)
-  их EU → AutoChill → Digitronic → забор
-  таможня на нас (ЕЛС ФТС), брокер по желанию
+Состав под потолки: касса около 750 тыс. ₽, вес ≤ 250 кг, объём ≤ 1 м³.
+Редуктор тот же: AT13 XP. BLASTER Y снят — с 7 € строка в минусе.
 
-Комиссия: инвойс AutoChill в USD → 300 $ (до 15 000 $).
-Логистика ориентир: 1 350 € на ~1 м³ / ~250 кг.
+Фрахт 1 350 € — старый ориентир на полный паллет. В заявке логисту
+его надо заменить фактической ставкой: партия легче и меньше куба.
+Комиссия выкупа в расчёт не входит: это была статья посредника, её в заявке нет.
 """
 
 from __future__ import annotations
@@ -16,14 +14,14 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-EUR = 90.0935  # ЦБ 27.10.2026
-USD = 80.4909
-DATE = "27.10.2026"
+EUR = 89.6603  # ЦБ, действует 2.11.2026 (установлен 31.10)
+USD = 80.5573
+DATE = "02.11.2026"
 VAT_PL = 0.23
 LOGISTICS_EUR = 1350
-COMM_USD = 300  # подтверждённый тариф при оплате в USD
-BROKER = 25_000  # ответ Екатерины ~25 000
-KAZAN = 24_000  # Москва → Казань
+COMM_USD = 0  # выкуп через посредника в эту заявку не входит
+BROKER = 25_000
+KAZAN = 24_000
 DUTY = 0.05
 VAT_IMPORT = 0.22
 MKT_DISC = 0.20
@@ -57,7 +55,7 @@ def calc(items: list[tuple]) -> dict:
     vat_ru = (cv + duty) * VAT_IMPORT
     fee = fts_fee(cv)
     russia = duty + vat_ru + fee + BROKER + KAZAN
-    invested = hk_rub + teu_rub + russia  # на круг, PL VAT возвращается
+    invested = hk_rub + teu_rub + russia
     market = shelf = 0
     rows = []
     for name, art, kind, e, k, L, d, q in items:
@@ -79,7 +77,11 @@ def calc(items: list[tuple]) -> dict:
                 kind=kind,
                 qty=q,
                 eur=e,
+                kg=k,
+                liters=L,
                 sum_eur=round(e * q, 2),
+                weight=round(k * q, 2),
+                volume_l=round(L * q, 1),
                 poland=round(pl),
                 commission=round(comm_u),
                 logistics=round(log_u),
@@ -101,6 +103,7 @@ def calc(items: list[tuple]) -> dict:
         goods_eur=round(goods_eur, 2),
         weight=round(weight, 1),
         liters=round(liters, 1),
+        m3=round(liters / 1000, 3),
         goods_rub=round(goods_rub),
         commission_usd=COMM_USD,
         commission_rub=round(comm_rub),
@@ -124,11 +127,13 @@ def calc(items: list[tuple]) -> dict:
     )
 
 
+# Ноябрьские нетто Катерины (письмо/Excel 19.10: «новая цена»).
+# Тип 33 — её цена 20 € от 19.10, отдельного повышения в ноябре нет.
+# Объём — та же оценка, что в заявке 27.10 (AT13: 150 шт = 1 м³).
 REC = [
-    ("AT13 XP", "RGDG3990", "редуктор", 46.0, 1.6, 6.667, 12800, 123),
-    ("BLASTER Y", "BLASTER Y 12x2/12", "фильтр", 4.5, 0.18, 0.909, 1250, 50),
+    ("AT13 XP", "RGDG3990", "редуктор", 47.0, 1.6, 6.667, 12800, 87),
     ("Тип 33", "33.EVG.13", "рейка 4 цил.", 20.0, 0.65, 1.5, 5550, 20),
-    ("FLS 12×12", "FL01S 12/12", "фильтр", 0.7, 0.08, 0.4, 250, 100),
+    ("FLS 12×12", "FL01S 12/12", "фильтр", 0.8, 0.08, 0.4, 250, 300),
 ]
 
 
@@ -139,7 +144,8 @@ def main() -> None:
     )
     print(
         f"invested={t['invested']:,} market={t['market']:,} "
-        f"profit={t['profit']:+,} ({t['pct']}%)"
+        f"profit={t['profit']:+,} ({t['pct']}%) "
+        f"kg={t['weight']} m3={t['m3']} eur={t['goods_eur']}"
     )
 
 
