@@ -18,15 +18,17 @@
     "duty": 32612,
     "vat_ru": 150668,
     "fee": 4924,
+    "conv_rate": 0.05,
+    "conv_rub": 44472,
     "broker": 25000,
     "kazan": 24000,
     "russia": 237204,
-    "invested": 889446,
-    "pre_vat": 738778,
+    "invested": 933918,
+    "pre_vat": 783250,
     "market": 1286000,
     "shelf": 1607500,
-    "profit": 396554,
-    "pct": 44.6,
+    "profit": 352082,
+    "pct": 37.7,
     "rows": [
       {
         "name": "AT13 XP",
@@ -45,12 +47,13 @@
         "duty": 262,
         "vat_ru": 1208,
         "other": 432,
-        "cost": 7134,
+        "fx": 357,
+        "cost": 7490,
         "shelf": 12800,
         "sell": 10240,
-        "margin": 3106,
-        "pct": 43.5,
-        "profit_line": 310622
+        "margin": 2750,
+        "pct": 36.7,
+        "profit_line": 274953
       },
       {
         "name": "Тип 33",
@@ -69,12 +72,13 @@
         "duty": 111,
         "vat_ru": 514,
         "other": 184,
-        "cost": 3036,
+        "fx": 152,
+        "cost": 3187,
         "shelf": 5550,
         "sell": 4440,
-        "margin": 1404,
-        "pct": 46.3,
-        "profit_line": 70217
+        "margin": 1253,
+        "pct": 39.3,
+        "profit_line": 62628
       },
       {
         "name": "FLS 12×12",
@@ -93,12 +97,13 @@
         "duty": 4,
         "vat_ru": 21,
         "other": 7,
-        "cost": 121,
+        "fx": 6,
+        "cost": 127,
         "shelf": 250,
         "sell": 200,
-        "margin": 79,
-        "pct": 64.7,
-        "profit_line": 15715
+        "margin": 73,
+        "pct": 56.9,
+        "profit_line": 14501
       }
     ]
   }

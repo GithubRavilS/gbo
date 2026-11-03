@@ -7,6 +7,8 @@
 
 Фрахт 1 350 € — старый ориентир полного паллета, в цифрах до прихода ставки.
 Комиссия выкупа в расчёт не входит.
+Конверсия 5% сидит сверху на всю кассу круга: товар, доставку, пошлину, НДС,
+брокера, сбор и Казань. В таможенную стоимость она не входит.
 """
 
 from __future__ import annotations
@@ -25,6 +27,7 @@ KAZAN = 24_000
 DUTY = 0.05
 VAT_IMPORT = 0.22
 MKT_DISC = 0.20
+CONV = 0.05  # конверсионные потери на весь круг, сверху
 
 
 def fts_fee(ts: float) -> int:
@@ -55,7 +58,9 @@ def calc(items: list[tuple]) -> dict:
     vat_ru = (cv + duty) * VAT_IMPORT
     fee = fts_fee(cv)
     russia = duty + vat_ru + fee + BROKER + KAZAN
-    invested = hk_rub + teu_rub + russia
+    base = hk_rub + teu_rub + russia
+    conv = base * CONV
+    invested = base + conv
     market = shelf = 0
     rows = []
     for name, art, kind, e, k, L, d, q in items:
@@ -69,6 +74,7 @@ def calc(items: list[tuple]) -> dict:
         duty_u = duty * share / q
         vat_u = vat_ru * share / q
         fix_u = (fee + BROKER + KAZAN) * share / q
+        conv_u = conv * share / q
         land = invested * share / q
         rows.append(
             dict(
@@ -88,6 +94,7 @@ def calc(items: list[tuple]) -> dict:
                 duty=round(duty_u),
                 vat_ru=round(vat_u),
                 other=round(fix_u),
+                fx=round(conv_u),
                 cost=round(land),
                 shelf=d,
                 sell=sell,
@@ -115,6 +122,8 @@ def calc(items: list[tuple]) -> dict:
         duty=round(duty),
         vat_ru=round(vat_ru),
         fee=fee,
+        conv_rate=CONV,
+        conv_rub=round(conv),
         broker=BROKER,
         kazan=KAZAN,
         russia=round(russia),
