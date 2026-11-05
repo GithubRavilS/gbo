@@ -19,6 +19,8 @@
     --green: #1f8a4c;
     --green-soft: #e8f6ee;
     --amber: #b86e00;
+    --red: #b42318;
+    --red-soft: #fdecea;
     --stage-pl: #0071e3;
     --stage-lv: #5e5ce6;
     --stage-ru: #1f8a4c;
@@ -242,6 +244,17 @@
     margin-top: 36px; color: var(--muted); font-size: 12px; text-align: center;
   }
   .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; }
+  .alert {
+    background: var(--red-soft);
+    border: 1px solid rgba(180, 35, 24, .25);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 18px 0 0;
+  }
+  .alert h3 { color: var(--red); margin-bottom: 8px; }
+  .alert p { margin: 0 0 8px; }
+  .alert p:last-child { margin: 0; }
+  .alert a { color: var(--red); }
 
   @media (max-width: 800px) {
     .kpis { grid-template-columns: 1fr 1fr; }
@@ -260,64 +273,34 @@
   <header class="hero">
     <h1>Газовое оборудование Digitronic</h1>
     <p class="lead">
-      Покупаем в Польше, везём в Казань через проверенную логистику, продаём установщикам
-      на <b>20% дешевле</b>, чем на сайте Digitronic в России. Схема с партнёром ПВ Бридж подтверждена.
+      Цены ноября, продажа на <b>20% ниже</b> полки. Три позиции, в каждой от 20 штук.
+      Сверху на всю кассу круга сидит <b>конверсия 5%</b>. Фрахт 1 800 €, пошлина 7%. До НДС 843 тысячи, с НДС заморозка 1,006 млн. Вес 208,5 кг, объём 0,82 м³.
     </p>
     <div class="kpis">
-      <div class="kpi"><span>Вкладываем</span><b>967 073 ₽</b></div>
-      <div class="kpi"><span>Продаём</span><b>1 418 320 ₽</b></div>
-      <div class="kpi good"><span>Зарабатываем</span><b>+451 247 ₽</b></div>
-      <div class="kpi good"><span>Доходность</span><b>+46,7%</b></div>
+      <div class="kpi"><span>До НДС</span><b>843 306 ₽</b></div>
+      <div class="kpi"><span>С НДС, заморозка</span><b>1 006 427 ₽</b></div>
+      <div class="kpi"><span>Продаём</span><b>1 286 000 ₽</b></div>
+      <div class="kpi good"><span>Прибыль</span><b>+279 573 ₽</b></div>
+    </div>
+    <div class="alert">
+      <h3>ПВ Бридж в эту сделку не берём</h3>
+      <p>
+        ООО «ПВ Бридж» (ИНН 7733766494) с 24 июня 2024 года в санкционном списке ЕС и в американском SDN.
+        С 15 октября 2026 года туда же внесена нынешний владелец и директор Гуменюк Светлана Ивановна,
+        и её ООО «Юнайтед Стрим».
+      </p>
+      <p>
+        AutoChill — польская компания. Платить Азизоглу, чтобы их европейская фирма рассчиталась с AutoChill,
+        нельзя: это тот самый контур, из-за которого их внесли в список. Разбор — в файле COUNTERPARTY.
+        Цифры ниже — себестоимость товара и ориентир фрахта, не поручение на оплату посреднику.
+      </p>
     </div>
   </header>
 
-  <h2>1. Как это работает · простыми словами</h2>
+  <h2>1. Что заказываем</h2>
   <div class="card">
-    <h3>Цепочка от оплаты до продажи</h3>
-    <p class="sub">Всё уже согласовано с логистами: платят нашей польской AutoChill, потом мы платим заводу, потом забирают товар.</p>
-    <div class="journey">
-      <div class="stage pl">
-        <div class="flag">Шаг 1 · Платим</div>
-        <ul>
-          <li><span>Товар + комиссия 300 $</span><b>АЗИЗОГЛУ (HK)</b></li>
-          <li><span>Доставка до Москвы</span><b>ООО ПВ Бридж</b></li>
-          <li><span>Валюта платежа</span><b>рубли</b></li>
-        </ul>
-        <div class="total"><span>Из России</span><b>≈ 718k ₽</b></div>
-      </div>
-      <div class="arrow" aria-hidden="true">→</div>
-      <div class="stage lv">
-        <div class="flag">Шаг 2 · Закупка</div>
-        <ul>
-          <li><span>Они платят</span><b>AutoChill</b></li>
-          <li><span>AutoChill платит</span><b>Digitronic</b></li>
-          <li><span>Потом</span><b>забор груза</b></li>
-        </ul>
-        <div class="total"><span>Срок до завода</span><b>до 5 дней</b></div>
-      </div>
-      <div class="arrow" aria-hidden="true">→</div>
-      <div class="stage ru">
-        <div class="flag">Шаг 3 · Россия</div>
-        <ul>
-          <li><span>Таможня Москва</span><b>пошлина + НДС</b></li>
-          <li><span>Доставка</span><b>в Казань</b></li>
-          <li><span>Продажа</span><b>полка −20%</b></li>
-        </ul>
-        <div class="total"><span>Таможня + Казань</span><b>≈ 249k ₽</b></div>
-      </div>
-    </div>
-    <div class="note-box">
-      <div class="note">
-        <strong>Почему комиссия в долларах</strong>
-        При инвойсе в USD комиссия 300 $, а не 750 €. Экономия порядка 40–45 тысяч рублей на партии.
-      </div>
-    </div>
-  </div>
-
-  <h2>2. Что заказываем</h2>
-  <div class="card">
-    <h3>Четыре позиции · всё в плюсе</h3>
-    <p class="sub">Цены завода — от Digitronic (Катерина). Нужно успеть до ноября: фильтр BLASTER Y с 4,50 € поднимется до 7 €.</p>
+    <h3>Три позиции · в каждой от 20 штук · все в плюсе</h3>
+    <p class="sub">AT13 × 100 и FLS × 200 — новые цены ноября, запас у завода ограничен. Тип 33 × 50 в наличии, отдельного повышения цены нет. AT02, AEB и MP48 сняты: коробка от 20 штук рядом с этим составом уже выше 750 тысяч до НДС. BLASTER Y по 7 € в минусе.</p>
     <div class="scroll">
       <table>
         <thead>
@@ -326,38 +309,38 @@
             <th class="num">Штук</th>
             <th class="num">Цена завода</th>
             <th class="num">Сумма €</th>
+            <th class="num">Вес, кг</th>
+            <th class="num">Объём, л</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="sku"><b>AT13 XP</b><small>редуктор · RGDG3990</small></td>
-            <td class="num">123</td><td class="num">46 €</td><td class="num">5 658</td>
+            <td class="sku"><b>AT13 XP</b><small>редуктор · RGDG3990 · 47 €</small></td>
+            <td class="num">100</td><td class="num">47 €</td><td class="num">4 700</td><td class="num">160,0</td><td class="num">666,7</td>
           </tr>
           <tr>
-            <td class="sku"><b>BLASTER Y</b><small>фильтр · до ноября 4,50 €</small></td>
-            <td class="num">50</td><td class="num">4,50 €</td><td class="num">225</td>
+            <td class="sku"><b>Тип 33</b><small>рейка · 33.EVG.13 · 20 €</small></td>
+            <td class="num">50</td><td class="num">20 €</td><td class="num">1 000</td><td class="num">32,5</td><td class="num">75,0</td>
           </tr>
           <tr>
-            <td class="sku"><b>Тип 33</b><small>рейка 4 цилиндра</small></td>
-            <td class="num">20</td><td class="num">20 €</td><td class="num">400</td>
-          </tr>
-          <tr>
-            <td class="sku"><b>FLS 12×12</b><small>фильтр расходник</small></td>
-            <td class="num">100</td><td class="num">0,70 €</td><td class="num">70</td>
+            <td class="sku"><b>FLS 12×12</b><small>фильтр · 0,80 €</small></td>
+            <td class="num">200</td><td class="num">0,80 €</td><td class="num">160</td><td class="num">16,0</td><td class="num">80,0</td>
           </tr>
           <tr>
             <td><b>Итого</b></td>
-            <td class="num"><b>293</b></td>
+            <td class="num"><b>350</b></td>
             <td class="num"></td>
-            <td class="num"><b>6 353 €</b></td>
+            <td class="num"><b>5 860 €</b></td>
+            <td class="num"><b>208,5</b></td>
+            <td class="num"><b>821,7</b></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="sub" style="margin-top:14px;margin-bottom:0">Вес около 227 кг, объём около 0,94 м³ — один паллет.</p>
+    <p class="sub" style="margin-top:14px;margin-bottom:0">Объём 0,822 м³, вес 208,5 кг. Литраж всех трёх строк — прежняя модель упаковки (150 редукторов AT13 = 1 м³), не замер склада. 100 редукторов и 200 фильтров надо подтвердить: на новую цену Катерина писала «ограниченный запас». У Тип 33 такой пометки нет.</p>
   </div>
 
-  <h2>3. Из чего складывается себестоимость партии</h2>
+  <h2>2. Из чего складывается себестоимость партии</h2>
   <div class="card">
     <h3>Все расходы до склада в Казани</h3>
     <div class="scroll">
@@ -368,59 +351,64 @@
         <tbody>
           <tr>
             <td>Закупка в Польше</td>
-            <td class="muted">6 353 € нетто у Digitronic</td>
-            <td class="num">572 364 ₽</td>
-          </tr>
-          <tr>
-            <td>Комиссия выкупа</td>
-            <td class="muted">300 $ (инвойс AutoChill в долларах)</td>
-            <td class="num">24 147 ₽</td>
+            <td class="muted">5 860 € нетто у Digitronic</td>
+            <td class="num">530 116 ₽</td>
           </tr>
           <tr>
             <td>Доставка до Москвы</td>
-            <td class="muted">1 350 € · ориентир на ~1 м³ / 250 кг</td>
-            <td class="num">121 626 ₽</td>
+            <td class="muted">1 800 € · ставка на эту партию</td>
+            <td class="num">162 834 ₽</td>
           </tr>
           <tr>
             <td>Пошлина</td>
-            <td class="muted">5% от (товар + доставка)</td>
-            <td class="num">34 700 ₽</td>
-          </tr>
-          <tr>
-            <td>НДС на таможне</td>
-            <td class="muted">22% · платим на счёт ФТС</td>
-            <td class="num">160 312 ₽</td>
+            <td class="muted">7% от (товар + доставка)</td>
+            <td class="num">48 507 ₽</td>
           </tr>
           <tr>
             <td>Брокер, сбор ФТС, Казань</td>
-            <td class="muted">брокер ~25k + сбор + доставка Москва → Казань</td>
+            <td class="muted">брокер ~25k + сбор 4 924 + Москва → Казань 24k</td>
             <td class="num">53 924 ₽</td>
           </tr>
           <tr>
-            <td colspan="2"><b>Себестоимость всей партии</b></td>
-            <td class="num"><b>967 073 ₽</b></td>
+            <td>НДС на таможне</td>
+            <td class="muted">22% от (товар + доставка + пошлина). В таможенную базу конверсия не входит</td>
+            <td class="num">163 121 ₽</td>
+          </tr>
+          <tr>
+            <td>Конверсия</td>
+            <td class="muted">5% сверху на всю кассу круга</td>
+            <td class="num">47 925 ₽</td>
+          </tr>
+          <tr>
+            <td colspan="2"><b>До российского НДС</b></td>
+            <td class="num"><b>843 306 ₽</b></td>
+          </tr>
+          <tr>
+            <td colspan="2"><b>Заморозка с НДС</b></td>
+            <td class="num"><b>1 006 427 ₽</b></td>
           </tr>
           <tr>
             <td colspan="2">Выручка (продажа установщикам)</td>
-            <td class="num">1 418 320 ₽</td>
+            <td class="num">1 286 000 ₽</td>
           </tr>
           <tr>
             <td colspan="2"><b style="color:var(--green)">Прибыль</b></td>
-            <td class="num"><b style="color:var(--green)">+451 247 ₽</b></td>
+            <td class="num"><b style="color:var(--green)">+279 573 ₽</b></td>
           </tr>
         </tbody>
       </table>
     </div>
     <p class="sub" style="margin-top:14px;margin-bottom:0">
-      Польский НДС 23% AutoChill платит заводу и потом возвращает налоговой — в итоговую себестоимость не входит.
+      Польский НДС 23% (121 927 ₽) AutoChill платит заводу и потом возвращает налоговой — в итоговую себестоимость не входит.
+      Конверсия посчитана от всей кассы, включая таможенный НДС, и в строку «до НДС» входит целиком: это потеря банка, не платёж таможне. Наценка к себестоимости при продаже минус 20% — <b>+27,8%</b>. Состав тот же. До НДС 843 тысячи — на 93 тысячи выше потолка 750 тысяч. Заморозка 1 006 427 ₽, на 6 тысяч выше миллиона.
     </p>
   </div>
 
-  <h2>4. Маржа по каждой детали</h2>
+  <h2>3. Маржа по каждой детали</h2>
   <div class="card">
     <h3>От завода до нашей цены</h3>
     <p class="sub">
-      В таблице всё в <b>рублях за 1 штуку</b>. Курс ЦБ 27.10: <b>1 € = 90,09 ₽</b>, <b>1 $ = 80,49 ₽</b>.
+      В таблице всё в <b>рублях за 1 штуку</b>. Курс ЦБ на 3 ноября: <b>1 € = 90,4635 ₽</b>.
       Листайте таблицу вправо, если не видно правые столбцы.
     </p>
     <div class="scroll">
@@ -430,11 +418,11 @@
             <th>Позиция</th>
             <th class="num">Шт</th>
             <th class="num">В Польше, ₽</th>
-            <th class="num">Комиссия, ₽</th>
             <th class="num">Доставка, ₽</th>
             <th class="num">Пошлина, ₽</th>
             <th class="num">НДС РФ, ₽</th>
             <th class="num">Прочее, ₽</th>
+            <th class="num">Конверсия, ₽</th>
             <th class="num">Себестоимость, ₽</th>
             <th class="num">Полка сайта, ₽</th>
             <th class="num">Наша цена −20%, ₽</th>
@@ -445,106 +433,142 @@
         </thead>
         <tbody>
           <tr>
-            <td class="sku"><b>AT13 XP</b><small>редуктор · 46 €</small></td>
-            <td class="num">123</td>
-            <td class="num">4 144</td>
-            <td class="num">175</td>
-            <td class="num">881</td>
-            <td class="num">251</td>
-            <td class="num">1 161</td>
-            <td class="num">390</td>
-            <td class="num"><b>7 002</b></td>
+            <td class="sku"><b>AT13 XP</b><small>редуктор · 47 €</small></td>
+            <td class="num">100</td>
+            <td class="num">4 252</td>
+            <td class="num">1 306</td>
+            <td class="num">389</td>
+            <td class="num">1 308</td>
+            <td class="num">432</td>
+            <td class="num">385</td>
+            <td class="num"><b>8 072</b></td>
             <td class="num">12 800</td>
             <td class="num">10 240</td>
-            <td class="num">+3 238</td>
-            <td class="num"><span class="pill">+46%</span></td>
-            <td class="num">+398k</td>
-          </tr>
-          <tr>
-            <td class="sku"><b>BLASTER Y</b><small>фильтр · 4,50 €</small></td>
-            <td class="num">50</td>
-            <td class="num">405</td>
-            <td class="num">17</td>
-            <td class="num">86</td>
-            <td class="num">25</td>
-            <td class="num">114</td>
-            <td class="num">38</td>
-            <td class="num"><b>685</b></td>
-            <td class="num">1 250</td>
-            <td class="num">1 000</td>
-            <td class="num">+315</td>
-            <td class="num"><span class="pill">+46%</span></td>
-            <td class="num">+16k</td>
+            <td class="num">+2 168</td>
+            <td class="num"><span class="pill">+26,9%</span></td>
+            <td class="num">+216 798</td>
           </tr>
           <tr>
             <td class="sku"><b>Тип 33</b><small>рейка · 20 €</small></td>
-            <td class="num">20</td>
-            <td class="num">1 802</td>
-            <td class="num">76</td>
-            <td class="num">383</td>
-            <td class="num">109</td>
-            <td class="num">505</td>
-            <td class="num">170</td>
-            <td class="num"><b>3 044</b></td>
+            <td class="num">50</td>
+            <td class="num">1 809</td>
+            <td class="num">556</td>
+            <td class="num">166</td>
+            <td class="num">557</td>
+            <td class="num">184</td>
+            <td class="num">163</td>
+            <td class="num"><b>3 435</b></td>
             <td class="num">5 550</td>
             <td class="num">4 440</td>
-            <td class="num">+1 396</td>
-            <td class="num"><span class="pill">+46%</span></td>
-            <td class="num">+28k</td>
+            <td class="num">+1 005</td>
+            <td class="num"><span class="pill">+29,3%</span></td>
+            <td class="num">+50 255</td>
           </tr>
           <tr>
-            <td class="sku"><b>FLS 12×12</b><small>фильтр · 0,70 €</small></td>
-            <td class="num">100</td>
-            <td class="num">63</td>
-            <td class="num">3</td>
-            <td class="num">13</td>
-            <td class="num">4</td>
-            <td class="num">18</td>
-            <td class="num">6</td>
-            <td class="num"><b>107</b></td>
+            <td class="sku"><b>FLS 12×12</b><small>фильтр · 0,80 €</small></td>
+            <td class="num">200</td>
+            <td class="num">72</td>
+            <td class="num">22</td>
+            <td class="num">7</td>
+            <td class="num">22</td>
+            <td class="num">7</td>
+            <td class="num">7</td>
+            <td class="num"><b>137</b></td>
             <td class="num">250</td>
             <td class="num">200</td>
-            <td class="num">+93</td>
-            <td class="num"><span class="pill">+87%</span></td>
-            <td class="num">+9k</td>
+            <td class="num">+63</td>
+            <td class="num"><span class="pill">+45,6%</span></td>
+            <td class="num">+12 521</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="legend">
-      <p><b>Как считается каждый столбец (на примере AT13 XP = 46 €)</b></p>
-      <div class="row"><b>В Польше</b> — цена завода в евро × курс. 46 × 90,09 = <b>4 144 ₽</b>.</div>
-      <div class="row"><b>Комиссия</b> — услуга выкупа ПВ Бридж: фикс <b>300 $ на всю партию</b> (= 24 147 ₽). Делится не поровну на штуки, а <b>пропорционально цене закупки</b>: дорогая позиция тянет большую долю. На 1 € товара ≈ 3,80 ₽ комиссии → на AT13: 46 × 3,80 ≈ <b>175 ₽</b>.</div>
-      <div class="row"><b>Доставка</b> — фрахт <b>1 350 € на всю партию</b> (= 121 626 ₽). Тоже пропорционально цене закупки, не «1350 ÷ число штук». На 1 € товара ≈ 19,14 ₽ доставки → на AT13: 46 × 19,14 ≈ <b>881 ₽</b>.</div>
-      <div class="row"><b>Пошлина</b> — <b>5%</b> от (весь товар + вся доставка) по партии, затем та же доля на штуку. Для AT13 выходит ≈ <b>251 ₽</b>.</div>
-      <div class="row"><b>НДС РФ</b> — <b>22%</b> на таможне от (товар + доставка + пошлина), доля на штуку. Для AT13 ≈ <b>1 161 ₽</b>.</div>
-      <div class="row"><b>Прочее</b> — брокер (~25 000 ₽) + сбор ФТС + доставка Москва→Казань (24 000 ₽), тоже пропорционально цене. Для AT13 ≈ <b>390 ₽</b>.</div>
-      <div class="row"><b>Себестоимость</b> — сумма всех столбцов слева: 4 144 + 175 + 881 + 251 + 1 161 + 390 = <b>7 002 ₽</b>.</div>
+      <p><b>Как считается каждый столбец (на примере AT13 XP = 47 €)</b></p>
+      <div class="row"><b>В Польше</b> — цена завода в евро × курс. 47 × 90,4635 = <b>4 252 ₽</b>.</div>
+      <div class="row"><b>Доставка</b> — фрахт <b>1 800 € на всю партию</b> (= 162 834 ₽). Делится пропорционально цене закупки. На AT13 выходит <b>1 306 ₽</b>.</div>
+      <div class="row"><b>Пошлина</b> — <b>7%</b> от (весь товар + вся доставка), затем доля на штуку. Для AT13 <b>389 ₽</b>.</div>
+      <div class="row"><b>НДС РФ</b> — <b>22%</b> на таможне от (товар + доставка + пошлина). Для AT13 <b>1 308 ₽</b>.</div>
+      <div class="row"><b>Прочее</b> — брокер (~25 000 ₽) + сбор ФТС (4 924 ₽) + Москва→Казань (24 000 ₽), пропорционально цене. Для AT13 <b>432 ₽</b>.</div>
+      <div class="row"><b>Конверсия</b> — 5% от всей кассы круга (47 925 ₽), доля по цене закупки. Для AT13 модель даёт 384 ₽, в таблице <b>385 ₽</b>, чтобы сумма столбцов совпала с себестоимостью.</div>
+      <div class="row"><b>Себестоимость</b> — сумма столбцов слева: <b>8 072 ₽</b>.</div>
       <div class="row"><b>Полка сайта</b> — цена с digitronicgas.ru (для AT13 — 12 800 ₽).</div>
-      <div class="row"><b>Наша цена −20%</b> — полка × 0,8 (как берут установщики): 12 800 × 0,8 = <b>10 240 ₽</b>.</div>
-      <div class="row"><b>Маржа / шт</b> — наша цена минус себестоимость: 10 240 − 7 002 = <b>+3 238 ₽</b> (~46%).</div>
-      <div class="row"><b>Прибыль</b> — маржа с штуки × количество: 3 238 × 123 ≈ <b>+398k ₽</b>.</div>
+      <div class="row"><b>Наша цена −20%</b> — полка × 0,8: 12 800 × 0,8 = <b>10 240 ₽</b>.</div>
+      <div class="row"><b>Маржа / шт</b> — 10 240 − 8 072 = <b>+2 168 ₽</b> (+26,9%).</div>
+      <div class="row"><b>Прибыль</b> — на строке AT13 <b>+216 798 ₽</b>. Три строки дают +279 574 ₽, итог партии <b>+279 573 ₽</b>: рубль сидит в округлении. На весь круг это <b>+27,8%</b> к себестоимости.</div>
     </div>
+  </div>
+
+  <h2>4. Какая скидка к полке возвращает вчерашние 37,7%</h2>
+  <div class="card">
+    <h3>Заморозка та же, 1 006 427 ₽. Меняется только цена</h3>
+    <p class="sub">Вчера в файле наценка к себестоимости была +37,7% (прибыль 352 082 ₽ при заморозке 933 918 ₽, фрахт 1 350 €, пошлина в том файле 5%). Та же схема с пошлиной 7% дала бы +35,3%. Сейчас продажа — полка минус 20%.</p>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Скидка к полке</th>
+            <th class="num">Продажа</th>
+            <th class="num">Прибыль</th>
+            <th class="num">Наценка к себестоимости</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>−20%, как сейчас</td>
+            <td class="num">1 286 000 ₽</td>
+            <td class="num">+279 573 ₽</td>
+            <td class="num">+27,8%</td>
+          </tr>
+          <tr>
+            <td>−15%</td>
+            <td class="num">1 366 300 ₽</td>
+            <td class="num">+359 873 ₽</td>
+            <td class="num">+35,8%</td>
+          </tr>
+          <tr>
+            <td>−14%</td>
+            <td class="num">1 382 450 ₽</td>
+            <td class="num">+376 023 ₽</td>
+            <td class="num">+37,4%</td>
+          </tr>
+          <tr>
+            <td><b>−13,8%</b></td>
+            <td class="num"><b>1 385 800 ₽</b></td>
+            <td class="num"><b>+379 373 ₽</b></td>
+            <td class="num"><b>+37,7%</b></td>
+          </tr>
+          <tr>
+            <td>−10%</td>
+            <td class="num">1 446 750 ₽</td>
+            <td class="num">+440 323 ₽</td>
+            <td class="num">+43,8%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:14px;margin-bottom:0">Минус 13,8% к полке: AT13 11 034 ₽, Тип 33 4 784 ₽, FLS 216 ₽. Круглый шаг минус 14%: AT13 11 008 ₽, Тип 33 4 773 ₽, FLS 215 ₽, наценка +37,4%. Минус 15% даёт +35,8%. Минус 10% даёт +43,8%, это уже выше вчерашнего.</p>
   </div>
 
   <h2>5. Решение</h2>
   <section class="verdict">
-    <h3>Запускаем этот состав</h3>
+    <h3>Три строки, круглые количества</h3>
     <p>
-      Вкладываем около 967 тысяч, забираем порядка 451 тысяч прибыли.
-      Все четыре позиции прибыльные. Следующий шаг после согласования —
-      подтвердить заказ у Digitronic (пока цены не выросли с ноября).
+      Конверсия 5% сидит на всей кассе. Фрахт 1 800 €, пошлина 7%. До НДС 843 тысячи, с НДС заморозка 1,006 млн. Продажа при полке минус 20% — 1,29 млн, прибыль 280 тысяч, наценка к себестоимости 27,8%.
+      Вчера в файле было +37,7% к себестоимости. Чтобы вернуть эту наценку, цена нужна на 13,8% ниже полки. Круглый шаг минус 14% даёт +37,4%. Минус 15% даёт +35,8%. Минус 10% даёт +43,8%.
+      Состав не менял. До НДС выше потолка 750 тысяч на 93 тысячи, заморозка выше миллиона на 6 тысяч.
+      Запрос на перевозку в ПВ Бридж не отправляем.
     </p>
     <div class="grid">
-      <div><small>Вложения</small><b>967k ₽</b></div>
-      <div><small>Выручка</small><b>1,42 млн</b></div>
-      <div><small>Прибыль</small><b>+451k</b></div>
+      <div><small>До НДС</small><b>843k ₽</b></div>
+      <div><small>С НДС</small><b>1,006 млн</b></div>
+      <div><small>Наценка</small><b>+27,8%</b></div>
     </div>
   </section>
 
   <footer>
-    Расчёт 27.10.2026 · курс ЦБ 90,09 ₽/€ и 80,49 ₽/$ · комиссия 300 $ · доставка 1 350 € · продажа = полка минус 20%
+    Расчёт 3.11.2026 · курс ЦБ 90,4635 ₽/€ · конверсия 5% на весь круг · пошлина 7% · фрахт 1 800 € · продажа в таблице = полка минус 20%
   </footer>
 </div>
 </body>

@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Первый заказ ГБО · расчёт на круг после подтверждения ПВ Бридж (27.10.2026).
+"""Заказ ГБО · 3 ноября 2026.
 
-Схема (подтверждено):
-  РФ → АЗИЗОГЛУ (HK) в ₽ за товар+комиссию
-  РФ → ООО ПВ Бридж — ТЭУ (логистика)
-  их EU → AutoChill → Digitronic → забор
-  таможня на нас (ЕЛС ФТС), брокер по желанию
+Потолки: до российского НДС не больше 750 тыс. ₽, заморозка с НДС не больше 1 млн ₽,
+вес ≤ 250 кг, объём ≤ 1 м³. В заказе только строки в плюсе при продаже «полка −20%».
+В строке не меньше 20 штук. Меньше — позицию не ставим, инвойс не раздуваем.
 
-Комиссия: инвойс AutoChill в USD → 300 $ (до 15 000 $).
-Логистика ориентир: 1 350 € на ~1 м³ / ~250 кг.
+Фрахт 1 800 € — ставка на эту партию из трёх позиций.
+Пошлина 7% от таможенной стоимости (товар + доставка).
+Комиссия выкупа в расчёт не входит.
+Конверсия 5% сидит сверху на всю кассу круга: товар, доставку, пошлину, НДС,
+брокера, сбор и Казань. В таможенную стоимость она не входит.
 """
 
 from __future__ import annotations
@@ -16,17 +17,18 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-EUR = 90.0935  # ЦБ 27.10.2026
-USD = 80.4909
-DATE = "27.10.2026"
+EUR = 90.4635  # ЦБ с 3.11.2026
+USD = 80.9734
+DATE = "03.11.2026"
 VAT_PL = 0.23
-LOGISTICS_EUR = 1350
-COMM_USD = 300  # подтверждённый тариф при оплате в USD
-BROKER = 25_000  # ответ Екатерины ~25 000
-KAZAN = 24_000  # Москва → Казань
-DUTY = 0.05
+LOGISTICS_EUR = 1800
+COMM_USD = 0  # выкуп через посредника в эту заявку не входит
+BROKER = 25_000
+KAZAN = 24_000
+DUTY = 0.07
 VAT_IMPORT = 0.22
 MKT_DISC = 0.20
+CONV = 0.05  # конверсионные потери на весь круг, сверху
 
 
 def fts_fee(ts: float) -> int:
@@ -57,7 +59,9 @@ def calc(items: list[tuple]) -> dict:
     vat_ru = (cv + duty) * VAT_IMPORT
     fee = fts_fee(cv)
     russia = duty + vat_ru + fee + BROKER + KAZAN
-    invested = hk_rub + teu_rub + russia  # на круг, PL VAT возвращается
+    base = hk_rub + teu_rub + russia
+    conv = base * CONV
+    invested = base + conv
     market = shelf = 0
     rows = []
     for name, art, kind, e, k, L, d, q in items:
@@ -71,6 +75,7 @@ def calc(items: list[tuple]) -> dict:
         duty_u = duty * share / q
         vat_u = vat_ru * share / q
         fix_u = (fee + BROKER + KAZAN) * share / q
+        conv_u = conv * share / q
         land = invested * share / q
         rows.append(
             dict(
@@ -79,13 +84,18 @@ def calc(items: list[tuple]) -> dict:
                 kind=kind,
                 qty=q,
                 eur=e,
+                kg=k,
+                liters=L,
                 sum_eur=round(e * q, 2),
+                weight=round(k * q, 2),
+                volume_l=round(L * q, 1),
                 poland=round(pl),
                 commission=round(comm_u),
                 logistics=round(log_u),
                 duty=round(duty_u),
                 vat_ru=round(vat_u),
                 other=round(fix_u),
+                fx=round(conv_u),
                 cost=round(land),
                 shelf=d,
                 sell=sell,
@@ -101,6 +111,7 @@ def calc(items: list[tuple]) -> dict:
         goods_eur=round(goods_eur, 2),
         weight=round(weight, 1),
         liters=round(liters, 1),
+        m3=round(liters / 1000, 3),
         goods_rub=round(goods_rub),
         commission_usd=COMM_USD,
         commission_rub=round(comm_rub),
@@ -112,10 +123,13 @@ def calc(items: list[tuple]) -> dict:
         duty=round(duty),
         vat_ru=round(vat_ru),
         fee=fee,
+        conv_rate=CONV,
+        conv_rub=round(conv),
         broker=BROKER,
         kazan=KAZAN,
         russia=round(russia),
         invested=round(invested),
+        pre_vat=round(invested - vat_ru),
         market=market,
         shelf=shelf,
         profit=round(market - invested),
@@ -124,11 +138,15 @@ def calc(items: list[tuple]) -> dict:
     )
 
 
+# Три строки, в каждой от 20 штук. Круглые количества.
+# AT13 100 и FLS 200 — новые цены ноября, запас ограничен (завод так писал на 130 и на 200).
+# Тип 33 × 50 — в наличии, без пометки об ограниченном запасе. Цена 19.10.
+# AT02 / AEB / MP48 в плюсе и в наличии, но коробка от 20 штук рядом с этим ядром
+# уже не влезает в 750 тыс. до НДС. В инвойс их не ставим.
 REC = [
-    ("AT13 XP", "RGDG3990", "редуктор", 46.0, 1.6, 6.667, 12800, 123),
-    ("BLASTER Y", "BLASTER Y 12x2/12", "фильтр", 4.5, 0.18, 0.909, 1250, 50),
-    ("Тип 33", "33.EVG.13", "рейка 4 цил.", 20.0, 0.65, 1.5, 5550, 20),
-    ("FLS 12×12", "FL01S 12/12", "фильтр", 0.7, 0.08, 0.4, 250, 100),
+    ("AT13 XP", "RGDG3990", "редуктор", 47.0, 1.6, 6.667, 12800, 100),
+    ("Тип 33", "33.EVG.13", "рейка 4 цил.", 20.0, 0.65, 1.5, 5550, 50),
+    ("FLS 12×12", "FL01S 12/12", "фильтр", 0.8, 0.08, 0.4, 250, 200),
 ]
 
 
@@ -139,7 +157,8 @@ def main() -> None:
     )
     print(
         f"invested={t['invested']:,} market={t['market']:,} "
-        f"profit={t['profit']:+,} ({t['pct']}%)"
+        f"profit={t['profit']:+,} ({t['pct']}%) "
+        f"kg={t['weight']} m3={t['m3']} eur={t['goods_eur']}"
     )
 
 

@@ -1,11 +1,7 @@
-# Открыть сайт инвестору
+# Открыть сайт
 
 ```bash
-cd ~/Documents/Cursor/gbo
-git fetch origin cursor/gbo-pv-bridge-recalc-bddf
-git checkout cursor/gbo-pv-bridge-recalc-bddf
 open -a Safari index.html
 ```
 
-Или превью:  
-https://htmlpreview.github.io/?https://github.com/GithubRavilS/gbo/blob/cursor/gbo-pv-bridge-recalc-bddf/index.html
+Актуальные цифры — состав 3 ноября 2026, фрахт 1 800 €, пошлина 7%. Три строки, конверсия 5% на весь круг. До НДС 843 306 ₽, с НДС 1 006 427 ₽, при полке минус 20% прибыль +279 573 ₽ (+27,8%). Контрагент ПВ Бридж в сделку не входит, см. `COUNTERPARTY.md`.

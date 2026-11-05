@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Состав и габарит груза</title>
+<style>
+  :root {
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --line: #e4e4e7;
+    --blue: #0a4f8a;
+    --blue-soft: #e7f1fa;
+    --green: #1d6b45;
+    --green-soft: #e7f6ee;
+    --amber: #8a5a00;
+    --amber-soft: #fff4dc;
+    --air: #f3f4f6;
+    --paper: #ffffff;
+    --bg: #eef1f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.4;
+  }
+  .sheet {
+    width: 1120px;
+    margin: 28px auto;
+    background: var(--paper);
+    border-radius: 18px;
+    padding: 32px 32px 26px;
+    box-shadow: 0 12px 40px rgba(20, 30, 40, .08);
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 18px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 6px;
+  }
+  h1 { margin: 0; font-size: 32px; letter-spacing: -.03em; line-height: 1.1; }
+  .sub { margin: 6px 0 0; color: var(--muted); font-size: 14px; max-width: 62ch; }
+  .kpis { display: flex; gap: 8px; }
+  .kpi {
+    min-width: 132px;
+    background: #f6f7f9;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+  .kpi span {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .kpi b {
+    display: block;
+    margin-top: 2px;
+    font-size: 20px;
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; table-layout: fixed; }
+  col.c-name { width: 27%; }
+  col.c-art { width: 12%; }
+  col.c-qty { width: 6%; }
+  col.c-kg { width: 8%; }
+  col.c-kgt { width: 8%; }
+  col.c-box { width: 18%; }
+  col.c-vol { width: 11%; }
+  col.c-code { width: 10%; }
+  th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  td { padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 15px; }
+  th.num, td.num { text-align: right; }
+  .name b { display: block; font-size: 16px; }
+  .name small { display: block; color: var(--muted); font-size: 12px; }
+  .code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 650; white-space: nowrap; }
+  tr.cartons td { background: #f6f7f9; font-weight: 650; }
+  tr.air td { color: var(--muted); }
+  tr.total td {
+    background: var(--blue);
+    color: #fff;
+    font-weight: 750;
+    border-bottom: 0;
+    font-size: 16px;
+  }
+  tr.total .code, tr.total small { color: #fff; }
+  h2 { margin: 26px 0 6px; font-size: 20px; letter-spacing: -.02em; }
+  .layout { display: grid; grid-template-columns: 1.4fr .8fr; gap: 18px; align-items: center; }
+  .stack {
+    display: grid;
+    grid-template-rows: 30.7fr 81fr;
+    height: 280px;
+    border: 1px solid #d5dbe3;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .topband { display: grid; grid-template-columns: 30.7fr 32.5fr; }
+  .fls, .rail, .empty, .at {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 12px;
+    min-width: 0;
+  }
+  .fls { background: var(--amber-soft); color: var(--amber); }
+  .railcol { display: grid; grid-template-rows: 14.3fr 16.4fr; }
+  .empty { background: var(--air); color: var(--muted); }
+  .rail { background: var(--green-soft); color: var(--green); }
+  .at { background: var(--blue-soft); color: var(--blue); }
+  .fls b, .rail b, .at b, .empty b { font-size: 14px; }
+  .fls span, .rail span, .at span, .empty span { font-size: 12px; font-weight: 600; }
+  .facts { margin: 0; padding: 0; list-style: none; }
+  .facts li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .facts span { color: var(--muted); }
+  .facts b { font-variant-numeric: tabular-nums; }
+  .facts .main b { font-size: 18px; }
+  .notes {
+    margin-top: 16px;
+    background: #f6f7f9;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .notes p { margin: 0 0 6px; }
+  .notes p:last-child { margin: 0; }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <div class="top">
+      <div>
+        <p class="eyebrow">3 позиции · 350 штук · уже с коробками</p>
+        <h1>Состав и габарит груза</h1>
+        <p class="sub">Габарит в таблице — общая коробка. Вес справа — изделие и та же строка с картоном. До куба место есть, добрать его этой мелочью не выходит: раньше кончаются килограммы и миллион.</p>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><span>С картоном</span><b>234 кг</b></div>
+        <div class="kpi"><span>Плотные коробки</span><b>0,492 м³</b></div>
+        <div class="kpi"><span>Свои коробки</span><b>0,63 м³</b></div>
+      </div>
+    </div>
+
+    <table>
+      <colgroup>
+        <col class="c-name"/><col class="c-art"/><col class="c-qty"/><col class="c-kg"/>
+        <col class="c-kgt"/><col class="c-box"/><col class="c-vol"/><col class="c-code"/>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Позиция</th>
+          <th>Артикул</th>
+          <th class="num">Шт</th>
+          <th class="num">Кг, 1 шт</th>
+          <th class="num">Кг нетто / с коробкой</th>
+          <th>Коробка, см</th>
+          <th class="num">Объём с коробкой, м³</th>
+          <th>ТН ВЭД</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name"><b>AT13 XP</b><small>редуктор · корпус 16,5 × 12,0 × 15,0 см · 10 коробок по 10 шт</small></td>
+          <td>RGDG3990</td>
+          <td class="num">100</td>
+          <td class="num">1,90</td>
+          <td class="num">190,0<small style="display:block;color:#6e6e73;font-size:12px">+7 кг картон · 197</small></td>
+          <td>34,7 × 63,2 × 16,2</td>
+          <td class="num">0,355</td>
+          <td class="code">8481 10 990 8</td>
+        </tr>
+        <tr>
+          <td class="name"><b>Тип 33</b><small>рейка 4 цил. · корпус 15,2 × 5,5 × 4,5 см · 1 коробка на 50 шт</small></td>
+          <td>33.EVG.13</td>
+          <td class="num">50</td>
+          <td class="num">0,40</td>
+          <td class="num">20,0<small style="display:block;color:#6e6e73;font-size:12px">+0,5 кг картон · 20,5</small></td>
+          <td>50,7 × 30,7 × 16,4</td>
+          <td class="num">0,026</td>
+          <td class="code">8409 91 000 9</td>
+        </tr>
+        <tr>
+          <td class="name"><b>FLS 12×12</b><small>фильтр · корпус 11,0 × 4,5 × 4,5 см · 1 коробка на 200 шт</small></td>
+          <td>FL01S 12/12</td>
+          <td class="num">200</td>
+          <td class="num">0,08</td>
+          <td class="num">16,0<small style="display:block;color:#6e6e73;font-size:12px">+0,7 кг картон · 16,7</small></td>
+          <td>69,7 × 30,7 × 30,7</td>
+          <td class="num">0,066</td>
+          <td class="code">8421 39 800</td>
+        </tr>
+        <tr class="cartons">
+          <td>Коробки вместе</td>
+          <td></td>
+          <td class="num">350</td>
+          <td></td>
+          <td class="num">226 / 234</td>
+          <td>12 коробок, вплотную</td>
+          <td class="num">0,447</td>
+          <td></td>
+        </tr>
+        <tr class="air">
+          <td>Воздух в общем прямоугольнике</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>рейка ниже и уже фильтра</td>
+          <td class="num">0,045</td>
+          <td></td>
+        </tr>
+        <tr class="total">
+          <td>Блок груза</td>
+          <td></td>
+          <td class="num">350</td>
+          <td></td>
+          <td class="num">234</td>
+          <td>69,7 × 63,2 × 111,7 см</td>
+          <td class="num">0,492</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Как коробки стоят</h2>
+    <p class="sub">Вид сбоку. Снизу десять коробок редукторов. Сверху на них фильтр и рейка. Рейка ниже, поэтому над ней остаётся шапка воздуха. Она уже входит в 0,492.</p>
+    <div class="layout">
+      <div class="stack" aria-hidden="true">
+        <div class="topband">
+          <div class="fls"><b>FLS · 1 коробка</b><span>69,7 × 30,7 × 30,7 см</span></div>
+          <div class="railcol">
+            <div class="empty"><b>Воздух</b><span>рейка ниже фильтра</span></div>
+            <div class="rail"><b>Тип 33 · 1 коробка</b><span>50,7 × 30,7 × 16,4 см</span></div>
+          </div>
+        </div>
+        <div class="at"><b>AT13 · 10 коробок по 10 шт</b><span>блок 69,4 × 63,2 × 81,0 см</span></div>
+      </div>
+      <ul class="facts">
+        <li><span>Голый корпус</span><b>0,360 м³</b></li>
+        <li><span>Те же детали в коробках</span><b>0,447 м³</b></li>
+        <li><span>Воздух между коробками</span><b>0,045 м³</b></li>
+        <li class="main"><span>Общие коробки</span><b>0,492 м³</b></li>
+        <li><span>Своя коробка редуктора</span><b>0,63 м³</b></li>
+        <li><span>Брутто с картоном</span><b>234 кг</b></li>
+      </ul>
+    </div>
+
+    <div class="notes">
+      <p>Три объёма, и ни один не снят рулеткой. 0,360 м³ — сумма корпусов по паспорту. 0,492 м³ — те же корпуса в общих коробках: между деталями 0,5 см, стенка 0,6 см, коробки стоят одним блоком 69,7 × 63,2 × 111,7 см. 0,63 м³ — если у каждого редуктора своя коробка 19,5 × 15,0 × 18,0 см и сто коробок сложены сеткой 97,5 × 60 × 90 см, а рейки и фильтр лежат сверху. Старые 0,82 м³ в смете — норма «150 редукторов = 1 м³», не обмер. 0,866 было тем же допуском с лишним воздухом вокруг каждой штуки. Для заявки рабочий коридор 0,49–0,63 м³, не половина и не полный куб.</p>
+      <p>Картон посчитан по площади коробки и картону около 0,5–0,6 кг на м². Десять коробок AT13 — 7 кг, рейка 0,5 кг, фильтр 0,7 кг. Нетто 226 кг, с картоном 234 кг. Свои коробки редуктора тяжелее примерно на 6 кг, брутто около 240 кг. Европаллета ещё 20–25 кг. Вместе с ней вес уже выше потолка 250 кг, поэтому паллету в эти 234 кг не включал.</p>
+      <p>До 1 м³ по плотной укладке свободно около 0,5 м³, по своим коробкам около 0,37 м³. Забить это дешёвой мелочью нечем. FLS — единственная копеечная строка в плюсе, 200 штук дают 0,07 м³ и 16 кг. Ещё столько же упирается в запас, который завод уже называл ограниченным, и в потолок 250 кг. До миллиона заморозки остаётся около 66 тысяч ₽, это примерно 540 € товара. На фильтры этого хватит по деньгам, по весу нет, а куб всё равно не заполнится: фильтр маленький. Редукторы и рейки место занимают, но они не копейки, и касса уже у миллиона.</p>
+      <p>Вес изделия: AT13 по Tomasetto 1,90 кг (digitronicgas.ru пишет 1,70). Тип 33 — 0,40 кг. FLS 0,08 кг в паспорте нет, это оценка. ТН ВЭД — рабочий код, не решение брокера. У фильтра десятый знак не поставлен: 8421 39 800.</p>
+    </div>
+  </main>
+</body>
+</html>
