@@ -1,0 +1,697 @@
+{
+  "odpis": {
+    "rodzaj": "Pełny",
+    "naglowekP": {
+      "rejestr": "RejP",
+      "numerKRS": "0001077805",
+      "dataCzasOdpisu": "03.11.2026 15:34:21",
+      "stanZDnia": "23.04.2026",
+      "wpis": [
+        {
+          "numerWpisu": 1,
+          "opis": "REJESTRACJA W KRAJOWYM REJESTRZE SĄDOWYM",
+          "dataWpisu": "28.12.2023",
+          "sygnaturaAktSprawyDotyczacejWpisu": "WA.XII NS-REJ.KRS/73608/23/87",
+          "oznaczenieSaduDokonujacegoWpisu": "SĄD REJONOWY DLA M.ST. WARSZAWY W WARSZAWIE, XII WYDZIAŁ GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO"
+        },
+        {
+          "numerWpisu": 2,
+          "opis": "ZMIANA DANYCH W REJESTRZE",
+          "dataWpisu": "28.12.2023",
+          "sygnaturaAktSprawyDotyczacejWpisu": "WA.XII NS-REJ.KRS/73608/23/87/NIP"
+        },
+        {
+          "numerWpisu": 3,
+          "opis": "ZMIANA DANYCH W REJESTRZE",
+          "dataWpisu": "29.12.2023",
+          "sygnaturaAktSprawyDotyczacejWpisu": "WA.XII NS-REJ.KRS/73608/23/87/REGON"
+        },
+        {
+          "numerWpisu": 4,
+          "opis": "ZMIANA DANYCH W REJESTRZE",
+          "dataWpisu": "06.02.2024",
+          "sygnaturaAktSprawyDotyczacejWpisu": "WA.XII NS-REJ.KRS/7498/24/12",
+          "oznaczenieSaduDokonujacegoWpisu": "SĄD REJONOWY DLA M.ST. WARSZAWY W WARSZAWIE, XII WYDZIAŁ GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO"
+        },
+        {
+          "numerWpisu": 5,
+          "opis": "ZMIANA DANYCH W REJESTRZE",
+          "dataWpisu": "12.03.2024",
+          "sygnaturaAktSprawyDotyczacejWpisu": "WA.XIV NS-REJ.KRS/14600/24/911",
+          "oznaczenieSaduDokonujacegoWpisu": "SĄD REJONOWY DLA M.ST. WARSZAWY W WARSZAWIE, XIV WYDZIAŁ GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO"
+        },
+        {
+          "numerWpisu": 6,
+          "opis": "ZMIANA DANYCH W REJESTRZE",
+          "dataWpisu": "08.03.2026",
+          "sygnaturaAktSprawyDotyczacejWpisu": "WZNOW/7547/26/113",
+          "oznaczenieSaduDokonujacegoWpisu": "SYSTEM"
+        },
+        {
+          "numerWpisu": 7,
+          "opis": "ZMIANA DANYCH W REJESTRZE",
+          "dataWpisu": "23.04.2026",
+          "sygnaturaAktSprawyDotyczacejWpisu": "WA.XIV NS-REJ.KRS/21335/26/376",
+          "oznaczenieSaduDokonujacegoWpisu": "SĄD REJONOWY DLA M.ST. WARSZAWY W WARSZAWIE, XIV WYDZIAŁ GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO"
+        }
+      ],
+      "stanPozycji": 1
+    },
+    "dane": {
+      "dzial1": {
+        "danePodmiotu": {
+          "formaPrawna": [
+            {
+              "formaPrawna": "SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+              "nrWpisuWprow": "1"
+            }
+          ],
+          "identyfikatory": [
+            {
+              "identyfikatory": {
+                "nip": "5273091062"
+              },
+              "nrWpisuWykr": "3",
+              "nrWpisuWprow": "2"
+            },
+            {
+              "identyfikatory": {
+                "regon": "52730523700000",
+                "nip": "5273091062"
+              },
+              "nrWpisuWprow": "3"
+            }
+          ],
+          "nazwa": [
+            {
+              "nazwa": "AUTOCHILL SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+              "nrWpisuWprow": "1"
+            }
+          ],
+          "czyProwadziDzialalnoscZInnymiPodmiotami": [
+            {
+              "czyProwadziDzialalnoscZInnymiPodmiotami": false,
+              "nrWpisuWprow": "1"
+            }
+          ],
+          "czyPosiadaStatusOPP": [
+            {
+              "czyPosiadaStatusOPP": false,
+              "nrWpisuWprow": "1"
+            }
+          ]
+        },
+        "siedzibaIAdres": {
+          "siedziba": [
+            {
+              "kraj": "POLSKA",
+              "wojewodztwo": "MAZOWIECKIE",
+              "powiat": "WARSZAWA",
+              "gmina": "WARSZAWA",
+              "miejscowosc": "WARSZAWA",
+              "nrWpisuWprow": "1"
+            }
+          ],
+          "adres": [
+            {
+              "ulica": "UL. CHMIELNA",
+              "nrDomu": "73B",
+              "nrLokalu": "14",
+              "miejscowosc": "WARSZAWA",
+              "kodPocztowy": "00-801",
+              "poczta": "WARSZAWA",
+              "kraj": "POLSKA",
+              "nrWpisuWykr": "4",
+              "nrWpisuWprow": "1"
+            },
+            {
+              "ulica": "UL. BRZESKA",
+              "nrDomu": "24",
+              "nrLokalu": "611",
+              "miejscowosc": "WARSZAWA",
+              "kodPocztowy": "03-741",
+              "poczta": "WARSZAWA",
+              "kraj": "POLSKA",
+              "nrWpisuWprow": "4"
+            }
+          ],
+          "adresPocztyElektronicznej": [
+            {
+              "adresPocztyElektronicznej": "AUTOCHILLRUS@GMAIL.COM",
+              "nrWpisuWprow": "4"
+            }
+          ],
+          "adresStronyInternetowej": [],
+          "adresDoDoreczenElektronicznychWpisanyDoBAE": []
+        },
+        "umowaStatut": {
+          "informacjaOZawarciuZmianieUmowyStatutu": [
+            {
+              "pozycja": [
+                {
+                  "zawarcieZmianaUmowyStatutu": "14.12.2023",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "zawarcieZmianaUmowyStatutu": "12.04.2026, ZMIANA: § 4, § 5, § 6, § 15",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            }
+          ]
+        },
+        "pozostaleInformacje": {
+          "informacjaOCzasieNaJakiZostalUtworzonyPodmiot": [
+            {
+              "czasNaJakiUtworzonyZostalPodmiot": "NIEOZNACZONY",
+              "nrWpisuWprow": "1"
+            }
+          ],
+          "informacjaOPismieDoOgloszen": [],
+          "informacjaOLiczbieUdzialow": [
+            {
+              "informacjaOLiczbieUdzialow": "WIĘKSZĄ LICZBĘ UDZIAŁÓW",
+              "nrWpisuWprow": "1"
+            }
+          ]
+        },
+        "wspolnicySpzoo": [
+          {
+            "nazwisko": [
+              {
+                "nazwisko": {
+                  "nazwiskoICzlon": "S*********"
+                },
+                "nrWpisuWykr": "7",
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "imiona": [
+              {
+                "imiona": {
+                  "imie": "R****"
+                },
+                "nrWpisuWykr": "7",
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "identyfikator": [
+              {
+                "pesel": "9**********",
+                "nrWpisuWykr": "7",
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "posiadaneUdzialy": [
+              {
+                "posiadaneUdzialy": "50 UDZIAŁÓW O ŁĄCZNEJ WARTOŚCI 2500,00 ZŁ",
+                "nrWpisuWykr": "7",
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "czyPosiadaCaloscUdzialow": [
+              {
+                "czyPosiadaCaloscUdzialow": false,
+                "nrWpisuWykr": "7",
+                "nrWpisuWprow": "1"
+              }
+            ]
+          },
+          {
+            "nazwisko": [
+              {
+                "nazwisko": {
+                  "nazwiskoICzlon": "V****"
+                },
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "imiona": [
+              {
+                "imiona": {
+                  "imie": "A****"
+                },
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "identyfikator": [
+              {
+                "pesel": "9**********",
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "posiadaneUdzialy": [
+              {
+                "posiadaneUdzialy": "50 UDZIAŁÓW O ŁĄCZNEJ WARTOŚCI 2500,00 ZŁ",
+                "nrWpisuWykr": "7",
+                "nrWpisuWprow": "1"
+              },
+              {
+                "posiadaneUdzialy": "90 UDZIAŁÓW O ŁĄCZNEJ WARTOŚCI 4.500,00 ZŁ",
+                "nrWpisuWprow": "7"
+              }
+            ],
+            "czyPosiadaCaloscUdzialow": [
+              {
+                "czyPosiadaCaloscUdzialow": false,
+                "nrWpisuWprow": "1"
+              }
+            ]
+          },
+          {
+            "nazwisko": [
+              {
+                "nazwisko": {
+                  "nazwiskoICzlon": "T************"
+                },
+                "nrWpisuWprow": "7"
+              }
+            ],
+            "imiona": [
+              {
+                "imiona": {
+                  "imie": "A****"
+                },
+                "nrWpisuWprow": "7"
+              }
+            ],
+            "identyfikator": [
+              {
+                "pesel": "9**********",
+                "nrWpisuWprow": "7"
+              }
+            ],
+            "posiadaneUdzialy": [
+              {
+                "posiadaneUdzialy": "10 UDZIAŁÓW O ŁĄCZNEJ WARTOŚCI 500,00 ZŁ",
+                "nrWpisuWprow": "7"
+              }
+            ],
+            "czyPosiadaCaloscUdzialow": [
+              {
+                "czyPosiadaCaloscUdzialow": false,
+                "nrWpisuWprow": "7"
+              }
+            ]
+          }
+        ],
+        "kapital": {
+          "wysokoscKapitaluZakladowego": [
+            {
+              "wartosc": "5000,00",
+              "waluta": "PLN",
+              "nrWpisuWprow": "1"
+            }
+          ]
+        }
+      },
+      "dzial2": {
+        "reprezentacja": [
+          {
+            "nazwaOrganu": [
+              {
+                "nazwaOrganu": "ZARZĄD",
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "sposobReprezentacji": [
+              {
+                "sposobReprezentacji": "DO SKŁADANIA OŚWIADCZEŃ W IMIENIU SPÓŁKI JEST UPOWAŻNIONY KAŻDY Z CZŁONKÓW ZARZĄDU SAMODZIELNIE.",
+                "nrWpisuWprow": "1"
+              }
+            ],
+            "sklad": [
+              {
+                "nazwisko": [
+                  {
+                    "nazwisko": {
+                      "nazwiskoICzlon": "S*********"
+                    },
+                    "nrWpisuWykr": "7",
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "imiona": [
+                  {
+                    "imiona": {
+                      "imie": "R****"
+                    },
+                    "nrWpisuWykr": "7",
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "identyfikator": [
+                  {
+                    "pesel": "9**********",
+                    "nrWpisuWykr": "7",
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "funkcjaWOrganie": [
+                  {
+                    "funkcjaWOrganie": "CZŁONEK ZARZĄDU",
+                    "nrWpisuWykr": "7",
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "czyZawieszona": [
+                  {
+                    "czyZawieszona": false,
+                    "nrWpisuWykr": "7",
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "dataZawieszeniaDo": []
+              },
+              {
+                "nazwisko": [
+                  {
+                    "nazwisko": {
+                      "nazwiskoICzlon": "V****"
+                    },
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "imiona": [
+                  {
+                    "imiona": {
+                      "imie": "A****"
+                    },
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "identyfikator": [
+                  {
+                    "pesel": "9**********",
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "funkcjaWOrganie": [
+                  {
+                    "funkcjaWOrganie": "CZŁONEK ZARZĄDU",
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "czyZawieszona": [
+                  {
+                    "czyZawieszona": false,
+                    "nrWpisuWprow": "1"
+                  }
+                ],
+                "dataZawieszeniaDo": []
+              },
+              {
+                "nazwisko": [
+                  {
+                    "nazwisko": {
+                      "nazwiskoICzlon": "T************"
+                    },
+                    "nrWpisuWprow": "7"
+                  }
+                ],
+                "imiona": [
+                  {
+                    "imiona": {
+                      "imie": "A****"
+                    },
+                    "nrWpisuWprow": "7"
+                  }
+                ],
+                "identyfikator": [
+                  {
+                    "pesel": "9**********",
+                    "nrWpisuWprow": "7"
+                  }
+                ],
+                "funkcjaWOrganie": [
+                  {
+                    "funkcjaWOrganie": "CZŁONEK ZARZĄDU",
+                    "nrWpisuWprow": "7"
+                  }
+                ],
+                "czyZawieszona": [
+                  {
+                    "czyZawieszona": false,
+                    "nrWpisuWprow": "7"
+                  }
+                ],
+                "dataZawieszeniaDo": []
+              }
+            ]
+          }
+        ]
+      },
+      "dzial3": {
+        "przedmiotDzialalnosci": {
+          "przedmiotPrzewazajacejDzialalnosci": [
+            {
+              "pozycja": [
+                {
+                  "opis": "POZOSTAŁA DZIAŁALNOŚĆ USŁUGOWA W ZAKRESIE TECHNOLOGII INFORMATYCZNYCH I KOMPUTEROWYCH",
+                  "kodDzial": "62",
+                  "kodKlasa": "09",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                },
+                {
+                  "opis": "POZOSTAŁA DZIAŁALNOŚĆ USŁUGOWA W ZAKRESIE TECHNOLOGII INFORMATYCZNYCH I KOMPUTEROWYCH",
+                  "kodDzial": "62",
+                  "kodKlasa": "90",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            }
+          ],
+          "przedmiotPozostalejDzialalnosci": [
+            {
+              "pozycja": [
+                {
+                  "opis": "ROBOTY ZWIĄZANE Z BUDOWĄ OBIEKTÓW INŻYNIERII LĄDOWEJ I WODNEJ",
+                  "kodDzial": "42",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "ROBOTY BUDOWLANE SPECJALISTYCZNE",
+                  "kodDzial": "43",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "HANDEL HURTOWY I DETALICZNY POJAZDAMI SAMOCHODOWYMI; NAPRAWA POJAZDÓW SAMOCHODOWYCH",
+                  "kodDzial": "45",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "HANDEL HURTOWY, Z WYŁĄCZENIEM HANDLU POJAZDAMI SAMOCHODOWYMI",
+                  "kodDzial": "46",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "HANDEL DETALICZNY, Z WYŁĄCZENIEM HANDLU DETALICZNEGO POJAZDAMI SAMOCHODOWYMI",
+                  "kodDzial": "47",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "DZIAŁALNOŚĆ ZWIĄZANA Z OPROGRAMOWANIEM I DORADZTWEM W ZAKRESIE INFORMATYKI ORAZ DZIAŁALNOŚĆ POWIĄZANA",
+                  "kodDzial": "62",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "DZIAŁALNOŚĆ ZWIĄZANA Z OBSŁUGĄ RYNKU NIERUCHOMOŚCI",
+                  "kodDzial": "68",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "FINANSOWA DZIAŁALNOŚĆ USŁUGOWA, Z WYŁĄCZENIEM UBEZPIECZEŃ I FUNDUSZÓW EMERYTALNYCH",
+                  "kodDzial": "64",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "WYNAJEM I DZIERŻAWA",
+                  "kodDzial": "77",
+                  "nrWpisuWykr": "7",
+                  "nrWpisuWprow": "1"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "POZOSTAŁE SPECJALISTYCZNE ROBOTY BUDOWLANE, GDZIE INDZIEJ NIESKLASYFIKOWANE",
+                  "kodDzial": "43",
+                  "kodKlasa": "99",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "POZOSTAŁA SPRZEDAŻ DETALICZNA NIEWYSPECJALIZOWANA",
+                  "kodDzial": "47",
+                  "kodKlasa": "12",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "SPRZEDAŻ DETALICZNA POJAZDÓW SILNIKOWYCH, Z WYŁĄCZENIEM MOTOCYKLI",
+                  "kodDzial": "47",
+                  "kodKlasa": "81",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "POZOSTAŁA DZIAŁALNOŚĆ W ZAKRESIE PROGRAMOWANIA",
+                  "kodDzial": "62",
+                  "kodKlasa": "10",
+                  "kodPodklasa": "B",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "DZIAŁALNOŚĆ W ZAKRESIE ARCHITEKTURY",
+                  "kodDzial": "71",
+                  "kodKlasa": "11",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "WYNAJEM I DZIERŻAWA SAMOCHODÓW OSOBOWYCH I LEKKICH POJAZDÓW SILNIKOWYCH, W TYM MOTOCYKLI",
+                  "kodDzial": "77",
+                  "kodKlasa": "11",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "NAPRAWA MECHANICZNA I SERWISOWA POJAZDÓW SILNIKOWYCH, Z WYŁĄCZENIEM MOTOCYKLI",
+                  "kodDzial": "95",
+                  "kodKlasa": "31",
+                  "kodPodklasa": "A",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "DZIAŁALNOŚĆ FRYZJERSKA",
+                  "kodDzial": "96",
+                  "kodKlasa": "21",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            },
+            {
+              "pozycja": [
+                {
+                  "opis": "DZIAŁALNOŚĆ W ZAKRESIE PIELĘGNACJI URODY I POZOSTAŁA DZIAŁALNOŚĆ KOSMETYCZNA",
+                  "kodDzial": "96",
+                  "kodKlasa": "22",
+                  "kodPodklasa": "Z",
+                  "nrWpisuWprow": "7"
+                }
+              ]
+            }
+          ]
+        },
+        "informacjaODniuKonczacymRokObrotowy": {
+          "dzienKonczacyPierwszyRokObrotowy": [
+            {
+              "dzienKonczacyPierwszyRokObrotowy": "31.12.2024",
+              "nrWpisuWprow": "1"
+            }
+          ]
+        }
+      },
+      "dzial4": {},
+      "dzial5": {},
+      "dzial6": {
+        "rozwiazanieUniewaznienie": {
+          "okreslenieOkolicznosci": []
+        },
+        "zawieszenieWznowienie": [
+          {
+            "dataZawieszenia": [
+              {
+                "dataZawieszenia": "07.03.2024",
+                "nrWpisuWprow": "5"
+              }
+            ],
+            "dataWznowienia": [
+              {
+                "dataWznowienia": "08.03.2026",
+                "nrWpisuWprow": "6"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

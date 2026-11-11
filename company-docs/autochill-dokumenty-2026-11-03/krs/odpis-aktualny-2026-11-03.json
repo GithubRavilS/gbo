@@ -1,0 +1,215 @@
+{
+  "odpis": {
+    "rodzaj": "Aktualny",
+    "naglowekA": {
+      "rejestr": "RejP",
+      "numerKRS": "0001077805",
+      "dataCzasOdpisu": "03.11.2026 15:33:36",
+      "stanZDnia": "23.04.2026",
+      "dataRejestracjiWKRS": "28.12.2023",
+      "numerOstatniegoWpisu": 7,
+      "dataOstatniegoWpisu": "23.04.2026",
+      "sygnaturaAktSprawyDotyczacejOstatniegoWpisu": "WA.XIV NS-REJ.KRS/21335/26/376",
+      "oznaczenieSaduDokonujacegoOstatniegoWpisu": "SĄD REJONOWY DLA M.ST. WARSZAWY W WARSZAWIE, XIV WYDZIAŁ GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO",
+      "stanPozycji": 1
+    },
+    "dane": {
+      "dzial1": {
+        "danePodmiotu": {
+          "formaPrawna": "SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+          "identyfikatory": {
+            "regon": "52730523700000",
+            "nip": "5273091062"
+          },
+          "nazwa": "AUTOCHILL SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+          "daneOWczesniejszejRejestracji": {},
+          "czyProwadziDzialalnoscZInnymiPodmiotami": false,
+          "czyPosiadaStatusOPP": false
+        },
+        "siedzibaIAdres": {
+          "siedziba": {
+            "kraj": "POLSKA",
+            "wojewodztwo": "MAZOWIECKIE",
+            "powiat": "WARSZAWA",
+            "gmina": "WARSZAWA",
+            "miejscowosc": "WARSZAWA"
+          },
+          "adres": {
+            "ulica": "UL. BRZESKA",
+            "nrDomu": "24",
+            "nrLokalu": "611",
+            "miejscowosc": "WARSZAWA",
+            "kodPocztowy": "03-741",
+            "poczta": "WARSZAWA",
+            "kraj": "POLSKA"
+          },
+          "adresPocztyElektronicznej": "AUTOCHILLRUS@GMAIL.COM"
+        },
+        "umowaStatut": {
+          "informacjaOZawarciuZmianieUmowyStatutu": [
+            {
+              "zawarcieZmianaUmowyStatutu": "14.12.2023"
+            },
+            {
+              "zawarcieZmianaUmowyStatutu": "12.04.2026, ZMIANA: § 4, § 5, § 6, § 15"
+            }
+          ]
+        },
+        "pozostaleInformacje": {
+          "czasNaJakiUtworzonyZostalPodmiot": "NIEOZNACZONY",
+          "informacjaOLiczbieUdzialow": "WIĘKSZĄ LICZBĘ UDZIAŁÓW"
+        },
+        "wspolnicySpzoo": [
+          {
+            "nazwisko": {
+              "nazwiskoICzlon": "V****"
+            },
+            "imiona": {
+              "imie": "A****"
+            },
+            "identyfikator": {
+              "pesel": "9**********"
+            },
+            "posiadaneUdzialy": "90 UDZIAŁÓW O ŁĄCZNEJ WARTOŚCI 4.500,00 ZŁ",
+            "czyPosiadaCaloscUdzialow": false
+          },
+          {
+            "nazwisko": {
+              "nazwiskoICzlon": "T************"
+            },
+            "imiona": {
+              "imie": "A****"
+            },
+            "identyfikator": {
+              "pesel": "9**********"
+            },
+            "posiadaneUdzialy": "10 UDZIAŁÓW O ŁĄCZNEJ WARTOŚCI 500,00 ZŁ",
+            "czyPosiadaCaloscUdzialow": false
+          }
+        ],
+        "kapital": {
+          "wysokoscKapitaluZakladowego": {
+            "wartosc": "5000,00",
+            "waluta": "PLN"
+          },
+          "wniesioneAporty": {}
+        }
+      },
+      "dzial2": {
+        "reprezentacja": {
+          "nazwaOrganu": "ZARZĄD",
+          "sposobReprezentacji": "DO SKŁADANIA OŚWIADCZEŃ W IMIENIU SPÓŁKI JEST UPOWAŻNIONY KAŻDY Z CZŁONKÓW ZARZĄDU SAMODZIELNIE.",
+          "sklad": [
+            {
+              "nazwisko": {
+                "nazwiskoICzlon": "V****"
+              },
+              "imiona": {
+                "imie": "A****"
+              },
+              "identyfikator": {
+                "pesel": "9**********"
+              },
+              "funkcjaWOrganie": "CZŁONEK ZARZĄDU",
+              "czyZawieszona": false
+            },
+            {
+              "nazwisko": {
+                "nazwiskoICzlon": "T************"
+              },
+              "imiona": {
+                "imie": "A****"
+              },
+              "identyfikator": {
+                "pesel": "9**********"
+              },
+              "funkcjaWOrganie": "CZŁONEK ZARZĄDU",
+              "czyZawieszona": false
+            }
+          ]
+        }
+      },
+      "dzial3": {
+        "przedmiotDzialalnosci": {
+          "przedmiotPrzewazajacejDzialalnosci": [
+            {
+              "opis": "POZOSTAŁA DZIAŁALNOŚĆ USŁUGOWA W ZAKRESIE TECHNOLOGII INFORMATYCZNYCH I KOMPUTEROWYCH",
+              "kodDzial": "62",
+              "kodKlasa": "90",
+              "kodPodklasa": "Z"
+            }
+          ],
+          "przedmiotPozostalejDzialalnosci": [
+            {
+              "opis": "POZOSTAŁE SPECJALISTYCZNE ROBOTY BUDOWLANE, GDZIE INDZIEJ NIESKLASYFIKOWANE",
+              "kodDzial": "43",
+              "kodKlasa": "99",
+              "kodPodklasa": "Z"
+            },
+            {
+              "opis": "POZOSTAŁA SPRZEDAŻ DETALICZNA NIEWYSPECJALIZOWANA",
+              "kodDzial": "47",
+              "kodKlasa": "12",
+              "kodPodklasa": "Z"
+            },
+            {
+              "opis": "SPRZEDAŻ DETALICZNA POJAZDÓW SILNIKOWYCH, Z WYŁĄCZENIEM MOTOCYKLI",
+              "kodDzial": "47",
+              "kodKlasa": "81",
+              "kodPodklasa": "Z"
+            },
+            {
+              "opis": "POZOSTAŁA DZIAŁALNOŚĆ W ZAKRESIE PROGRAMOWANIA",
+              "kodDzial": "62",
+              "kodKlasa": "10",
+              "kodPodklasa": "B"
+            },
+            {
+              "opis": "DZIAŁALNOŚĆ W ZAKRESIE ARCHITEKTURY",
+              "kodDzial": "71",
+              "kodKlasa": "11",
+              "kodPodklasa": "Z"
+            },
+            {
+              "opis": "WYNAJEM I DZIERŻAWA SAMOCHODÓW OSOBOWYCH I LEKKICH POJAZDÓW SILNIKOWYCH, W TYM MOTOCYKLI",
+              "kodDzial": "77",
+              "kodKlasa": "11",
+              "kodPodklasa": "Z"
+            },
+            {
+              "opis": "NAPRAWA MECHANICZNA I SERWISOWA POJAZDÓW SILNIKOWYCH, Z WYŁĄCZENIEM MOTOCYKLI",
+              "kodDzial": "95",
+              "kodKlasa": "31",
+              "kodPodklasa": "A"
+            },
+            {
+              "opis": "DZIAŁALNOŚĆ FRYZJERSKA",
+              "kodDzial": "96",
+              "kodKlasa": "21",
+              "kodPodklasa": "Z"
+            },
+            {
+              "opis": "DZIAŁALNOŚĆ W ZAKRESIE PIELĘGNACJI URODY I POZOSTAŁA DZIAŁALNOŚĆ KOSMETYCZNA",
+              "kodDzial": "96",
+              "kodKlasa": "22",
+              "kodPodklasa": "Z"
+            }
+          ]
+        },
+        "informacjaODniuKonczacymRokObrotowy": {
+          "dzienKonczacyPierwszyRokObrotowy": "31.12.2024"
+        }
+      },
+      "dzial4": {},
+      "dzial5": {},
+      "dzial6": {
+        "zawieszenieWznowienie": [
+          {
+            "dataZawieszenia": "07.03.2024",
+            "dataWznowienia": "08.03.2026"
+          }
+        ]
+      }
+    }
+  }
+}
